@@ -52,11 +52,11 @@ function loadResults(sql){
         url: mySpreadsheet,
         sql: sql,
         labels: ["Year","Band Prize","Band","Theme Title","Captain","Captain Prize","Order","Concept"],
-        errorHandler: function(){$('#bands').append('<h3>Error.</h3>')},
-        userCallback: function() {
-            $(".table").tablesorter();
+        errorHandler: function errorGuy(){$('#bands').append('<h3>Error.</h3>')},
+        userCallback: function callbackGuy(){
+            $('#bands').tablesorter();
             if ($('#bands tr').length == 1) {
-                $('#bands').append('<h3>No results.</h3>')
+                $('#bands').append("<h3>No results.</h3>")
             }
         }
     });
