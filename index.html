@@ -9,7 +9,25 @@
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <style>body{padding-top:80px;background: #fff url('img/FSB1920.jpg') center fixed;background-size: cover}.starter-template{padding:40px 15px;text-align:center;}</style>
+    <link href='http://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css'>
+    <style>
+        h1 {
+            font-family: 'Limelight', cursive;
+            font-size: 400%;
+            text-align: center;
+            padding: .5em;
+        }
+        h1 a, h1 a:hover {
+            text-decoration: none;
+            color: #000;
+        }
+        form {
+            text-align: center
+        }
+        th {
+            cursor: pointer;
+        }
+    </style>
 
     <!--[if IE]>
         <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -19,40 +37,27 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="./">String Band Database</a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="firstBands"><a href="?p=firstBands">First Prize Bands</a></li>
-                    <li class="firstCaptains"><a href="?p=firstCaptains">First Prize Captains</a></li>
-                </ul>
-            </div><!--.nav-collapse -->
-        </div>
-    </nav>
     <div class="container">
+        <h1><a href="./">String Band Database</a></h1>
         <form id="searchForm" action="./" method="get">
-            <div class="row">
-              <div class="col-lg-12">
+            <div class="form-group">
                 <div class="input-group">
                   <input name="q" type="text" class="form-control input-lg" placeholder="Search year, string band, captain, theme...">
                   <span class="input-group-btn">
                     <button class="btn btn-primary btn-lg" type="submit">Search</button>
                   </span>
-                </div><!-- /input-group -->
-              </div><!-- /.col-lg-12 -->
-            </div><!-- /.row -->
+                </div>
+            </div>
+            <div class="form-group centered">
+                <label>Quick Lists</label><br />
+                <a class="btn btn-default firstBands" href="?p=firstBands">First Prize Bands</a>
+                <a class="btn btn-default firstCaptains" href="?p=firstCaptains">First Prize Captains</a>
+            </div>
         </form>
         <div id="searchTerm"></div>
-        <table id="bands" class="table table-responsive tablesorter"></table>
+        <div class="table-responsive">
+            <table id="bands" class="table tablesorter"></table>
+        </div>
         <p>Created by <a href="http://brianhamburg.com">Brian Hamburg</a>.</p>
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
