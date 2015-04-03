@@ -55,9 +55,9 @@ function loadResults(sql){
         errorHandler: function(){$('#bands').append('<h3>Error.</h3>')},
         userCallback: function() {
             $(".table").tablesorter();
-            //if ($('#bands tr').length == 1) {
-            //    $('#bands').append('<h3>No results.</h3>')
-            //}
+            if ($('#bands tr').length == 1) {
+                $('#bands').append('<h3>No results.</h3>')
+            }
         }
     });
 };
