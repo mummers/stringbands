@@ -7,48 +7,54 @@
     <meta name="author" content="Brian Hamburg">
     <title>String Band Database</title>
     <link rel="shortcut icon" href="">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Old+Standard+TT'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <style>
+        body {
+            font-family: 'Old Standard TT', serif;
+        }
         h1 {
-            font-family: 'Limelight', cursive;
-            font-size: 400%;
+            font-size: 300%;
             text-align: center;
             padding: .5em;
         }
         h1 a, h1 a:hover {
             text-decoration: none;
-            color: #000;
+            color: #337ab7;
         }
         form {
-            text-align: center
+            text-align: center;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
         }
         th {
             cursor: pointer;
+            color: #337ab7;
         }
     </style>
 
     <!--[if IE]>
-        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+        <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
 
 <body>
     <div class="container">
-        <h1><a href="./">String Band Database</a></h1>
+        <h1 class="animated rubberBand"><a href="./"><i class="fa fa-music animated bounceInLeft"></i> <i class="fa fa-database animated bounceInRight"></i><br /><small>The Philadelphia Mummers</small><br />String Band Database</a></h1>
         <form id="searchForm" action="./" method="get">
             <div class="form-group">
                 <div class="input-group">
                   <input name="q" type="text" class="form-control input-lg" placeholder="Search year, string band, captain, theme...">
                   <span class="input-group-btn">
-                    <button class="btn btn-primary btn-lg" type="submit">Search</button>
+                    <button class="btn btn-primary btn-lg" type="submit"><i class="fa fa-search"></i></button>
                   </span>
                 </div>
             </div>
-            <div class="form-group centered">
+            <div class="form-group">
                 <label>Quick Lists</label><br />
                 <a class="btn btn-default firstBands" href="?p=firstBands">First Prize Bands</a>
                 <a class="btn btn-default firstCaptains" href="?p=firstCaptains">First Prize Captains</a>
@@ -56,14 +62,14 @@
         </form>
         <div id="searchTerm"></div>
         <div class="table-responsive">
-            <table id="bands" class="table table-striped table-hover tablesorter"></table>
+            <table id="bands" class="table table-striped tablesorter"></table>
         </div>
         <p>Created by <a href="http://brianhamburg.com">Brian Hamburg</a>.</p>
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/0.2.4/dist/jquery.sheetrock.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.4/js/jquery.tablesorter.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
