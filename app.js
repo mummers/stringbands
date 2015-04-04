@@ -21,7 +21,7 @@ if (params == 0) {
     $('#searchTerm').html("<h2>" + searchTerm + " Results</h2>");
     loadResults(createSQL(searchTerm));
 } else if (params['q']) { // Search user input
-    searchTerm = params['q'];
+    searchTerm = params['q'].split('+').join([separator = ' ']).trim();
     $('#searchTerm').append("<h2>Search results for &ldquo;" + searchTerm + "&rdquo;</h2>");
     loadResults(createSQL(searchTerm));
 } else if (params['p']){ // Search via button
