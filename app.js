@@ -43,7 +43,7 @@ if (params == 0) {
 
 // define search string function
 function createSQL(term) {
-    return "select A,B,C,D,E,F,M,N where (A like '%" + term + "%') or (B like '" + term + "') or (lower(C) like lower('%" + term + "%')) or (lower(D) like lower('%" + term + "%')) or (lower(E) like lower('%" + term + "%')) or (F like '%" + term + "%') or (lower(N) like lower('%" + term + "%')) order by A desc, B asc";
+    return "select A,B,C,D,E,F,M,L where (A like '%" + term + "%') or (B like '" + term + "') or (lower(C) like lower('%" + term + "%')) or (lower(D) like lower('%" + term + "%')) or (lower(E) like lower('%" + term + "%')) or (F like '%" + term + "%') or (lower(N) like lower('%" + term + "%')) order by A desc, B asc";
 }
 
 // define function to load results
@@ -51,7 +51,7 @@ function loadResults(sql){
     $('#bands').sheetrock({
         url: mySpreadsheet,
         sql: sql,
-        labels: ["Year","Band Prize","Band","Theme Title","Captain","Captain Prize","Order","Concept"],
+        labels: ["Year","Band Prize","Band","Theme Title","Captain","Captain Prize","Order","Score"],
         errorHandler: function errorGuy(){$('#bands').append('<h3>Error.</h3>')},
         userCallback: function callbackGuy(){
             $('#bands').tablesorter();
