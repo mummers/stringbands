@@ -48,7 +48,7 @@ function loadResults(sql){
     $('#bands').sheetrock({
         url: mySpreadsheet,
         sql: sql,
-        labels: ["Year","Band Prize","Band","Theme Title","Captain","Captain Prize","Order","Score"],
+        labels: ["Year","Band Prize","Band","Theme Title","Captain","Captain Prize","Order of March","Band Score"],
         errorHandler: function errorGuy(){$('#bands').append('<h3>Error.</h3>')},
         userCallback: function callbackGuy(){
             $('#bands').tablesorter();
