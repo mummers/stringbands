@@ -29,17 +29,14 @@ if (params == 0) {
     if (params['p'] == 'firstBands') {
         $('.firstBands').addClass('active');
         $('#searchTerm').append("<h2>First Prize Bands</h2>");
-        sqlString = "select A,B,C,D,E,F,M,N where B = 1 order by A desc";
+        sqlString = "select A,B,C,D,E,F,M,L where B = 1 order by A desc";
     } else if (params['p'] == 'firstCaptains') {
         $('.firstCaptains').addClass('active');
         $('#searchTerm').append("<h2>First Prize Captains</h2>");
-        sqlString = "select A,B,C,D,E,F,M,N where F = 1 order by A desc";
+        sqlString = "select A,B,C,D,E,F,M,L where F = 1 order by A desc";
     }
     loadResults(sqlString);
 }
-
-// Check table length
-
 
 // define search string function
 function createSQL(term) {
