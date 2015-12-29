@@ -10,28 +10,36 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
-    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Old+Standard+TT'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto|Balthazar' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <style>
         body {
-            font-family: 'Old Standard TT', serif;
+          background-image: url(FSB1920.png);
+          background-size: cover;
+          background-attachment: fixed;
+          font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
         }
         h1 {
-            font-size: 250%;
-            text-align: center;
-            padding: .5em;
+          font-size: 250%;
+          text-align: center;
+          padding: .4em;
+          font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
         }
         h1 a, h1 a:hover {
-            text-decoration: none;
-            color: #337ab7;
+          text-decoration: none;
+          color: #337ab7;
+          font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+        }
+        h2,h3,h4,h5,h6 {
+          font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
         }
         form {
-            text-align: center;
-            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+          text-align: center;
+          font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
         }
         th {
-            cursor: pointer;
-            color: #337ab7;
+          cursor: pointer;
+          color: #337ab7;
         }
     </style>
 
@@ -44,7 +52,7 @@
 
 <body>
     <div class="container">
-        <h1 class="animated rubberBand"><a href="./"><i class="fa fa-music animated bounceInLeft"></i> <i class="fa fa-database animated bounceInRight"></i><br /><small>The Philadelphia Mummers</small><br />String Band Database</a></h1>
+        <h1><a href="./"><small>The Philadelphia Mummers</small><br />String Band Database</a></h1>
         <form id="searchForm" action="./" method="get">
             <div class="form-group">
                 <div class="input-group">
@@ -62,7 +70,7 @@
         </form>
         <div id="searchTerm"></div>
         <div class="table-responsive">
-            <table id="bands" class="table table-striped tablesorter"></table>
+            <table id="bands" class="table tablesorter"></table>
         </div>
         <p>Created by <a href="http://brianhamburg.com">Brian Hamburg</a>.</p>
     </div>
@@ -77,7 +85,6 @@
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        
         ga('create', 'UA-41776841-1', 'auto');
         ga('send', 'pageview');
     </script>
