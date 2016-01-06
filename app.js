@@ -49,17 +49,20 @@ function createSQL(term) {
 // define function to load results
 function loadResults(sql){
   $('#bands').sheetrock({
-      url: mySpreadsheet,
-      sql: sql,
-      errorHandler: function errorGuy(){$('#bands').append('<h3>Error.</h3>')},
-      userCallback: function callbackGuy(){
-          $('#bands').tablesorter();
-          if ($('#bands tr').length == 0) {
-              $('#bands').append("<h3>No results.</h3>")
-          }
-      },
-      rowTemplate: bandsTemplate
-    });
+    url: mySpreadsheet,
+    sql: sql,
+    rowTemplate: bandsTemplate,
+    callback: function (error, options, response){
+      if(!error){
+        $('#bands').tablesorter();
+        if ($('#bands tr').length == 1) {
+          $('#bands').append("<h3>No results.</h3>")
+        }
+      } else {
+        $('#bands').append('<h3>Error.</h3>');
+      }
+    }
+  });
 }
 
 Handlebars.registerHelper("convertSpaces", function(input) {
