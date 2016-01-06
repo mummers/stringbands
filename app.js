@@ -54,7 +54,7 @@ function loadResults(sql){
       errorHandler: function errorGuy(){$('#bands').append('<h3>Error.</h3>')},
       userCallback: function callbackGuy(){
           $('#bands').tablesorter();
-          if ($('#bands tr').length == 1) {
+          if ($('#bands tr').length == 0) {
               $('#bands').append("<h3>No results.</h3>")
           }
       },
@@ -66,3 +66,9 @@ Handlebars.registerHelper("convertSpaces", function(input) {
     var output = input.toLowerCase();
     return output.replace(" ", "+");
 });
+
+$(document).ready(function() 
+  { 
+    $('#bands').tablesorter(); 
+  } 
+); 
