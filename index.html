@@ -18,36 +18,42 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto|Balthazar' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <style>
-        body {
-          background-image: url(FSB1920.png);
-          background-size: cover;
-          background-attachment: fixed;
-          font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
-        }
-        h1 {
-          font-size: 250%;
-          text-align: center;
-          padding: .4em;
-          font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
-        }
-        h1 a, h1 a:hover {
-          text-decoration: none;
-          color: #337ab7;
-          font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
-        }
-        h2,h3,h4,h5,h6 {
-          font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
-        }
-        form {
-          text-align: center;
-          font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
-        }
-        th {
-          cursor: pointer;
-          color: #337ab7;
-        }
+      body {
+        background-image: url(FSB1920.png);
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      h1 {
+        font-size: 250%;
+        text-align: center;
+        padding: .4em;
+        font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      h1 a, h1 a:hover {
+        text-decoration: none;
+        color: #337ab7;
+        font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      h2,h3,h4,h5,h6 {
+        font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      form {
+        text-align: center;
+        font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      table {
+        margin: 5px 0;
+      }
+      th {
+        cursor: pointer;
+        color: #337ab7;
+      }
+      a:hover {
+        text-decoration: none;
+      }
     </style>
-
+  
     <!--[if IE]>
         <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
@@ -75,7 +81,40 @@
         </form>
         <div id="searchTerm"></div>
         <div class="table-responsive">
-            <table id="bands" class="table tablesorter"></table>
+          <table id="bands" class="table tablesorter">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Band Prize</th>
+                <th>Band</th>
+                <th>Theme</th>
+                <th>Captain</th>
+                <th>Captain Prize</th>
+                <th>Order</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <script id="bands-template" type="text/x-handlebars-template">
+              {{#if num}}
+                <tr>
+                  <td><a href="/?q={{cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
+                  <td>{{cellsArray.[1]}}</td>
+                  <td><a href="/?q={{convertSpaces cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
+                  <td>
+                    {{#if cellsArray.[8]}}
+                      <a href="{{cellsArray.[8]}}" target="_blank">{{cellsArray.[3]}} <i class="fa fa-youtube-play"></i></a>
+                    {{else}}
+                      {{cellsArray.[3]}}
+                    {{/if}}
+                  </td>
+                  <td><a href="/?q={{convertSpaces cellsArray.[4]}}">{{cellsArray.[4]}}</a></td>
+                  <td>{{cellsArray.[5]}}</td>
+                  <td>{{cellsArray.[6]}}</td>
+                  <td>{{cellsArray.[7]}}</td>
+                </tr>
+              {{/if}}
+            </script>
+          </table>
         </div>
         <p>Created by <a href="http://brianhamburg.com">Brian Hamburg</a> with much assistance from fine purveyors of mummery such as these:</p>
         <ul>
@@ -86,9 +125,10 @@
         <p>Please submit corrections and suggestions to <a href="mailto:bhamburg@gmail.com">bhamburg@gmail.com</a>. Thanks!</p>
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/0.2.4/dist/jquery.sheetrock.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.4/js/jquery.tablesorter.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.0/dist/sheetrock.min.js"></script>></script>
     <script src="app.js"></script>
     <!-- Google Analytics -->
     <script>

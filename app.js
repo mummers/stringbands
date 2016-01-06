@@ -1,5 +1,8 @@
 // Define Google spreadsheet URL
-var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=1847002595'
+var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=1847002595';
+
+// Compile the Handlebars template for HR leaders.
+var bandsTemplate = Handlebars.compile($('#bands-template').html());
   
 // Get query string parameters
 var params = [], hash;
@@ -29,32 +32,37 @@ if (params == 0) {
     if (params['p'] == 'firstBands') {
         $('.firstBands').addClass('active');
         $('#searchTerm').append("<h2>First Prize Bands</h2>");
-        sqlString = "select A,B,C,D,E,F,M,L where B = 1 order by A desc";
+        sqlString = "select A,B,C,D,E,F,M,L,U where B = 1 order by A desc";
     } else if (params['p'] == 'firstCaptains') {
         $('.firstCaptains').addClass('active');
         $('#searchTerm').append("<h2>First Prize Captains</h2>");
-        sqlString = "select A,B,C,D,E,F,M,L where F = 1 order by A desc";
+        sqlString = "select A,B,C,D,E,F,M,L,U where F = 1 order by A desc";
     }
     loadResults(sqlString);
 }
 
 // define search string function
 function createSQL(term) {
-    return "select A,B,C,D,E,F,M,L where (A like '%" + term + "%') or (B like '" + term + "') or (lower(C) like lower('%" + term + "%')) or (lower(D) like lower('%" + term + "%')) or (lower(E) like lower('%" + term + "%')) or (F like '%" + term + "%') or (lower(N) like lower('%" + term + "%')) order by A desc, B asc";
+    return "select A,B,C,D,E,F,M,L,U where (A like '%" + term + "%') or (B like '" + term + "') or (lower(C) like lower('%" + term + "%')) or (lower(D) like lower('%" + term + "%')) or (lower(E) like lower('%" + term + "%')) or (F like '%" + term + "%') or (lower(N) like lower('%" + term + "%')) order by A desc, B asc";
 }
 
 // define function to load results
 function loadResults(sql){
-    $('#bands').sheetrock({
-        url: mySpreadsheet,
-        sql: sql,
-        labels: ["Year","Band Prize","Band","Theme Title","Captain","Captain Prize","Order of March","Band Score"],
-        errorHandler: function errorGuy(){$('#bands').append('<h3>Error.</h3>')},
-        userCallback: function callbackGuy(){
-            $('#bands').tablesorter();
-            if ($('#bands tr').length == 1) {
-                $('#bands').append("<h3>No results.</h3>")
-            }
-        }
+  $('#bands').sheetrock({
+      url: mySpreadsheet,
+      sql: sql,
+      errorHandler: function errorGuy(){$('#bands').append('<h3>Error.</h3>')},
+      userCallback: function callbackGuy(){
+          $('#bands').tablesorter();
+          if ($('#bands tr').length == 1) {
+              $('#bands').append("<h3>No results.</h3>")
+          }
+      },
+      rowTemplate: bandsTemplate
     });
-};
+}
+
+Handlebars.registerHelper("convertSpaces", function(input) {
+    var output = input.toLowerCase();
+    return output.replace(" ", "+");
+});
