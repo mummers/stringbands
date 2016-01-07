@@ -65,9 +65,8 @@ function loadResults(sql){
   });
 }
 
-Handlebars.registerHelper("convertSpaces", function(input) {
-    var output = input.toLowerCase();
-    return output.replace(" ", "+");
+Handlebars.registerHelper("normalize", function(input) {
+  return input.toLowerCase().replace(/ +|'+/g, "+").replace(/\.+|,.*/g, "");
 });
 
 $(document).ready(function() 
