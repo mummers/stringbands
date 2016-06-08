@@ -41,6 +41,10 @@ if (params == 0) {
         var year = chance.year({ min: 1902, max: 2016 });
         $('#searchTerm').append("<h2>Search results for &ldquo;" + year + "&rdquo;</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,U where A = " + year + " order by A desc";
+    } else if (params['p'] == 'randomBand') {
+        var band = chance.pickset(['Avalon', 'Aqua', 'Broomall', 'Duffy', 'Durning', 'Ferko', 'Fralinger', 'Greater Kensington', 'Greater Overbrook', 'Hegeman', 'Pennsport', 'Polish American', 'Quaker City', 'South Philadelphia', 'Trilby', 'Uptown', 'Woodland']);
+        $('#searchTerm').append("<h2>Search results for &ldquo;" + band + "&rdquo;</h2>");
+        sqlString = "select A,B,C,D,E,F,M,L,U where C = " + band + " order by A desc";
     }
     loadResults(sqlString);
 }
