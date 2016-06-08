@@ -38,7 +38,7 @@ if (params == 0) {
         $('#searchTerm').append("<h2>First Prize Captains</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,U where F = 1 order by A desc";
     } else if (params['p'] == 'randomYear') {
-        var year = chance.year({ min: 1975, max: 2016 });
+        var year = chance.year({ min: 1902, max: 2016 });
         $('#searchTerm').append("<h2>Search results for &ldquo;" + year + "&rdquo;</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,U where A = " + year + " order by A desc";
     }
