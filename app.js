@@ -44,7 +44,7 @@ if (params == 0) {
     } else if (params['p'] == 'randomBand') {
         var band = chance.pickset(['Avalon', 'Aqua', 'Broomall', 'Duffy', 'Durning', 'Ferko', 'Fralinger', 'Greater Kensington', 'Greater Overbrook', 'Hegeman', 'Pennsport', 'Polish American', 'Quaker City', 'South Philadelphia', 'Trilby', 'Uptown', 'Woodland']);
         $('#searchTerm').append("<h2>Search results for &ldquo;" + band + "&rdquo;</h2>");
-        sqlString = "select A,B,C,D,E,F,M,L,U where C = " + band + " order by A desc";
+        sqlString = "select A,B,C,D,E,F,M,L,U where (lower(C) like lower('%" + band + "%')) order by A desc";
     }
     loadResults(sqlString);
 }
