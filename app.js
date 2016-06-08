@@ -37,6 +37,10 @@ if (params == 0) {
         $('.firstCaptains').addClass('active');
         $('#searchTerm').append("<h2>First Prize Captains</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,U where F = 1 order by A desc";
+    } else if (params['p'] == 'randomYear') {
+        $('.randomYear').addClass('active');
+        $('#searchTerm').append("<h2>randomYear</h2>");
+        sqlString = "select A,B,C,D,E,F,M,L,U where F = 1 order by A desc";
     }
     loadResults(sqlString);
 }
