@@ -37,6 +37,14 @@ if (params == 0) {
         $('.firstCaptains').addClass('active');
         $('#searchTerm').append("<h2>First Prize Captains</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,U where F = 1 order by A desc";
+    } else if (params['p'] == 'randomYear') {
+        var year = chance.year({ min: 1902, max: 2016 });
+        $('#searchTerm').append("<h2>Search results for &ldquo;" + year + "&rdquo;</h2>");
+        sqlString = "select A,B,C,D,E,F,M,L,U where A = " + year + " order by A desc";
+    } else if (params['p'] == 'randomBand') {
+        var band = chance.pickset(['Avalon', 'Aqua', 'Broomall', 'Burke', 'Duffy', 'Durning', 'Ferko', 'Fralinger', 'Greater Kensington', 'Greater Overbrook', 'Hegeman', 'Irish American', 'Italian American', 'Pennsport', 'Polish American', 'Quaker City', 'South Philadelphia', 'Trilby', 'Two Street', 'Ukrainian American', 'Uptown', 'Woodland']);
+        $('#searchTerm').append("<h2>Search results for &ldquo;" + band + "&rdquo;</h2>");
+        sqlString = "select A,B,C,D,E,F,M,L,U where (lower(C) like lower('%" + band + "%')) order by A desc";
     }
     loadResults(sqlString);
 }
