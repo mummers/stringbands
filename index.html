@@ -18,42 +18,54 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto|Balthazar' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <style>
-      body {
+    body {
         background-image: url(FSB1920.png);
         background-size: cover;
         background-attachment: fixed;
         font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
-      }
-      h1 {
+    }
+    h1 {
         font-size: 250%;
         text-align: center;
         padding: .4em;
         font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
-      }
-      h1 a, h1 a:hover {
+    }
+    h1 a, h1 a:hover {
         text-decoration: none;
         color: #337ab7;
         font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
-      }
-      h2,h3 {
+    }
+    h2,h3 {
         font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
-      }
-      form {
+    }
+    form {
         font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
-      }
-      table {
+    }
+    table {
         margin: 5px 0;
-      }
-      th {
+    }
+    th {
         cursor: pointer;
         color: #337ab7;
-      }
-      a:hover {
+    }
+    a:hover {
         text-decoration: none;
-      }
-      .btn-group {
-          margin-bottom: 10px;
-      }
+    }
+    .btn-group {
+        margin-bottom: 10px;
+    }
+    .panel-heading .accordion-toggle:after {
+        /* symbol for "opening" panels */
+        font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+        content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+        float: right;        /* adjust as needed */
+        color: grey;         /* adjust as needed */
+    }
+    .panel-heading .accordion-toggle.collapsed:after {
+        /* symbol for "collapsed" panels */
+        content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+    }
+
     </style>
   
     <!--[if IE]>
