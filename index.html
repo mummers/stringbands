@@ -18,54 +18,53 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto|Balthazar' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <style>
-    body {
-        background-image: url(FSB1920.png);
-        background-size: cover;
-        background-attachment: fixed;
-        font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
-    }
-    h1 {
-        font-size: 250%;
-        text-align: center;
-        padding: .4em;
-        font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
-    }
-    h1 a, h1 a:hover {
-        text-decoration: none;
-        color: #337ab7;
-        font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
-    }
-    h2,h3 {
-        font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
-    }
-    form {
-        font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
-    }
-    table {
-        margin: 5px 0;
-    }
-    th {
-        cursor: pointer;
-        color: #337ab7;
-    }
-    a:hover {
-        text-decoration: none;
-    }
-    .btn-group {
-        margin-bottom: 10px;
-    }
-    .panel-heading .accordion-toggle h4:after {
-        /* symbol for "opening" panels */
-        font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
-        content: "\e114";    /* adjust as needed, taken from bootstrap.css */
-        float: right;        /* adjust as needed */
-        color: grey;         /* adjust as needed */
-    }
-    .panel-heading .accordion-toggle.collapsed h4:after {
-        /* symbol for "collapsed" panels */
-        content: "\e080";    /* adjust as needed, taken from bootstrap.css */
-    }
-
+      body {
+          background-image: url(FSB1920.png);
+          background-size: cover;
+          background-attachment: fixed;
+          font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      h1 {
+          font-size: 250%;
+          text-align: center;
+          padding: .4em;
+          font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      h1 a, h1 a:hover {
+          text-decoration: none;
+          color: #337ab7;
+          font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      h2,h3 {
+          font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      form {
+          font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      table {
+          margin: 5px 0;
+      }
+      th {
+          cursor: pointer;
+          color: #337ab7;
+      }
+      a:hover {
+          text-decoration: none;
+      }
+      .btn-group {
+          margin-bottom: 10px;
+      }
+      .accordion-toggle:after {
+          /* symbol for "opening" panels */
+          font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+          content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+          float: right;        /* adjust as needed */
+          color: white;         /* adjust as needed */
+      }
+      .accordion-toggle.collapsed:after {
+          /* symbol for "collapsed" panels */
+          content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+      }
     </style>
   
     <!--[if IE]>
@@ -89,12 +88,8 @@
             </div>
             <div class="panel-group">
               <div class="panel panel-primary">
-                <a data-toggle="collapse" href="#collapse1" style="text-decoration: none; display: block;" class="panel-heading accordion-toggle">
-                  <h4 class="panel-title">
-                    Quick Lists
-                  </h4>
-                </a>
-                <div id="collapse1" class="panel-collapse collapse">
+                <a data-toggle="collapse" href="#quick-lists" style="text-decoration: none; display: block;" class="panel-heading panel-title accordion-toggle">Quick Lists</a>
+                <div id="quick-lists" class="panel-collapse collapse">
                   <ul class="list-group">
                     <a class="list-group-item" href="?p=firstBands"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Bands</a>
                     <a class="list-group-item" href="?p=firstCaptains"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Captains</a>
