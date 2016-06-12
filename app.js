@@ -45,7 +45,7 @@ if (params == 0) {
         sqlString = "select A,B,C,D,E,F,M,L,U where (lower(C) like lower('%" + band + "%')) order by A desc";
     } else if (params['p'] == 'leadoffBands') {
         $('#searchTerm').append("<h2>Leadoff Bands</h2>");
-        sqlString = "select A,B,C,D,E,F,M,L,U where M = 1 order by A desc";
+        sqlString = "select A,B,C,D,E,F,M,L,U where L = 1 order by A desc";
     }
     loadResults(sqlString);
 }
