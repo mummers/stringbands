@@ -30,11 +30,9 @@ if (params == 0) {
 } else if (params['p']){ // Search via button
     searchTerm = params['p'];
     if (params['p'] == 'firstBands') {
-        $('.firstBands').addClass('active');
         $('#searchTerm').append("<h2>First Prize Bands</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,U where B = 1 order by A desc";
     } else if (params['p'] == 'firstCaptains') {
-        $('.firstCaptains').addClass('active');
         $('#searchTerm').append("<h2>First Prize Captains</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,U where F = 1 order by A desc";
     } else if (params['p'] == 'randomYear') {
@@ -42,9 +40,12 @@ if (params == 0) {
         $('#searchTerm').append("<h2>Search results for &ldquo;" + year + "&rdquo;</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,U where A = " + year + " order by A desc";
     } else if (params['p'] == 'randomBand') {
-        var band = chance.pickset(['Avalon', 'Aqua', 'Broomall', 'Burke', 'Duffy', 'Durning', 'Ferko', 'Fralinger', 'Greater Kensington', 'Greater Overbrook', 'Hegeman', 'Irish American', 'Italian American', 'Pennsport', 'Polish American', 'Quaker City', 'South Philadelphia', 'Trilby', 'Two Street', 'Ukrainian American', 'Uptown', 'Woodland']);
+        var band = chance.pickset(['Avalon', 'Aqua', 'Broomall', 'Burke', 'Duffy', 'Durning', 'Ferko', 'Fralinger', 'Greater Bucks', 'Greater Kensington', 'Greater Overbrook', 'Harrowgate', 'Hegeman', 'Irish American', 'Italian American', 'Pennsport', 'Polish American', 'Quaker City', 'South Philadelphia', 'Trilby', 'Two Street', 'Ukrainian American', 'Uptown', 'Woodland']);
         $('#searchTerm').append("<h2>Search results for &ldquo;" + band + "&rdquo;</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,U where (lower(C) like lower('%" + band + "%')) order by A desc";
+    } else if (params['p'] == 'leadoffBands') {
+        $('#searchTerm').append("<h2>Leadoff Bands</h2>");
+        sqlString = "select A,B,C,D,E,F,M,L,U where M = 1 order by A desc";
     }
     loadResults(sqlString);
 }
