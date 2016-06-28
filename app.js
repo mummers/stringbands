@@ -99,7 +99,8 @@ function loadResults2(sql){
         $('#bands').append('<h3>Error.</h3>');
       }
     }
-  }      $('#bands').append('<small>The punniest theme title given by Jake Hart.</small>'););
+  };);
+  $('#bands').append('<small>The punniest theme title given by Jake Hart.</small>')
 }
 
 Handlebars.registerHelper("normalize", function(input) {
