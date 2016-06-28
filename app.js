@@ -54,7 +54,7 @@ if (params == 0) {
         loadResults(sqlString);
     } else if (params['p'] == 'lastStand') { // Custer's Last Stand Winners
         $('#searchTerm').append("<h2>Custer's Last Stand Winners</h2>");
-        sqlString2 = "select A,B,C,D,E,F,M,L,U where M = 1 order by A desc";
+        sqlString2 = "select A,B,C,D,E,F,M,L,U order by A desc";
         loadResults2(sqlString2);
     }
 }
