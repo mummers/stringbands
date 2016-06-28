@@ -56,6 +56,7 @@ if (params == 0) {
         $('#searchTerm').append("<h2>Custer's Last Stand Winners</h2>");
         sqlString2 = "select A,B,C,D,E,F,M,L,U order by A desc";
         loadResults2(sqlString2);
+         $('#bands').append('<small>The punniest theme title given by Jake Hart.</small>');
     }
 }
 
@@ -99,8 +100,7 @@ function loadResults2(sql){
         $('#bands').append('<h3>Error.</h3>');
       }
     }
-  };);
-  $('#bands').append('<small>The punniest theme title given by Jake Hart.</small>')
+  });
 }
 
 Handlebars.registerHelper("normalize", function(input) {
