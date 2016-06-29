@@ -1,9 +1,8 @@
 // Define Google spreadsheet URL
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=1847002595';
 var lastStandWinners = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=639470266';
-var hofInductees = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=1711796058';
 
-// Compile the Handlebars template for HR leaders.
+// Compile the Handlebars template.
 var bandsTemplate = Handlebars.compile($('#bands-template').html());
   
 // Get query string parameters
@@ -33,10 +32,6 @@ if (params == 0) {
     $('#searchTerm').append("<h2>Custard's Last Stand Winners</h2><h5>The punniest theme title given by Jake Hart.</h5>");
     sqlString = "select A,B,C,D,E,F,M,L,U order by A desc";
     loadResults(sqlString, lastStandWinners);
-} else if (params['p'] == 'hof') { // Hall of Fame Inductees
-    $('#searchTerm').append("<h2>Hall of Fame Inductees</h2>");
-    sqlString = "select A,B,C order by A desc";
-    loadResults(sqlString, hofInductees);
 } else if (params['p']){ // Search via button
     searchTerm = params['p'];
     if (params['p'] == 'firstBands') { // First Prize Bands
