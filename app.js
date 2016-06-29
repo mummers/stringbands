@@ -28,8 +28,8 @@ if (params == 0) {
     searchTerm = params['q'].split('+').join([separator = ' ']).trim();
     $('#searchTerm').append("<h2>Search results for &ldquo;" + searchTerm + "&rdquo;</h2>");
     loadResults(createSQL(searchTerm), mySpreadsheet);
-} else if (params['p'] == 'lastStand') { // Custer's Last Stand Winners
-    $('#searchTerm').append("<h2>Custard's Last Stand Winners</h2></br><h5>The punniest theme title given by Jake Hart.</h5>");
+} else if (params['p'] == 'lastStand') { // Custard's Last Stand Winners
+    $('#searchTerm').append("<h2>Custard's Last Stand Winners</h2><h5>The punniest theme title given by Jake Hart.</h5>");
     sqlString = "select A,B,C,D,E,F,M,L,U order by A desc";
     loadResults(sqlString, lastStandWinners);
 } else if (params['p']){ // Search via button
