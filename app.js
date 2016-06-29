@@ -31,7 +31,7 @@ if (params == 0) {
 } else if (params['p'] == 'lastStand') { // Custer's Last Stand Winners
     $('#searchTerm').append("<h2>Custer's Last Stand Winners</h2>");
     sqlString = "select A,B,C,D,E,F,M,L,U order by A desc";
-    loadResults(sqlString2, lastStandWinners);
+    loadResults(sqlString, lastStandWinners);
     $('#bands').append('<h5>The punniest theme title given by Jake Hart.</h5>');
 } else if (params['p']){ // Search via button
     searchTerm = params['p'];
