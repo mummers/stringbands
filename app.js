@@ -8,10 +8,6 @@ var hofInductees = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj
 var bandsTemplate = Handlebars.compile($('#bands-template').html());
 var hofTemplate = Handlebars.compile($('#hof-template').html());
 
-$('#hof').sheetrock({
-  url: hofInductees
-});
-
 // Get query string parameters
 var params = [], hash;
 var q = document.URL.split('?')[1];
