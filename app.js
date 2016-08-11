@@ -2,10 +2,16 @@
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=1847002595';
 var lastStandWinners = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=639470266';
 var viewersChoice = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=2085823882';
+var hofInductees = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=1711796058';
 
 // Compile the Handlebars template.
 var bandsTemplate = Handlebars.compile($('#bands-template').html());
-  
+var hofTemplate = Handlebars.compile($('#hof-template').html());
+
+$('#hof').sheetrock({
+  url: hofInductees
+});
+
 // Get query string parameters
 var params = [], hash;
 var q = document.URL.split('?')[1];
