@@ -69,7 +69,7 @@ function createSQL(term) {
 function loadResults(sql, sheetURL){
   $('#bands').sheetrock({
     url: sheetURL,
-    sql: sql,
+    query: sql,
     rowTemplate: bandsTemplate,
     callback: function (error, options, response){
       if(!error){
