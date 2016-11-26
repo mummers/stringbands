@@ -21,9 +21,26 @@ if(q != undefined){
 // Start with this year if no params
 var searchTerm = 2017;
 
+// Logic for countdown
+var today = new Date();  
+var nyd = new Date(today.getFullYear() + 1, 0, 1);
+var one_day=1000*60*60*24;
+var countdownMessage = "";
+if (today.getMonth() == 0 && today.getDate() == 1)   
+{  
+  countdownMessage = "<h3>Happy New Year! " + today.getFullYear() + "Results will be posted after 8 PM EST.</h3>";   
+} else {
+  countdownMessage = "<p>Only " + Math.ceil((nyd.getTime() - today.getTime()) / one_day) + " days left until New Year's Day!</p>";
+}
+
 // Check for parameters
 if (params == 0) {
-    $('#searchTerm').html("<h2>" + searchTerm + " Results</h2>");
+    if (searchTerm > today.getFullYear()) {
+        $('#searchTerm').html("<h2>" + searchTerm + " Themes and Line of March</h2>");
+    } else {
+        $('#searchTerm').html("<h2>" + searchTerm + " Results</h2>");
+    }
+    $('#searchTerm').append(countdownMessage);
     loadResults(createSQL(searchTerm), mySpreadsheet);
 } else if (params['q']) { // Search user input
     searchTerm = params['q'].split('+').join([separator = ' ']).trim();
