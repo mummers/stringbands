@@ -19,7 +19,7 @@ if(q != undefined){
 }
 
 // Start with this year if no params
-var searchTerm = new Date().getFullYear();
+var searchTerm = 2017;
 
 // Check for parameters
 if (params == 0) {
