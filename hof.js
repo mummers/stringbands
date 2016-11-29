@@ -1,7 +1,7 @@
 // Define Google spreadsheet URL
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=1711796058';
 
-// Compile the Handlebars template.
+// Compile the Handlebars template
 var bandsTemplate = Handlebars.compile($('#hof-template').html());
 
 // Get query string parameters
@@ -45,8 +45,8 @@ Handlebars.registerHelper("normalize", function(input) {
   return input.toLowerCase().replace(/ +/g, "+").replace(/\.+|,.+|'.+/g, "");
 });
 
-$(document).ready(function() 
-  { 
-    $('#hof').tablesorter(); 
-  } 
-); 
+$(document).ready(function()
+  {
+    $('#hof').tablesorter();
+  }
+);
