@@ -1,9 +1,9 @@
-// Define Google spreadsheet URL
+// Define Google spreadsheet URLs
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=1847002595';
 var lastStandWinners = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=639470266';
 var viewersChoice = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=2085823882';
 
-// Compile the Handlebars template.
+// Compile the Handlebars template
 var bandsTemplate = Handlebars.compile($('#bands-template').html());
 
 // Get query string parameters
@@ -63,7 +63,7 @@ if (params == 0) {
         $('#searchTerm').append("<h2>First Prize Captains</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,U where F = 1 order by A desc";
     } else if (params['p'] == 'randomYear') { // Random Year
-        var year = chance.year({ min: 1902, max: 2016 });
+        var year = chance.year({ min: 1902, max: today.getFullYear() });
         $('#searchTerm').append("<h2>Search results for &ldquo;" + year + "&rdquo;</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,U where A = " + year + " order by A desc";
     } else if (params['p'] == 'randomBand') { // Random Band
