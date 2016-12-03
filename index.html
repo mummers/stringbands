@@ -49,13 +49,13 @@
           color: #337ab7;
           font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
       }
-      h2,h3,h5 {
+      h2,h3,h4,h5 {
           font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
       }
       form {
           font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
       }
-      table {
+      table, .table {
           margin: 5px 0;
       }
       th {
@@ -78,6 +78,36 @@
       .accordion-toggle.collapsed:after {
           /* symbol for "collapsed" panels */
           content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+      }
+      .footnotes {
+        margin-bottom: 20px;
+      }
+      .note {
+        display: none;
+      }
+      td.bd span, td.bs span, td.dq span, td.gp span, td.no span, td.np span, td.sp span {
+        display: none;
+      }
+      td.bd:after {
+        content: "BD";
+      }
+      td.bs:after {
+        content: "BS";
+      }
+      td.dq:after {
+        content: "DQ";
+      }
+      td.gp:after {
+        content: "GP";
+      }
+      td.no:after {
+        content: "NO";
+      }
+      td.np:after {
+        content: "NP";
+      }
+      td.sp:after {
+        content: "SP";
       }
     </style>
 
@@ -134,13 +164,14 @@
                 <th>Captain<br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
                 <th>Marching<br>Order <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
                 <th>Band<br>Score <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+                <th class="note">Note</th>
               </tr>
             </thead>
             <script id="bands-template" type="text/x-handlebars-template">
               {{#if num}}
                 <tr>
                   <td><a href="?q={{cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
-                  <td>{{cellsArray.[1]}}</td>
+                  <td class="prize"><span>{{cellsArray.[1]}}</span></td>
                   <td><a href="?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
                   <td>
                     {{#if cellsArray.[8]}}
@@ -150,13 +181,23 @@
                     {{/if}}
                   </td>
                   <td><a href="?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a></td>
-                  <td>{{cellsArray.[5]}}</td>
+                  <td class="prize"><span>{{cellsArray.[5]}}</span></td>
                   <td>{{cellsArray.[6]}}</td>
                   <td>{{cellsArray.[7]}}</td>
+                  <td class="note">{{cellsArray.[9]}}</td>
                 </tr>
               {{/if}}
             </script>
           </table>
+          <div class="footnotes">
+            <div class="note bdNote">BD: Before the String Band Division was established.</div>
+            <div class="note bsNote">BS: Participated in the non-official Broad Street parade. No official judging.</div>
+            <div class="note dqNote">DQ: Disqualified.</div>
+            <div class="note gpNote">GP: Greater Philadelphia area bands. Judged separately.</div>
+            <div class="note noNote">NO: No official judging. No prizes awarded</div>
+            <div class="note npNote">NP: Failed to place. No prize awarded.</div>
+            <div class="note spNote">SP: Failed to place. Awarded "Special Mention" by the city.</div>
+          </div>
         </div>
         <p>Created by <a href="http://brianhamburg.com">Brian Hamburg</a> with much assistance from fine purveyors of mummery such as these:</p>
         <ul>
