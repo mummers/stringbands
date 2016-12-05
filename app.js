@@ -42,6 +42,9 @@ if (params == 0) {
     }
     $('#searchTerm').append(countdownMessage);
     loadResults(createSQL(searchTerm), mySpreadsheet);
+} else if (params['q'] == '2007') { // 2007 note
+    countdownMessage = "Held January 6 due to rain.";
+    $('#searchTerm').append(countdownMessage);
 } else if (params['q']) { // Search user input
     searchTerm = params['q'].split('+').join([separator = ' ']).trim();
     $('#searchTerm').append("<h2>Search results for &ldquo;" + searchTerm + "&rdquo;</h2>");
