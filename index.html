@@ -56,7 +56,7 @@
           font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
       }
       table, .table {
-          margin: 5px 0;
+          margin: 10px 0;
       }
       th {
           cursor: pointer;
@@ -80,10 +80,15 @@
           content: "\e080";    /* adjust as needed, taken from bootstrap.css */
       }
       .footnotes {
-        margin-bottom: 20px;
+        margin: 0 0 20px 10px;
+        font-style: italic;
+        color: #999;
       }
       .note {
         display: none;
+      }
+      .nbNote {
+        margin-bottom: 10px;
       }
       td.bd span, td.bs span, td.dq span, td.gp span, td.no span, td.np span, td.sp span {
         display: none;
@@ -172,7 +177,7 @@
                 <tr>
                   <td><a href="?q={{cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
                   <td class="prize"><span>{{cellsArray.[1]}}</span></td>
-                  <td><a href="?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
+                  <td class="band"><a href="?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
                   <td>
                     {{#if cellsArray.[8]}}
                       <a href="{{cellsArray.[8]}}" target="_blank">{{cellsArray.[3]}} <i class="fa fa-youtube-play"></i></a>
@@ -190,6 +195,7 @@
             </script>
           </table>
           <div class="footnotes">
+            <div class="note nbNote">* Not the band with the same name marching today.</div>
             <div class="note bdNote">BD: Before the String Band Division was established.</div>
             <div class="note bsNote">BS: Participated in the non-official Broad Street parade. No official judging.</div>
             <div class="note dqNote">DQ: Disqualified.</div>

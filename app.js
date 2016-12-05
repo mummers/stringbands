@@ -146,4 +146,7 @@ $( window ).load(function() {
   if($(".sp").length != 0) {
     $(".spNote").show();
   }
+  if($(".band:contains('*')").length != 0) {
+    $(".nbNote").show();
+  }
 });
