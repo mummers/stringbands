@@ -66,7 +66,7 @@ if (params == 0) {
         $('#searchTerm').append("<h2>Second Prize Bands</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,V,W where B = 2 order by A desc";
     } else if (params['p'] == 'lastBands') { // Last Prize Bands
-        $('#searchTerm').append("<h2>Last Prize and Disqualified Bands</h2>");
+        $('#searchTerm').append("<h2>Last Prize, No Prize, and Disqualified Bands</h2>");
         sqlString = "select A,B,C,D,E,F,M,L,V,W where B = N order by A desc";
     } else if (params['p'] == 'randomYear') { // Random Year
         var year = chance.year({ min: 1902, max: today.getFullYear() });
