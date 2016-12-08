@@ -151,7 +151,8 @@
                     <a class="list-group-item" href="?p=lastStand"><i class="fa fa-smile-o fa-fw" aria-hidden="true"></i> Custard's Last Stand Winners</a>
                     <a class="list-group-item" href="?p=viewers"><i class="fa fa-television fa-fw" aria-hidden="true"></i> Viewer's Choice Award Winners</a>
                     <a class="list-group-item" href="hof.html"><i class="fa fa-star fa-fw" aria-hidden="true"></i> Hall of Fame Inductees</a>
-                  </ul>
+                    <a class="list-group-item" href="#"><i class="fa fa-list-ol" aria-hidden="true"></i> Win Tally</a>
+                    </ul>
                 </div>
               </div>
             </div>
@@ -168,7 +169,7 @@
             <script id="hof-template" type="text/x-handlebars-template">
                           {{#if num}}
                 <tr>
-                <td><a href="?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
+                <td><a href="./index.html?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
                 <td>{{cellsArray.[1]}}</td>
                 </tr>
                               {{/if}}
