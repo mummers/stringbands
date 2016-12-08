@@ -1,5 +1,5 @@
-// Define Google spreadsheet URL
-var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=1711796058';
+// Define spreadsheet URL.
+var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=635406709';
 
 // Compile the Handlebars template
 var bandsTemplate = Handlebars.compile($('#hof-template').html());
@@ -18,25 +18,25 @@ if(q != undefined){
 
 // Check for parameters
 if (params == 0) {
-    $('#searchTerm').append("<h2>Hall of Fame Inductees</h2>");
-    sqlString = "select A,B,C order by A desc";
+    $('#searchTerm').append("<h2>Band Win Tally</h2>");
+    sqlString = "select A,B order by B desc";
     loadResults(sqlString, mySpreadsheet);
 }
 
 // define function to load results
 function loadResults(sql, sheetURL){
-  $('#hof').sheetrock({
+  $('#bands').sheetrock({
     url: sheetURL,
     sql: sql,
     rowTemplate: bandsTemplate,
     callback: function (error, options, response){
       if(!error){
-        $('#hof').tablesorter();
-        if ($('#hof tr').length == 1) {
-          $('#hof').append("<h3>No results.</h3>")
+        $('#bands').tablesorter();
+        if ($('#bands tr').length == 1) {
+          $('#bands').append("<h3>No results.</h3>")
         }
       } else {
-        $('#hof').append('<h3>Error.</h3>');
+        $('#bands').append('<h3>Error.</h3>');
       }
     }
   });
