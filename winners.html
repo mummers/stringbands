@@ -129,6 +129,8 @@
               <tr>
                 <th>Band <i class="fa fa-sort" aria-hidden="true"></i></th>
                 <th>Number Of Wins <i class="fa fa-sort" aria-hidden="true"></i></th>
+                <th>Most Recent Win <i class="fa fa-sort" aria-hidden="true"></i></th>
+                <th>Years Since Last Win <i class="fa fa-sort" aria-hidden="true"></i></th>
               </tr>
             </thead>
             <script id="hof-template" type="text/x-handlebars-template">
@@ -136,6 +138,8 @@
                 <tr>
                 <td><a href="./index.html?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
                 <td>{{cellsArray.[1]}}</td>
+                <td><a href="./index.html?q={{cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
+                <td>{{cellsArray.[3]}}</td>
                 </tr>
                               {{/if}}
             </script>
