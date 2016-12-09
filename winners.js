@@ -19,7 +19,7 @@ if(q != undefined){
 // Check for parameters
 if (params == 0) {
     $('#searchTerm').append("<h2>Band Win Tally</h2>");
-    sqlString = "select A,B order by B desc";
+    sqlString = "select A,B,C,D order by B desc";
     loadResults(sqlString, mySpreadsheet);
 }
 
