@@ -1,0 +1,82 @@
+body {
+    background-image: url(FSB1920.png);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+h1 {
+    font-size: 250%;
+    text-align: center;
+    padding: .4em;
+    font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+h1 a, h1 a:hover {
+    text-decoration: none;
+    color: #337ab7;
+    font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+h2,h3,h4,h5 {
+    font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+form {
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+table, .table {
+    margin: 10px 0;
+}
+th {
+    cursor: pointer;
+    color: #337ab7;
+}
+a:hover {
+    text-decoration: none;
+}
+.btn-group {
+    margin-bottom: 10px;
+}
+.accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: white;         /* adjust as needed */
+}
+.accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}
+.footnotes {
+  margin: 0 0 20px 10px;
+  font-style: italic;
+  color: #999;
+}
+.note {
+  display: none;
+}
+.nbNote {
+  margin-bottom: 10px;
+}
+td.bd span, td.bs span, td.dq span, td.gp span, td.no span, td.np span, td.sp span {
+  display: none;
+}
+td.bd:after {
+  content: "BD";
+}
+td.bs:after {
+  content: "BS";
+}
+td.dq:after {
+  content: "DQ";
+}
+td.gp:after {
+  content: "GP";
+}
+td.no:after {
+  content: "NO";
+}
+td.np:after {
+  content: "NP";
+}
+td.sp:after {
+  content: "SP";
+}
