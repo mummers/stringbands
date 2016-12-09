@@ -31,90 +31,8 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto|Balthazar' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-      body {
-          background-image: url(FSB1920.png);
-          background-size: cover;
-          background-attachment: fixed;
-          font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
-      }
-      h1 {
-          font-size: 250%;
-          text-align: center;
-          padding: .4em;
-          font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
-      }
-      h1 a, h1 a:hover {
-          text-decoration: none;
-          color: #337ab7;
-          font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
-      }
-      h2,h3,h4,h5 {
-          font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
-      }
-      form {
-          font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
-      }
-      table, .table {
-          margin: 10px 0;
-      }
-      th {
-          cursor: pointer;
-          color: #337ab7;
-      }
-      a:hover {
-          text-decoration: none;
-      }
-      .btn-group {
-          margin-bottom: 10px;
-      }
-      .accordion-toggle:after {
-          /* symbol for "opening" panels */
-          font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
-          content: "\e114";    /* adjust as needed, taken from bootstrap.css */
-          float: right;        /* adjust as needed */
-          color: white;         /* adjust as needed */
-      }
-      .accordion-toggle.collapsed:after {
-          /* symbol for "collapsed" panels */
-          content: "\e080";    /* adjust as needed, taken from bootstrap.css */
-      }
-      .footnotes {
-        margin: 0 0 20px 10px;
-        font-style: italic;
-        color: #999;
-      }
-      .note {
-        display: none;
-      }
-      .nbNote {
-        margin-bottom: 10px;
-      }
-      td.bd span, td.bs span, td.dq span, td.gp span, td.no span, td.np span, td.sp span {
-        display: none;
-      }
-      td.bd:after {
-        content: "BD";
-      }
-      td.bs:after {
-        content: "BS";
-      }
-      td.dq:after {
-        content: "DQ";
-      }
-      td.gp:after {
-        content: "GP";
-      }
-      td.no:after {
-        content: "NO";
-      }
-      td.np:after {
-        content: "NP";
-      }
-      td.sp:after {
-        content: "SP";
-      }
-    </style>
+  
+    <link href='styles.css' rel='stylesheet' type='text/css'>
 
     <!--[if IE]>
         <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -140,18 +58,18 @@
                 <a data-toggle="collapse" href="#quick-lists" style="text-decoration: none; display: block;" class="panel-heading panel-title accordion-toggle collapsed">Quick Lists</a>
                 <div id="quick-lists" class="panel-collapse collapse">
                   <ul class="list-group">
-                    <a class="list-group-item" href="?p=firstBands"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Bands</a>
-                    <a class="list-group-item" href="?p=firstCaptains"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Captains</a>
-                    <a class="list-group-item" href="?p=secondBands"><i class="fa fa-hand-peace-o fa-fw" aria-hidden="true"></i> Second Prize Bands</a>
-                    <a class="list-group-item" href="?p=lastBands"><i class="fa fa-thumbs-o-down fa-fw" aria-hidden="true"></i> Last Prize Bands</a>
-                    <a class="list-group-item" href="?p=leadoffBands"><i class="fa fa-flag fa-fw" aria-hidden="true"></i> Leadoff Bands</a>
-                    <a class="list-group-item" href="?p=finaleBands"><i class="fa fa-flag-checkered fa-fw" aria-hidden="true"></i> Finale Bands</a>
-                    <a class="list-group-item" href="?p=randomYear"><i class="fa fa-random fa-fw" aria-hidden="true"></i> Random Year</a>
-                    <a class="list-group-item" href="?p=randomBand"><i class="fa fa-random fa-fw" aria-hidden="true"></i> Random Band</a>
-                    <a class="list-group-item" href="?p=lastStand"><i class="fa fa-smile-o fa-fw" aria-hidden="true"></i> Custard's Last Stand Winners</a>
-                    <a class="list-group-item" href="?p=viewers"><i class="fa fa-television fa-fw" aria-hidden="true"></i> Viewer's Choice Award Winners</a>
+                    <a class="list-group-item" href="winners.html"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Bands Leaderboard</a>
+                    <a class="list-group-item" href="index.html?p=firstBands"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Bands</a>
+                    <a class="list-group-item" href="index.html?p=firstCaptains"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Captains</a>
+                    <a class="list-group-item" href="index.html?p=secondBands"><i class="fa fa-hand-peace-o fa-fw" aria-hidden="true"></i> Second Prize Bands</a>
+                    <a class="list-group-item" href="index.html?p=lastBands"><i class="fa fa-thumbs-o-down fa-fw" aria-hidden="true"></i> Last Prize Bands</a>
+                    <a class="list-group-item" href="index.html?p=leadoffBands"><i class="fa fa-flag fa-fw" aria-hidden="true"></i> Leadoff Bands</a>
+                    <a class="list-group-item" href="index.html?p=finaleBands"><i class="fa fa-flag-checkered fa-fw" aria-hidden="true"></i> Finale Bands</a>
+                    <a class="list-group-item" href="index.html?p=randomYear"><i class="fa fa-random fa-fw" aria-hidden="true"></i> Random Year</a>
+                    <a class="list-group-item" href="index.html?p=randomBand"><i class="fa fa-random fa-fw" aria-hidden="true"></i> Random Band</a>
+                    <a class="list-group-item" href="index.html?p=lastStand"><i class="fa fa-smile-o fa-fw" aria-hidden="true"></i> Custard's Last Stand Winners</a>
+                    <a class="list-group-item" href="index.html?p=viewers"><i class="fa fa-television fa-fw" aria-hidden="true"></i> Viewer's Choice Award Winners</a>
                     <a class="list-group-item" href="hof.html"><i class="fa fa-star fa-fw" aria-hidden="true"></i> Hall of Fame Inductees</a>
-                    <a class="list-group-item" href="winners.html"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> Win Tally</a>
                   </ul>
                 </div>
               </div>
@@ -176,9 +94,9 @@
             <script id="bands-template" type="text/x-handlebars-template">
               {{#if num}}
                 <tr>
-                  <td><a href="?q={{cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
+                  <td><a href="index.html?q={{cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
                   <td class="prize"><span>{{cellsArray.[1]}}</span></td>
-                  <td class="band"><a href="?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
+                  <td class="band"><a href="index.html?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
                   <td>
                     {{#if cellsArray.[8]}}
                       <a href="{{cellsArray.[8]}}" target="_blank">{{cellsArray.[3]}} <i class="fa fa-youtube-play"></i></a>
@@ -186,7 +104,7 @@
                       {{cellsArray.[3]}}
                     {{/if}}
                   </td>
-                  <td><a href="?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a></td>
+                  <td><a href="index.html?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a></td>
                   <td class="prize"><span>{{cellsArray.[5]}}</span></td>
                   <td>{{cellsArray.[6]}}</td>
                   <td>{{cellsArray.[7]}}</td>

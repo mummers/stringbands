@@ -18,8 +18,8 @@ if(q != undefined){
 
 // Check for parameters
 if (params == 0) {
-    $('#searchTerm').append("<h2>Band Win Tally</h2>");
-    sqlString = "select A,B,C,D order by B desc";
+    $('#searchTerm').append("<h2>First Prize Band Leaderboard</h2>");
+    sqlString = "select A,B,C,D order by C desc";
     loadResults(sqlString, mySpreadsheet);
 }
 
@@ -51,3 +51,8 @@ $(document).ready(function()
     $('#hof').tablesorter();
   }
 );
+$( window ).load(function() {
+  if($(".band:contains('*')").length != 0) {
+    $(".nbNote").show();
+  }
+});
