@@ -18,7 +18,7 @@ if(q != undefined){
 
 // Check for parameters
 if (params == 0) {
-    $('#searchTerm').append("<h2>First Prize Band Leaderboard</h2>");
+    $('#searchTerm').append("<h2>First Prize Bands Leaderboard</h2>");
     sqlString = "select A,B,C,D order by C desc";
     loadResults(sqlString, mySpreadsheet);
 }
