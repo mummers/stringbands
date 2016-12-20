@@ -10,14 +10,13 @@ var bandsTemplate = Handlebars.compile($('#bands-template').html());
 var params = [], hash;
 var q = document.URL.split('?')[1];
 if(q != undefined){
-  q = q.split('&');
-  for(var i = 0; i < q.length; i++){
-    hash = q[i].split('=');
-    params.push(hash[1]);
-    params[hash[0]] = hash[1];
+    q = q.split('&');
+    for(var i = 0; i < q.length; i++){
+        hash = q[i].split('=');
+        params.push(hash[1]);
+        params[hash[0]] = hash[1];
     }
 }
-
 
 // Start with this year if no params
 var searchTerm = 2017;
