@@ -7,12 +7,16 @@ var viewersChoice = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xK
 var bandsTemplate = Handlebars.compile($('#bands-template').html());
 
 // Get query string parameters
-var params = {};
+var params = [], hash;
 var q = document.URL.split('?')[1];
-q.replace(/[?&]([^=]+)[=]([^&#]+)/g, function(match, key, value){
-  params[key] = value;
-  return '';
-});
+if(q != undefined){
+  q = q.split('&');
+  for(var i = 0; i < q.length; i++){
+    hash = q[i].split('=');
+    params.push(hash[1]);
+    params[hash[0]] = hash[1];
+    }
+}
 
 
 // Start with this year if no params
