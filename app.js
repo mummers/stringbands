@@ -47,6 +47,11 @@ if(isEmpty(params)) {
     }
     $('#searchTerm').append(countdownMessage);
     loadResults(createSQL(searchTerm), mySpreadsheet);
+} else if (params['q'] && params['prize']) { // Search user input with prize attached
+    searchTerm = params['q'].split('+').join([separator = ' ']).trim();
+    sqlString = "select A,B,C,D,E,F,M,L,V,W where (B = 1 and (lower(C) like lower('%" + searchTerm + "%'))) order by A desc";
+    $('#searchTerm').append("<h2>Search results for &ldquo;" + searchTerm + "&rdquo;</h2>");
+    loadResults(sqlString, mySpreadsheet);
 } else if (params['q']) { // Search user input
     searchTerm = params['q'].split('+').join([separator = ' ']).trim();
     $('#searchTerm').append("<h2>Search results for &ldquo;" + searchTerm + "&rdquo;</h2>");
