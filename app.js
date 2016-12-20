@@ -7,15 +7,20 @@ var viewersChoice = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xK
 var bandsTemplate = Handlebars.compile($('#bands-template').html());
 
 // Get query string parameters
-var params = [], hash;
-var q = document.URL.split('?')[1];
-if(q != undefined){
-    q = q.split('&');
-    for(var i = 0; i < q.length; i++){
-        hash = q[i].split('=');
-        params.push(hash[1]);
-        params[hash[0]] = hash[1];
+var q = document.URL;
+var params = {};
+
+q.replace(/[?&]([^=]+)[=]([^&#]+)/g, function(match, key, value){
+  params[key] = value;
+  return '';
+});
+
+function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
     }
+    return true;
 }
 
 // Start with this year if no params
@@ -34,7 +39,7 @@ if (today.getMonth() == 0 && today.getDate() == 1)
 }
 
 // Check for parameters
-if (params == 0) {
+if(isEmpty(params)) {
     if (searchTerm > today.getFullYear()) {
         $('#searchTerm').html("<h2>" + searchTerm + " Themes and Line of March</h2>");
     } else {
