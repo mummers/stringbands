@@ -23,6 +23,12 @@ function isEmpty(obj) {
     return true;
 }
 
+function getOrdinal(n) {
+    var s=["th","st","nd","rd"],
+    v=n%100;
+    return n+(s[(v-20)%10]||s[v]||s[0]);
+ }
+
 // Start with this year if no params
 var searchTerm = 2017;
 
@@ -51,7 +57,7 @@ if(isEmpty(params)) {
     searchTerm = params['q'].split('+').join([separator = ' ']).trim();
     prize = params['prize'].split('+').join([separator = ' ']).trim();
     sqlString = "select A,B,C,D,E,F,M,L,V,W where (B = " + prize + " and (lower(C) like lower('%" + searchTerm + "%'))) order by A desc";
-    $('#searchTerm').append("<h2>Search results for &ldquo;" + searchTerm + "&rdquo;</h2>");
+    $('#searchTerm').append("<h2>Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(prize) + " prize </h2>");
     loadResults(sqlString, mySpreadsheet);
 } else if (params['q']) { // Search user input
     searchTerm = params['q'].split('+').join([separator = ' ']).trim();
