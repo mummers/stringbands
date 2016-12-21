@@ -128,7 +128,7 @@ function loadResults(sql, sheetURL){
 }
 
 Handlebars.registerHelper("normalize", function(input) {
-  return input.toLowerCase().replace(/ +/g, "+").replace(/\.+|,.+|'.+/g, "");
+  return input.toLowerCase().replace(/ +/g, "+").replace(/\\.+|,.+|'.+/g, "");
 });
 
 $(document).ready(function() { 
