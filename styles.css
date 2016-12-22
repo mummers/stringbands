@@ -34,9 +34,6 @@ a:hover {
 .btn-group {
     margin-bottom: 10px;
 }
-.btn-primary {
-    margin-bottom: 10px;
-}
 .accordion-toggle:after {
     /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
