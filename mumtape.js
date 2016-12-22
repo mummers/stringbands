@@ -11,6 +11,7 @@ function loadResults(sql){
   });
 }
 
+
 var delay=1000; //1 second
 setTimeout(function() {
 	var video = ($('#themes td:nth-child(2)').map(function(){
@@ -21,4 +22,9 @@ setTimeout(function() {
   message = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + ID + '"></iframe>';
   document.getElementById('themes').innerHTML = message;
   document.getElementById("themes").style.visibility = "visible";
+  apiKey = "AIzaSyBkW3JBO9VU6eI-2Ee9G4QfKV-gdcmDK70"
+  $.getJSON( "https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet&id=" + ID + "&key=" + apiKey, function( data ) {
+   //var obj = $.parseJSON(data);
+    alert(data.items[0].snippet.localized.title);
+  });
 }, delay);
