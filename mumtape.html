@@ -34,6 +34,7 @@
 
     <link href='styles.css' rel='stylesheet' type='text/css'>
 
+    <style>.themes{visibility: hidden;}</style>
     <!--[if IE]>
         <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
@@ -80,54 +81,10 @@
           <a class="btn btn-primary btn-lg" href="http://phl17.com/live/" target="_blank"><i class="fa fa-video-camera fa-fw"></i> Parade Live Stream</a>
         </p>
         <div id="searchTerm"></div>
-        <div class="table-responsive">
-          <table id="bands" class="table tablesorter">
-            <thead>
-              <tr>
-                <th>Year <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th>Band<br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th>Band <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th>Theme Title <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th>Captain <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th>Captain<br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th>Marching<br>Order <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th>Band<br>Score <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th class="note">Note</th>
-              </tr>
-            </thead>
-            <script id="bands-template" type="text/x-handlebars-template">
-              {{#if num}}
-                <tr>
-                  <td><a href="index.html?q={{cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
-                  <td class="prize"><span>{{cellsArray.[1]}}</span></td>
-                  <td class="band"><a href="index.html?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
-                  <td>
-                    {{#if cellsArray.[8]}}
-                      <a href="{{cellsArray.[8]}}" target="_blank">{{cellsArray.[3]}} <i class="fa fa-youtube-play"></i></a>
-                    {{else}}
-                      {{cellsArray.[3]}}
-                    {{/if}}
-                  </td>
-                  <td><a href="index.html?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a></td>
-                  <td class="prize"><span>{{cellsArray.[5]}}</span></td>
-                  <td>{{cellsArray.[6]}}</td>
-                  <td>{{cellsArray.[7]}}</td>
-                  <td class="note">{{cellsArray.[9]}}</td>
-                </tr>
-              {{/if}}
-            </script>
-          </table>
-          <div class="footnotes">
-            <div class="note nbNote">* Not the band with the same name marching today.</div>
-            <div class="note bdNote">BD: Before the String Band Division was established.</div>
-            <div class="note bsNote">BS: Participated in the non-official Broad Street parade. No official judging.</div>
-            <div class="note dqNote">DQ: Disqualified.</div>
-            <div class="note gpNote">GP: Greater Philadelphia area bands. Judged separately.</div>
-            <div class="note noNote">NO: No official judging. No prizes awarded to any band.</div>
-            <div class="note npNote">NP: Failed to place. No prize awarded.</div>
-            <div class="note spNote">SP: Failed to place. Awarded "Special Mention" by the city.</div>
-          </div>
+        <div class="embed-responsive embed-responsive-16by9">
+        <table id="themes" class="table table-condensed table-striped themes"></table>
         </div>
+        <br>
         <p>A <a href="http://brianhamburg.com">Brian Hamburg</a> and <a href="http://tjferry.me/">TJ Ferry</a> collaboration with much assistance from fine purveyors of mummery such as these:</p>
         <ul>
             <li>Russ Coleman, <a href="http://www.stringbandarchives.com/">String Band Archives</a></li>
@@ -142,7 +99,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.1/dist/sheetrock.min.js"></script>
-    <script src="app.js"></script>
+    <script src="mumtape.js"></script>
     <!-- Google Analytics -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
