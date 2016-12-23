@@ -21,4 +21,10 @@ setTimeout(function() {
   message = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + ID + '"></iframe>';
   document.getElementById('themes').innerHTML = message;
   document.getElementById("themes").style.visibility = "visible";
+  apiKey = "AIzaSyBkW3JBO9VU6eI-2Ee9G4QfKV-gdcmDK70"
+  $.getJSON( "https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet&id=" + ID + "&key=" + apiKey, function( data ) {
+    videoTitle = data.items[0].snippet.localized.title;
+    document.getElementById('searchTerm').innerHTML = "<h2>Random Mum Tape: "+ videoTitle + "</h2>";
+  });
+
 }, delay);
