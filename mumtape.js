@@ -11,7 +11,7 @@ function loadResults(sql){
   });
 }
 
-var delay=1000; //1 second
+var delay=700;
 setTimeout(function() {
 	var video = ($('#themes td:nth-child(2)').map(function(){
 	   return $(this).text();
