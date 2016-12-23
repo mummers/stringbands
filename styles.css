@@ -8,15 +8,15 @@ h1 {
     font-size: 250%;
     text-align: center;
     padding: .4em;
-    font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Noto Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 h1 a, h1 a:hover {
     text-decoration: none;
     color: #337ab7;
-    font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Noto Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 h2,h3,h4,h5 {
-    font-family: "Balthazar","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Noto Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 form {
     font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
