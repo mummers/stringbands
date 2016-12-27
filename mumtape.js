@@ -30,7 +30,7 @@ setTimeout(function() {
   year = randomVid[0];
   document.getElementById('themes').innerHTML = message;
   document.getElementById("themes").style.visibility = "visible";
-  document.getElementById('year').innerHTML = 'Check out the results for <a href="index.html?q="' + year + '>' + year + '</a>.';
+  document.getElementById('year').innerHTML = 'Check out the results for <a href="index.html?q=' + year + '">' + year + '</a>.';
   apiKey = "AIzaSyBkW3JBO9VU6eI-2Ee9G4QfKV-gdcmDK70"
   $.getJSON("https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet&id=" + ID + "&key=" + apiKey, function(data) {
     videoTitle = data.items[0].snippet.localized.title;
