@@ -32,7 +32,7 @@ setTimeout(function() {
   band = randomVid[2];
   document.getElementById('themes').innerHTML = message;
   document.getElementById("themes").style.visibility = "visible";
-  document.getElementById('year-tag').innerHTML = '<a href="index.html?q=' + year + '">' + 'Check out the full results for ' + year + ' here</a>.';
+  document.getElementById('year-tag').innerHTML = '<a href="index.html?q=' + year + '" target="_blank">' + 'Check out the full results for ' + year + ' here</a>.';
   document.getElementById('searchTerm').innerHTML = "<h2>Random Mum Tape: " + year + " " + band + " String Band</h2>";
   sqlString = "select A,B,C,D,E,F where A = " + year + " order by A desc";
   loadResults(sqlString, '#results');
