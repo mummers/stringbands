@@ -4,11 +4,22 @@ $('#searchTerm').append("<h2>Random Mum Tape</h2>");
 sqlString = "select A,B,C,V where V contains 'https' order by A desc";
 loadResults(sqlString, '#themes');
 
+var bandsTemplate = Handlebars.compile($('#bands-template').html());
+
 function loadResults(sql, table) {
   $(table).sheetrock({
     url: mySpreadsheet,
     query: sql,
-    labels: ['Year', 'Band Prize', 'Band', 'Theme Title', 'Captain', 'Captain Prize']
+    rowTemplate: bandsTemplate,
+    callback: function(error, options, response) {
+      if (!error) {
+        if ($('#bands tr').length == 1) {
+          $('#bands').append("<h3>No results.</h3>")
+        }
+      } else {
+        $('#bands').append('<h3>' + error + '</h3>');
+      }
+    }
   });
 }
 
@@ -32,9 +43,8 @@ setTimeout(function() {
   band = randomVid[2];
   document.getElementById('themes').innerHTML = message;
   document.getElementById("themes").style.visibility = "visible";
-  document.getElementById('year-tag').innerHTML = '<a href="index.html?q=' + year + '" target="_blank">' + 'Check out the full results for ' + year + ' here</a>.';
   document.getElementById('searchTerm').innerHTML = "<h2>Random Mum Tape: " + year + " " + band + " String Band</h2>";
-  sqlString = "select A,B,C,D,E,F where A = " + year + " order by A desc";
+  sqlString = "select A,B,C,D,E,F,M,L,V,W where A = " + year + " order by A desc";
   loadResults(sqlString, '#bands');
 }, delay);
 
@@ -46,7 +56,5 @@ setTimeout(function() {
       links[i].className = "info";
     }
   }
-
-  $("#bands").tablesorter();
-
 }, 1200);
+
