@@ -40,9 +40,7 @@ setTimeout(function() {
   document.getElementById('video').innerHTML = message;
   document.getElementById('searchTerm').innerHTML = "<h2>" + year + " " + band + " String Band</h2>";
   sqlString = "select A,B,C,D,E,F,M,L,V,W where A = " + year + " order by A desc";
-  document.getElementById('results-tag').innerHTML = year + " Results"
-  sheetrock.defaults.rowTemplate = bandsTemplate
-  sheetrock.defaults.callback = myCallback
+  document.getElementById('results-tag').innerHTML = year + " Results";
   loadResults(sqlString, '#bands');
 
 }, delay);
