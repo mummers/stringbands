@@ -115,7 +115,10 @@
         <td class="band"><a href="index.html?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
         <td>
           {{#if cellsArray.[8]}}
-          <a href="video.html?q={{cellsArray.[8]}}&year={{cellsArray.[0]}}&band={{normalize cellsArray.[2]}}" target="_blank">{{cellsArray.[3]}} <i class="fa fa-youtube-play"></i></a>{{else}} {{cellsArray.[3]}} {{/if}}
+            <a href="video.html?q={{cellsArray.[8]}}&year={{cellsArray.[0]}}&band={{normalize cellsArray.[2]}}" target="_blank">{{cellsArray.[3]}} <i class="fa fa-youtube-play"></i></a>
+          {{else}}
+            {{cellsArray.[3]}}
+          {{/if}}
         </td>
         <td><a href="index.html?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a></td>
         <td class="prize"><span>{{cellsArray.[5]}}</span></td>
