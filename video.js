@@ -33,10 +33,18 @@ function loadResults(sql, table){
 var delay = 100;
 setTimeout(function() {
   video = params['q'].split('+').join([separator = ' ']).trim();
+  year = params['year'].split('+').join([separator = ' ']).trim();
   console.log(video);
   message = '<iframe class="embed-responsive-item" src="' + video + '"></iframe>';
   document.getElementById('video').innerHTML = message;
   document.getElementById("video").style.visibility = "visible";
+  document.getElementById('searchTerm').innerHTML = "<h2>" + year + " " + band + " String Band</h2>";
+  sqlString = "select A,B,C,D,E,F,M,L,V,W where A = " + year + " order by A desc";
+  document.getElementById('results-tag').innerHTML = year + " Results"
+  sheetrock.defaults.rowTemplate = bandsTemplate
+  sheetrock.defaults.callback = myCallback
+  loadResults(sqlString, '#bands');
+
 }, delay);
 
 Handlebars.registerHelper("normalize", function(input) {
