@@ -39,6 +39,7 @@ setTimeout(function() {
   });
   randomVid = chance.pickone(myTableArray);
   ID = randomVid[3];
+  console.log(ID);
   message = '<iframe class="embed-responsive-item" src="' + ID + '"></iframe>';
   year = randomVid[0];
   band = randomVid[2];
