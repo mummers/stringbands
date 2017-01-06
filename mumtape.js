@@ -11,17 +11,18 @@ function loadResults(sql, table) {
     url: mySpreadsheet,
     query: sql,
     rowTemplate: bandsTemplate,
-    callback: function(error, options, response) {
-      if (!error) {
-        if ($('#bands tr').length == 1) {
-          $('#bands').append("<h3>No results.</h3>")
-        }
-      } else {
-        $('#bands').append('<h3>' + error + '</h3>');
-      }
-    }
   });
 }
+
+function myCallback(error, options, response) {
+  if (!error) {
+    if ($('#bands tr').length == 1) {
+      $('#bands').append("<h3>No results.</h3>")
+    }
+  } else {
+    $('#bands').append('<h3>' + error + '</h3>');
+  }
+};
 
 var delay = 700;
 setTimeout(function() {
@@ -45,8 +46,13 @@ setTimeout(function() {
   document.getElementById("themes").style.visibility = "visible";
   document.getElementById('searchTerm').innerHTML = "<h2>Random Mum Tape: " + year + " " + band + " String Band</h2>";
   sqlString = "select A,B,C,D,E,F,M,L,V,W where A = " + year + " order by A desc";
+  sheetrock.defaults.callback = myCallback
   loadResults(sqlString, '#bands');
 }, delay);
+
+Handlebars.registerHelper("normalize", function(input) {
+  return input.toLowerCase().replace(/ +/g, "+").replace(/\\.+|,.+|'.+/g, "");
+});
 
 setTimeout(function() {
   var links = document.getElementsByTagName("tr");
