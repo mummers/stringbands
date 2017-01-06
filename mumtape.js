@@ -4,13 +4,25 @@ $('#searchTerm').append("<h2>Random Mum Tape</h2>");
 sqlString = "select A,B,C,V where V contains 'https' order by A desc";
 loadResults(sqlString, '#themes');
 
+var bandsTemplate = Handlebars.compile($('#bands-template').html());
+
 function loadResults(sql, table) {
   $(table).sheetrock({
     url: mySpreadsheet,
-    query: sql,
-    labels: ['Year', 'Band Prize', 'Band', 'Theme Title', 'Captain', 'Captain Prize']
+    query: sql
   });
 }
+
+function myCallback(error, options, response) {
+  if (!error) {
+    $('#bands').tablesorter();
+    if ($('#bands tr').length == 1) {
+      $('#bands').append("<h3>No results.</h3>")
+    }
+  } else {
+    $('#bands').append('<h3>' + error + '</h3>');
+  }
+};
 
 var delay = 700;
 setTimeout(function() {
@@ -32,11 +44,16 @@ setTimeout(function() {
   band = randomVid[2];
   document.getElementById('themes').innerHTML = message;
   document.getElementById("themes").style.visibility = "visible";
-  document.getElementById('year-tag').innerHTML = '<a href="index.html?q=' + year + '" target="_blank">' + 'Check out the full results for ' + year + ' here</a>.';
   document.getElementById('searchTerm').innerHTML = "<h2>Random Mum Tape: " + year + " " + band + " String Band</h2>";
-  sqlString = "select A,B,C,D,E,F where A = " + year + " order by A desc";
+  sqlString = "select A,B,C,D,E,F,M,L,V,W where A = " + year + " order by A desc";
+  sheetrock.defaults.rowTemplate = bandsTemplate
+  sheetrock.defaults.callback = myCallback
   loadResults(sqlString, '#bands');
 }, delay);
+
+Handlebars.registerHelper("normalize", function(input) {
+  return input.toLowerCase().replace(/ +/g, "+").replace(/\\.+|,.+|'.+/g, "");
+});
 
 setTimeout(function() {
   var links = document.getElementsByTagName("tr");
@@ -46,7 +63,40 @@ setTimeout(function() {
       links[i].className = "info";
     }
   }
-
+  
   $("#bands").tablesorter();
+  
+  $("td.note:contains('bd')").siblings(".prize").addClass("bd");
+  if($(".bd").length != 0) {
+    $(".bdNote").show();
+  }
+  $("td.note:contains('bs')").siblings(".prize").addClass("bs");
+  if($(".bs").length != 0) {
+    $(".bsNote").show();
+  }
+  $("td.note:contains('dq')").siblings(".prize").addClass("dq");
+  if($(".dq").length != 0) {
+    $(".dqNote").show();
+  }
+  $("td.note:contains('gp')").siblings(".prize").addClass("gp");
+  if($(".gp").length != 0) {
+    $(".gpNote").show();
+  }
+  $("td.note:contains('no')").siblings(".prize").addClass("no");
+  if($(".no").length != 0) {
+    $(".noNote").show();
+  }
+  $("td.note:contains('np')").siblings(".prize").addClass("np");
+  if($(".np").length != 0) {
+    $(".npNote").show();
+  }
+  $("td.note:contains('sp')").siblings(".prize").addClass("sp");
+  if($(".sp").length != 0) {
+    $(".spNote").show();
+  }
+  if($(".band:contains('*')").length != 0) {
+    $(".nbNote").show();
+  }
 
 }, 1200);
+

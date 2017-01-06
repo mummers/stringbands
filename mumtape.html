@@ -82,16 +82,60 @@
   			</p>
           <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="mumtape.html"><i class="fa fa-youtube-play fa-fw"></i> Random Mum Tape</a>
           <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="http://phl17.com/tag/mummers-parade-photos/" target="_blank"><i class="fa fa-camera fa-fw"></i> 2017 Parade Photo Gallery</a>
-        <div id="searchTerm"></div>
-        <div class="embed-responsive embed-responsive-16by9">
-            <table id="themes" class="table tablesorter themes"></table>
-        </div>
-        <br>
-        <div class="table-responsive">
-        <table id="bands" class="table tablesorter"></table>
-        </div>
-        <h3 class="text-center" id="year-tag"></h3>
-        <br>
+<div id="searchTerm"></div>
+<div class="embed-responsive embed-responsive-16by9">
+  <table id="themes" class="table tablesorter themes"></table>
+</div>
+<br>
+<div class="table-responsive">
+  <table id="bands" class="table tablesorter">
+    <thead>
+      <tr>
+        <th>Year <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th>Band
+          <br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th>Band <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th>Theme Title <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th>Captain <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th>Captain
+          <br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th>Marching
+          <br>Order <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th>Band
+          <br>Score <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th class="note">Note</th>
+      </tr>
+    </thead>
+    <script id="bands-template" type="text/x-handlebars-template">
+      {{#if num}}
+      <tr>
+        <td><a href="index.html?q={{cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
+        <td class="prize"><span>{{cellsArray.[1]}}</span></td>
+        <td class="band"><a href="index.html?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
+        <td>
+          {{#if cellsArray.[8]}}
+          <a href="{{cellsArray.[8]}}" target="_blank">{{cellsArray.[3]}} <i class="fa fa-youtube-play"></i></a> {{else}} {{cellsArray.[3]}} {{/if}}
+        </td>
+        <td><a href="index.html?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a></td>
+        <td class="prize"><span>{{cellsArray.[5]}}</span></td>
+        <td>{{cellsArray.[6]}}</td>
+        <td>{{cellsArray.[7]}}</td>
+        <td class="note">{{cellsArray.[9]}}</td>
+      </tr>
+      {{/if}}
+    </script>
+  </table>
+  <div class="footnotes">
+    <div class="note nbNote">* Not the band with the same name marching today.</div>
+    <div class="note bdNote">BD: Before the String Band Division was established.</div>
+    <div class="note bsNote">BS: Participated in the non-official Broad Street parade. No official judging.</div>
+    <div class="note dqNote">DQ: Disqualified.</div>
+    <div class="note gpNote">GP: Greater Philadelphia area bands. Judged separately.</div>
+    <div class="note noNote">NO: No official judging. No prizes awarded to any band.</div>
+    <div class="note npNote">NP: Failed to place. No prize awarded.</div>
+    <div class="note spNote">SP: Failed to place. Awarded "Special Mention" by the city.</div>
+  </div>
+</div>
         <p>A <a href="http://brianhamburg.com">Brian Hamburg</a> and <a href="http://tjferry.me/">TJ Ferry</a> collaboration with much assistance from fine purveyors of mummery such as these:</p>
         <ul>
             <li>Russ Coleman, <a href="http://www.stringbandarchives.com/">String Band Archives</a></li>
