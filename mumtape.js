@@ -46,7 +46,7 @@ setTimeout(function() {
   document.getElementById("themes").style.visibility = "visible";
   document.getElementById('searchTerm').innerHTML = "<h2>Random Mum Tape: " + year + " " + band + " String Band</h2>";
   sqlString = "select A,B,C,D,E,F,M,L,V,W where A = " + year + " order by A desc";
-  document.getElementById('themes').innerHTML = year + " Results"
+  document.getElementById('results-tag').innerHTML = year + " Results"
   sheetrock.defaults.rowTemplate = bandsTemplate
   sheetrock.defaults.callback = myCallback
   loadResults(sqlString, '#bands');
