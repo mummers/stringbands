@@ -38,8 +38,8 @@ setTimeout(function() {
     }
   });
   randomVid = chance.pickone(myTableArray);
-  ID = randomVid[3].replace("https://www.youtube.com/watch?v=", "");
-  message = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + ID + '"></iframe>';
+  ID = randomVid[3];
+  message = '<iframe class="embed-responsive-item" src="' + ID + '"></iframe>';
   year = randomVid[0];
   band = randomVid[2];
   document.getElementById('themes').innerHTML = message;
@@ -100,4 +100,3 @@ setTimeout(function() {
   }
 
 }, 1200);
-
