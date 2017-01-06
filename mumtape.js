@@ -9,7 +9,7 @@ var bandsTemplate = Handlebars.compile($('#bands-template').html());
 function loadResults(sql, table) {
   $(table).sheetrock({
     url: mySpreadsheet,
-    query: sql,
+    query: sql
   });
 }
 
