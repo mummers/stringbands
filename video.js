@@ -33,6 +33,10 @@ function loadResults(sql, table){
   });
 }
 
+Handlebars.registerHelper("normalize", function(input) {
+  return input.toLowerCase().replace(/ +/g, "+").replace(/\\.+|,.+|'.+/g, "");
+});
+
 var delay = 100;
 setTimeout(function() {
   video = params['q'].split('+').join([separator = ' ']).trim();
@@ -47,10 +51,6 @@ setTimeout(function() {
   loadResults(sqlString, '#bands');
 
 }, delay);
-
-Handlebars.registerHelper("normalize", function(input) {
-  return input.toLowerCase().replace(/ +/g, "+").replace(/\\.+|,.+|'.+/g, "");
-});
 
 setTimeout(function() {
   var links = document.getElementsByTagName("tr");
@@ -95,4 +95,4 @@ setTimeout(function() {
     $(".nbNote").show();
   }
 
-}, 1200);
+}, 1400);
