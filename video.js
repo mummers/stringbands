@@ -42,7 +42,6 @@ setTimeout(function() {
   video = params['q'].split('+').join([separator = ' ']).trim();
   year = params['year'].split('+').join([separator = ' ']).trim();
   band = titleCase(params['band'].split('+').join([separator = ' ']).trim());
-  console.log(band);
   message = '<iframe class="embed-responsive-item" src="' + video + '"></iframe>';
   document.getElementById('video').innerHTML = message;
   document.getElementById('searchTerm').innerHTML = "<h2>" + year + " " + band + " String Band</h2>";
