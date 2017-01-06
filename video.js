@@ -11,6 +11,9 @@ q.replace(/[?&]([^=]+)[=]([^&#]+)/g, function(match, key, value){
   return '';
 });
 
+function titleCase(str) {
+  return str.toLowerCase().replace(/\b(\w)/g, s => s.toUpperCase());
+}
 
 function loadResults(sql, table){
   $(table).sheetrock({
@@ -38,7 +41,7 @@ setTimeout(function() {
   console.log(video);
   message = '<iframe class="embed-responsive-item" src="' + video + '"></iframe>';
   document.getElementById('video').innerHTML = message;
-  document.getElementById('searchTerm').innerHTML = "<h2>" + year + " " + band + " String Band</h2>";
+  document.getElementById('searchTerm').innerHTML = "<h2>" + year + " " + titleCase(band) + " String Band</h2>";
   sqlString = "select A,B,C,D,E,F,M,L,V,W where A = " + year + " order by A desc";
   document.getElementById('results-tag').innerHTML = year + " Results";
   loadResults(sqlString, '#bands');
