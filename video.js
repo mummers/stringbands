@@ -15,14 +15,54 @@ function titleCase(str) {
   return str.toLowerCase().replace(/\b(\w)/g, s => s.toUpperCase());
 }
 
-function loadResults(sql, table){
+function loadResults(sql, table) {
   $(table).sheetrock({
     url: mySpreadsheet,
     query: sql,
     rowTemplate: bandsTemplate,
-    callback: function (error, options, response){
-      if(!error){
+    callback: function(error, options, response) {
+      if (!error) {
+        var links = document.getElementsByTagName("tr");
+
+        for (var i = 0; i < links.length; i++) {
+          if (links[i].innerHTML.includes(band)) {
+            links[i].className = "info";
+          }
+        }
+
         $('#bands').tablesorter();
+
+        $("td.note:contains('bd')").siblings(".prize").addClass("bd");
+        if ($(".bd").length != 0) {
+          $(".bdNote").show();
+        }
+        $("td.note:contains('bs')").siblings(".prize").addClass("bs");
+        if ($(".bs").length != 0) {
+          $(".bsNote").show();
+        }
+        $("td.note:contains('dq')").siblings(".prize").addClass("dq");
+        if ($(".dq").length != 0) {
+          $(".dqNote").show();
+        }
+        $("td.note:contains('gp')").siblings(".prize").addClass("gp");
+        if ($(".gp").length != 0) {
+          $(".gpNote").show();
+        }
+        $("td.note:contains('no')").siblings(".prize").addClass("no");
+        if ($(".no").length != 0) {
+          $(".noNote").show();
+        }
+        $("td.note:contains('np')").siblings(".prize").addClass("np");
+        if ($(".np").length != 0) {
+          $(".npNote").show();
+        }
+        $("td.note:contains('sp')").siblings(".prize").addClass("sp");
+        if ($(".sp").length != 0) {
+          $(".spNote").show();
+        }
+        if ($(".band:contains('*')").length != 0) {
+          $(".nbNote").show();
+        }
         if ($('#bands tr').length == 1) {
           $('#bands').append("<h3>No results.</h3>")
         }
@@ -50,48 +90,3 @@ setTimeout(function() {
   loadResults(sqlString, '#bands');
 
 }, delay);
-
-setTimeout(function() {
-  var links = document.getElementsByTagName("tr");
-
-  for (var i = 0; i < links.length; i++) {
-    if (links[i].innerHTML.includes(band)) {
-      links[i].className = "info";
-    }
-  }
-  
-  $("#bands").tablesorter();
-  
-  $("td.note:contains('bd')").siblings(".prize").addClass("bd");
-  if($(".bd").length != 0) {
-    $(".bdNote").show();
-  }
-  $("td.note:contains('bs')").siblings(".prize").addClass("bs");
-  if($(".bs").length != 0) {
-    $(".bsNote").show();
-  }
-  $("td.note:contains('dq')").siblings(".prize").addClass("dq");
-  if($(".dq").length != 0) {
-    $(".dqNote").show();
-  }
-  $("td.note:contains('gp')").siblings(".prize").addClass("gp");
-  if($(".gp").length != 0) {
-    $(".gpNote").show();
-  }
-  $("td.note:contains('no')").siblings(".prize").addClass("no");
-  if($(".no").length != 0) {
-    $(".noNote").show();
-  }
-  $("td.note:contains('np')").siblings(".prize").addClass("np");
-  if($(".np").length != 0) {
-    $(".npNote").show();
-  }
-  $("td.note:contains('sp')").siblings(".prize").addClass("sp");
-  if($(".sp").length != 0) {
-    $(".spNote").show();
-  }
-  if($(".band:contains('*')").length != 0) {
-    $(".nbNote").show();
-  }
-
-}, 1200);
