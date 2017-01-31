@@ -93,11 +93,12 @@
             </thead>
             <script id="bands-template" type="text/x-handlebars-template">
                           {{#if num}}
-
+                          {{#if cellsArray.[0]}}
                 <tr>
                   <td><a href="index.html?q={{cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
                   <td><a href="index.html?q={{cellsArray.[0]}}">{{cellsArray.[1]}}</a></td>
                 </tr>
+                              {{/if}}
                               {{/if}}
             </script>
           </table>
