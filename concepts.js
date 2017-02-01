@@ -3,7 +3,6 @@ var bandsTemplate = Handlebars.compile($('#bands-template').html());
 
 sqlString = "select O,count(B) group by O order by O";
 loadResults(sqlString);
-// define function to load results
 function loadResults(sql){
   $('#bands').sheetrock({
     url: mySpreadsheet,
@@ -21,3 +20,7 @@ function loadResults(sql){
     }
   });
 }
+
+Handlebars.registerHelper("normalize", function(input) {
+  return input.toLowerCase().replace(/ +/g, "+").replace(/\.+|,.+|'.+/g, "");
+});
