@@ -33,8 +33,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href='styles.css' rel='stylesheet' type='text/css'>
-
-    <style>.themes{visibility: hidden;}</style>
+    <style>.themes{visibility: hidden;} .video-filters{display: none;}</style>
     <!--[if IE]>
         <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
@@ -84,6 +83,38 @@
           <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="mumtape.html"><i class="fa fa-youtube-play fa-fw"></i> Random Mum Tape</a>
           <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="http://phl17.com/tag/mummers-parade-photos/" target="_blank"><i class="fa fa-camera fa-fw"></i> 2017 Parade Photo Gallery</a>
 <div id="searchTerm"></div>
+        <a id="showFilters"><i class="fa fa-plus-circle fa-2x pull-right"></i></a>        
+<form class="form-inline video-filters" id="video-filters">
+<div class="form-group">
+<label for="yearText">Only show me videos from after:</label>
+<input type="text" class="form-control" id="yearText" placeholder="Year">
+<label for="bandsFilter">Only show me videos from:</label>
+<div class="form-group">
+<select class="form-control" id="bandsFilter">
+<option selected hidden value=''></option>
+<option>Aqua</option>
+<option>Avalon</option>
+<option>Broomall</option>
+<option>Duffy</option>
+<option>Durning</option>
+<option>Ferko</option>
+<option>Fralinger</option>
+<option>Greater Kensington</option>
+<option>Greater Overbrook</option>
+<option>Hegeman</option>
+<option>Irish American</option>
+<option>Pennsport</option>
+<option>Polish American</option>
+<option>Quaker City</option>
+<option>South Philadelphia</option>
+<option>Trilby</option>
+<option>Ukrainian American</option>
+<option>Uptown</option>
+<option>Woodland</option>
+    </select></div></div>
+    <button type="submit" id="btnSearch" class="btn btn-default">Submit</button></form>
+        <br />
+                <br />
 <div class="embed-responsive embed-responsive-16by9">
   <table id="themes" class="table tablesorter themes"></table>
 </div>
