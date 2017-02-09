@@ -103,6 +103,9 @@ setTimeout(function() {
 		if (year > 2017){
 			document.getElementById('themes').innerHTML = "<h2>" + year +  " didn't happen yet!</h2>";
 		}
+		else if (year == 2017){
+			document.getElementById('themes').innerHTML = "<h2>2018 didn't happen yet!</h2>";
+		}
 		else{
 			document.getElementById('themes').innerHTML = "<img src='Mummy Turtle.gif' class='img-responsive'>";}
 	}
