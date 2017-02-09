@@ -100,7 +100,7 @@ setTimeout(function() {
 	} else {
 		document.getElementById('searchTerm').innerHTML = "<h2>Whoops! Looks like there was an error. Try again.</h2>";
 		document.getElementById("themes").style.visibility = "visible";
-		if (year > 2017){
+		if (year >= 2017){
 			year = parseInt(year) + 1
 			document.getElementById('themes').innerHTML = "<h2>" + year +  " didn't happen yet!</h2>";
 		}
