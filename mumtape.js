@@ -101,10 +101,10 @@ setTimeout(function() {
 		document.getElementById('searchTerm').innerHTML = "<h2>Whoops! Looks like there was an error. Try again.</h2>";
 		document.getElementById("themes").style.visibility = "visible";
 		if (year > 2017){
-			document.getElementById('themes').innerHTML = "<h2>This year doesn't exist yet!</h2>";
+			document.getElementById('themes').innerHTML = "<h2>" + year +  " didn't happen yet!</h2>";
 		}
 		else{
-		document.getElementById('themes').innerHTML = "<img src='Mummy Turtle.gif' class='img-responsive'>";}
+			document.getElementById('themes').innerHTML = "<img src='Mummy Turtle.gif' class='img-responsive'>";}
 	}
 }, delay);
 Handlebars.registerHelper("normalize", function(input) {
