@@ -107,7 +107,8 @@ setTimeout(function() {
 			document.getElementById('themes').innerHTML = "<h2>2018 didn't happen yet!</h2>";
 		}
 		else{
-			document.getElementById('themes').innerHTML = "<img src='Mummy Turtle.gif' class='img-responsive'>";}
+			document.getElementById('themes').innerHTML = "<img src='Mummy Turtle.gif' class='img-responsive'>";
+		}
 	}
 }, delay);
 Handlebars.registerHelper("normalize", function(input) {
