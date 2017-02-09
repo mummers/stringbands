@@ -106,8 +106,8 @@ setTimeout(function() {
 		else if (year == 2017){
 			document.getElementById('themes').innerHTML = "<h2>2018 didn't happen yet!</h2>";
 		}
-		else{
-			document.getElementById('themes').innerHTML = "<img src='Mummy Turtle.gif' class='img-responsive'>";
+		else {
+			document.getElementById('themes').innerHTML = "<p class='text-center'><img src='Mummy Turtle.gif' class='img-responsive'></p>";
 		}
 	}
 }, delay);
