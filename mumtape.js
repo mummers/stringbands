@@ -98,7 +98,9 @@ setTimeout(function() {
 		sheetrock.defaults.callback = myCallback;
 		loadResults(sqlString, '#bands');
 	} else {
-		document.getElementById('searchTerm').innerHTML = "<h2>Whoops! Looks like there was an error. Try again.</h2>"
+		document.getElementById('searchTerm').innerHTML = "<h2>Whoops! Looks like there was an error. Try again.</h2>";
+		document.getElementById("themes").style.visibility = "visible";
+		document.getElementById('themes').innerHTML = '<img src="stringbands/Mummy Turtle.gif" class="img-responsive" alt="Responsive image">’
 	}
 }, delay);
 Handlebars.registerHelper("normalize", function(input) {
