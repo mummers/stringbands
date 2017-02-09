@@ -101,13 +101,10 @@ setTimeout(function() {
 		document.getElementById('searchTerm').innerHTML = "<h2>Whoops! Looks like there was an error. Try again.</h2>";
 		document.getElementById("themes").style.visibility = "visible";
 		if (year > 2017){
-			document.getElementById('themes').innerHTML = "<h2>" + year +  " didn't happen yet!</h2>";
-		}
-		else if (year == 2017){
-			document.getElementById('themes').innerHTML = "<h2>2018 didn't happen yet!</h2>";
+			document.getElementById('themes').innerHTML = "<h2>" + (year + 1) +  " didn't happen yet!</h2>";
 		}
 		else {
-			document.getElementById('themes').innerHTML = "<p class='text-center'><img src='Mummy Turtle.gif' class='img-responsive'></p>";
+			document.getElementById('themes').innerHTML = "<img src='Mummy Turtle.gif' class='img-responsive turtle'>";
 		}
 	}
 }, delay);
