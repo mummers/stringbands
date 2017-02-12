@@ -14,3 +14,7 @@ function loadResults() {
 }
 
 loadResults();
+
+Handlebars.registerHelper("normalize", function(input) {
+  return input.toLowerCase().replace(/ +/g, "+").replace(/\\.+|,.+|'.+/g, "");
+});
