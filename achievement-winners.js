@@ -18,7 +18,7 @@ if(q != undefined){
 
 // Check for parameters
 if (params == 0) {
-    $('#searchTerm').append("<h2>Lifetime Achievement Award Winners</h2>");
+    $('#searchTerm').append("<h2>Lifetime Achievement Award Winners</h2><h5>Each year the String Band Association presents a lifetime achievement award to a string band member for his or her individual accomplishments for the String Band Association going above and beyond to improve the quality of the Parade and promote the spirit of mummery. Following is the listing of the award recipients.</h5>");
     sqlString = "select A,B order by A desc";
     loadResults(sqlString, mySpreadsheet);
 }
