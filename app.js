@@ -203,15 +203,18 @@ setTimeout(function() {
                 "General Effect - Visual: " + $ge_visual + "\n",
                 "Costume: " + $costume + "\n",
                 "Total Points: " + $total);
+                alert(rowArray.join(""));
             } else if (playing_exists) {
               rowArray.push("Music Playing: " + $mp + "\n",
                 "General Effect Music: " + $ge_music + "\n",
                 "Visual Performance: " + $vp + "\n",
                 "General Effect - Visual: " + $ge_visual + "\n",
                 "Total Points: " + $total);
+                alert(rowArray.join(""));
             }
-            alert(rowArray.join(""));
-
+            else{
+            	console.log("No breakdown");
+            }
           }
         }
     }
