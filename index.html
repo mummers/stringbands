@@ -97,6 +97,11 @@
                 <th>Marching<br>Order <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
                 <th>Band<br>Score <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
                 <th class="note">Note</th>
+                <th class="note">Music Playing</th>
+                <th class="note">General Effect - Music</th>
+                <th class="note">Visual Performance</th>
+                <th class="note">General Effect - Visual</th>
+                <th class="note">Costume</th>
               </tr>
             </thead>
             <script id="bands-template" type="text/x-handlebars-template">
@@ -115,8 +120,13 @@
                   <td><a href="index.html?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a></td>
                   <td class="prize"><span>{{cellsArray.[5]}}</span></td>
                   <td>{{cellsArray.[6]}}</td>
-                  <td>{{cellsArray.[7]}}</td>
+                  <td class="total">{{cellsArray.[7]}}</td>
                   <td class="note">{{cellsArray.[9]}}</td>
+                  <td class="note mp">{{cellsArray.[10]}}</td>
+                  <td class="note ge_music">{{cellsArray.[11]}}</td>
+                  <td class="note vp">{{cellsArray.[12]}}</td>
+                  <td class="note ge_visual">{{cellsArray.[13]}}</td>
+                  <td class="note costume">{{cellsArray.[14]}}</td>
                 </tr>
               {{/if}}
             </script>
