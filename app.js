@@ -176,6 +176,7 @@ setTimeout(function() {
         table.rows[i].cells[j].onclick = function() {
           if (this.cellIndex == 7) {
             var $row = $(this).closest("tr");
+            var $year = $row.find(".year").text();
             var $mp = $row.find(".mp").text();
             var $ge_music = $row.find(".ge_music").text();
             var $vp = $row.find(".vp").text();
@@ -189,31 +190,36 @@ setTimeout(function() {
               costume_exists = false;
             }
 
-            if ($mp.length > 1) {
+            if ($mp.length > 0) {
               playing_exists = true;
             } else {
               playing_exists = false;
             }
 
             rowArray = [];
-            if (costume_exists) {
+            if ($year < 1987) {
+              rowArray.push("Music: " + $ge_music + "\n",
+                "Presentation: " + $ge_visual + "\n",
+                "Costume: " + $costume + "\n",
+                "Total Points: " + $total);
+              alert(rowArray.join(""));
+            } else if (costume_exists) {
               rowArray.push("Music Playing: " + $mp + "\n",
                 "General Effect Music: " + $ge_music + "\n",
                 "Visual Performance: " + $vp + "\n",
                 "General Effect - Visual: " + $ge_visual + "\n",
                 "Costume: " + $costume + "\n",
                 "Total Points: " + $total);
-                alert(rowArray.join(""));
-            } else if (playing_exists) {
+              alert(rowArray.join(""));
+            } else if (playing_exists){
               rowArray.push("Music Playing: " + $mp + "\n",
                 "General Effect Music: " + $ge_music + "\n",
                 "Visual Performance: " + $vp + "\n",
                 "General Effect - Visual: " + $ge_visual + "\n",
                 "Total Points: " + $total);
-                alert(rowArray.join(""));
-            }
-            else{
-            	console.log("No breakdown");
+              alert(rowArray.join(""));
+            } else {
+              console.log("No breakdown");
             }
           }
         }
