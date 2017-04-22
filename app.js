@@ -219,7 +219,7 @@ setTimeout(function() {
                 "Total Points: " + $total);
               alert(rowArray.join(""));
             } else {
-              console.log("No breakdown");
+              alert("No point breakdowns for " + $year + " are available.");
             }
           }
         }
