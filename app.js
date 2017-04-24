@@ -198,7 +198,6 @@ setTimeout(function() {
               playing_exists = false;
             }
 
-            rowArray = [];
             breakdown = "breakdown"
             if ($year < 1991) {
               breakdown = ('<h3>' + $band + " " + $year + '</h3>' +
@@ -219,12 +218,14 @@ setTimeout(function() {
                             '<b>Total Points:</b> ' + $total + '<br>')
                 swal({title: 'Point Breakdown', html: breakdown})
             } else if (playing_exists){
-              rowArray.push("Music Playing: " + $mp + "\n",
-                "General Effect Music: " + $ge_music + "\n",
-                "Visual Performance: " + $vp + "\n",
-                "General Effect - Visual: " + $ge_visual + "\n",
-                "Total Points: " + $total);
-              alert(rowArray.join(""));
+                breakdown = ('<h3>' + $band + " " + $year + '</h3>' +
+                            '<i>' + getOrdinal($prize) + ' Prize' + '</i><br><br>' +
+                            '<b>Music Playing:</b> ' + $mp + '<br>' +
+                            '<b>General Effect Music:</b> ' + $ge_music + '<br>' +
+                            '<b>Visual Performance:</b> ' + $vp + '<br>' +
+                            '<b>General Effect - Visual:</b> ' + $ge_visual + '<br>' +
+                            '<b>Total Points:</b> ' + $total + '<br>')
+                swal({title: 'Point Breakdown', html: breakdown})
             } else {
               alert("No point breakdowns for " + $year + " are available.");
             }
