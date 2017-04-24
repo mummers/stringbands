@@ -197,7 +197,7 @@ setTimeout(function() {
             }
 
             rowArray = [];
-            if ($year < 1987) {
+            if ($year < 1991) {
               rowArray.push("Music: " + $ge_music + "\n",
                 "Presentation: " + $ge_visual + "\n",
                 "Costume: " + $costume + "\n",
