@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto|Noto+Serif' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.css">
     <link href='styles.css' rel='stylesheet' type='text/css'>
     <style>.themes{visibility: hidden;} .video-filters{display: none;}</style>
     <!--[if IE]>
@@ -151,12 +151,17 @@
         <th>Band
           <br>Score <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
         <th class="note">Note</th>
+        <th class="note">Music Playing</th>
+        <th class="note">General Effect - Music</th>
+        <th class="note">Visual Performance</th>
+        <th class="note">General Effect - Visual</th>
+        <th class="note">Costume</th>
       </tr>
     </thead>
     <script id="bands-template" type="text/x-handlebars-template">
       {{#if num}}
       <tr>
-        <td><a href="index.html?q={{cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
+        <td class="year"><a href="index.html?q={{cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
         <td class="prize"><span>{{cellsArray.[1]}}</span></td>
         <td class="band"><a href="index.html?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
         <td>
@@ -167,10 +172,15 @@
           {{/if}}
         </td>
         <td><a href="index.html?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a></td>
-        <td class="prize"><span>{{cellsArray.[5]}}</span></td>
+        <td><span>{{cellsArray.[5]}}</span></td>
         <td>{{cellsArray.[6]}}</td>
-        <td>{{cellsArray.[7]}}</td>
+        <td class="total">{{cellsArray.[7]}}</td>
         <td class="note">{{cellsArray.[9]}}</td>
+        <td class="note mp">{{cellsArray.[10]}}</td>
+        <td class="note ge_music">{{cellsArray.[11]}}</td>
+        <td class="note vp">{{cellsArray.[12]}}</td>
+        <td class="note ge_visual">{{cellsArray.[13]}}</td>
+        <td class="note costume">{{cellsArray.[14]}}</td>
       </tr>
       {{/if}}
     </script>
@@ -200,6 +210,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+    <script src="//cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.js"></script>
     <script src="mumtape.js"></script>
     <!-- Google Analytics -->
     <script>

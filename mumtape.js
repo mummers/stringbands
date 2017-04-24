@@ -6,6 +6,12 @@ showBtn.onclick = function() {
 	$("#video-filters").toggle();
 }
 
+function getOrdinal(n) {
+    var s=["th","st","nd","rd"],
+    v=n%100;
+    return n+(s[(v-20)%10]||s[v]||s[0]);
+ }
+
 button.onclick = function() {
 	var year = document.getElementById('yearText').value;
 	var bandFilter = document.getElementById('bandsFilter').value;
@@ -92,7 +98,7 @@ setTimeout(function() {
 		document.getElementById('themes').innerHTML = message;
 		document.getElementById("themes").style.visibility = "visible";
 		document.getElementById('searchTerm').innerHTML = "<h2>Random Mum Tape: " + year + " " + band + " String Band</h2>";
-		sqlString = "select A,B,C,D,E,F,M,L,V,W where A = " + year + " order by A desc";
+		sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K where A = " + year + " order by A desc";
 		document.getElementById('results-tag').innerHTML = year + " Results";
 		sheetrock.defaults.rowTemplate = bandsTemplate;
 		sheetrock.defaults.callback = myCallback;
@@ -109,6 +115,7 @@ setTimeout(function() {
 		}
 	}
 }, delay);
+
 Handlebars.registerHelper("normalize", function(input) {
   return input.toLowerCase().replace(/ +/g, "+").replace(/\\.+|,.+|'.+/g, "");
 });
@@ -156,4 +163,71 @@ setTimeout(function() {
     $(".nbNote").show();
   }
 
+}, 1200);
+
+setTimeout(function() {
+  var table = document.getElementById("bands");
+  if (table != null) {
+    for (var i = 0; i < table.rows.length; i++) {
+      for (var j = 0; j < table.rows[i].cells.length; j++)
+        table.rows[i].cells[j].onclick = function() {
+          if (this.cellIndex == 7) {
+            var $row = $(this).closest("tr");
+            var $year = $row.find(".year").text();
+            var $prize = $row.find(".prize").text();
+            var $band = $row.find(".band").text();
+            var $mp = $row.find(".mp").text();
+            var $ge_music = $row.find(".ge_music").text();
+            var $vp = $row.find(".vp").text();
+            var $ge_visual = $row.find(".ge_visual").text();
+            var $costume = $row.find(".costume").text();
+            var $total = $row.find(".total").text();
+
+            if ($costume.length > 1) {
+              costume_exists = true;
+            } else {
+              costume_exists = false;
+            }
+
+            if ($mp.length > 0) {
+              playing_exists = true;
+            } else {
+              playing_exists = false;
+            }
+
+            breakdown = "breakdown"
+            if ($year < 1991 && costume_exists) {
+              breakdown = ('<h3>' + $band + " " + $year + '</h3>' +
+                           '<i>' + getOrdinal($prize) + ' Prize' + '</i><br><br>' +
+                           '<b>Music:</b> ' + $ge_music + '<br>' +
+                           '<b>Presentation:</b> ' + $ge_visual + '<br>' +
+                           '<b>Costume:</b> ' + $costume + '<br><br>' +
+                           '<b>Total Points:</b> ' + $total + '<br>')
+              swal({title: 'Point Breakdown', html: breakdown})
+            } else if (costume_exists) {
+               breakdown = ('<h3>' + $band + " " + $year + '</h3>' +
+                            '<i>' + getOrdinal($prize) + ' Prize' + '</i><br><br>' +
+                            '<b>Music Playing:</b> ' + $mp + '<br>' +
+                            '<b>General Effect Music:</b> ' + $ge_music + '<br>' +
+                            '<b>Visual Performance:</b> ' + $vp + '<br>' +
+                            '<b>General Effect - Visual:</b> ' + $ge_visual + '<br>' +
+                            '<b>Costume:</b> ' + $costume + '<br><br>' +
+                            '<b>Total Points:</b> ' + $total + '<br>')
+                swal({title: 'Point Breakdown', html: breakdown})
+            } else if (playing_exists){
+                breakdown = ('<h3>' + $band + " " + $year + '</h3>' +
+                            '<i>' + getOrdinal($prize) + ' Prize' + '</i><br><br>' +
+                            '<b>Music Playing:</b> ' + $mp + '<br>' +
+                            '<b>General Effect Music:</b> ' + $ge_music + '<br>' +
+                            '<b>Visual Performance:</b> ' + $vp + '<br>' +
+                            '<b>General Effect - Visual:</b> ' + $ge_visual + '<br><br>' +
+                            '<b>Total Points:</b> ' + $total + '<br>')
+                swal({title: 'Point Breakdown', html: breakdown})
+            } else {
+              alert("No point breakdowns for " + $year + " are available.");
+            }
+          }
+        }
+    }
+  };
 }, 1200);
