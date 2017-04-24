@@ -202,7 +202,7 @@ setTimeout(function() {
             breakdown = "breakdown"
             if ($year < 1991) {
               breakdown = ('<h3>' + $band + " " + $year + '</h3>' +
-                '<i>' + getOrdinal($prize) + ' Prize' + '</i><br>' +
+                '<i>' + getOrdinal($prize) + ' Prize' + '</i><br><br>' +
                 '<b>Music:</b> ' + $ge_music + '<br>' +
     '<b>Presentation:</b> ' + $ge_visual + '<br>' +
     '<b>Costume:</b> ' + $costume + '<br><br>' +
