@@ -177,6 +177,8 @@ setTimeout(function() {
           if (this.cellIndex == 7) {
             var $row = $(this).closest("tr");
             var $year = $row.find(".year").text();
+            var $prize = $row.find(".prize").text();
+            var $band = $row.find(".band").text();
             var $mp = $row.find(".mp").text();
             var $ge_music = $row.find(".ge_music").text();
             var $vp = $row.find(".vp").text();
@@ -199,7 +201,9 @@ setTimeout(function() {
             rowArray = [];
             breakdown = "breakdown"
             if ($year < 1991) {
-              breakdown = ('<b>Music:</b> ' + $ge_music + '<br>' +
+              breakdown = ('<h3>' + $band + " " + $year + '</h3>' +
+                '<i>' + getOrdinal($prize) + ' Prize' + '</i>' +
+                '<b>Music:</b> ' + $ge_music + '<br>' +
     '<b>Presentation:</b> ' + $ge_visual + '<br>' +
     '<b>Costume:</b> ' + $costume + '<br>' +
     '<b>Total Points:</b> ' + $total + '<br>')
