@@ -223,7 +223,7 @@ setTimeout(function() {
                             '<b>Music Playing:</b> ' + $mp + '<br>' +
                             '<b>General Effect Music:</b> ' + $ge_music + '<br>' +
                             '<b>Visual Performance:</b> ' + $vp + '<br>' +
-                            '<b>General Effect - Visual:</b> ' + $ge_visual + '<br>' +
+                            '<b>General Effect - Visual:</b> ' + $ge_visual + '<br><br>' +
                             '<b>Total Points:</b> ' + $total + '<br>')
                 swal({title: 'Point Breakdown', html: breakdown})
             } else {
