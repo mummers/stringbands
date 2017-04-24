@@ -197,12 +197,13 @@ setTimeout(function() {
             }
 
             rowArray = [];
+            breakdown = "breakdown"
             if ($year < 1991) {
-              rowArray.push("Music: " + $ge_music + "\n",
-                "Presentation: " + $ge_visual + "\n",
-                "Costume: " + $costume + "\n",
-                "Total Points: " + $total);
-              swal('Point Breakdown', rowArray.join(""))
+              breakdown = ('<b>Music:</b> ' + $ge_music + '<br>' +
+    '<b>Presentation:</b> ' + $ge_visual + '<br>' +
+    '<b>Costume:</b> ' + $costume + '<br>' +
+    '<b>Total Points:</b> ' + $total + '<br>')
+              swal(title: 'Point Breakdown', html: breakdown)
             } else if (costume_exists) {
               rowArray.push("Music Playing: " + $mp + "\n",
                 "General Effect Music: " + $ge_music + "\n",
