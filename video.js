@@ -128,7 +128,7 @@ setTimeout(function() {
             }
 
             breakdown = "breakdown"
-            if ($year < 1991) {
+            if ($year < 1991 && costume_exists) {
               breakdown = ('<h3>' + $band + " " + $year + '</h3>' +
                            '<i>' + getOrdinal($prize) + ' Prize' + '</i><br><br>' +
                            '<b>Music:</b> ' + $ge_music + '<br>' +
