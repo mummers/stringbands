@@ -91,7 +91,7 @@ setTimeout(function() {
   message = '<iframe class="embed-responsive-item" src="' + video + '"></iframe>';
   document.getElementById('video').innerHTML = message;
   document.getElementById('searchTerm').innerHTML = "<h2>" + year + " " + band + " String Band</h2>";
-  sqlString = "select A,B,C,D,E,F,M,L,V,W where A = " + year + " order by A desc";
+  sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K where A = " + year + " order by A desc";
   document.getElementById('results-tag').innerHTML = year + " Results";
   loadResults(sqlString, '#bands');
 
