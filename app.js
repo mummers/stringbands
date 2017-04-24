@@ -202,20 +202,22 @@ setTimeout(function() {
             breakdown = "breakdown"
             if ($year < 1991) {
               breakdown = ('<h3>' + $band + " " + $year + '</h3>' +
-                '<i>' + getOrdinal($prize) + ' Prize' + '</i><br><br>' +
-                '<b>Music:</b> ' + $ge_music + '<br>' +
-    '<b>Presentation:</b> ' + $ge_visual + '<br>' +
-    '<b>Costume:</b> ' + $costume + '<br><br>' +
-    '<b>Total Points:</b> ' + $total + '<br>')
+                           '<i>' + getOrdinal($prize) + ' Prize' + '</i><br><br>' +
+                           '<b>Music:</b> ' + $ge_music + '<br>' +
+                           '<b>Presentation:</b> ' + $ge_visual + '<br>' +
+                           '<b>Costume:</b> ' + $costume + '<br><br>' +
+                           '<b>Total Points:</b> ' + $total + '<br>')
               swal({title: 'Point Breakdown', html: breakdown})
             } else if (costume_exists) {
-              rowArray.push("Music Playing: " + $mp + "\n",
-                "General Effect Music: " + $ge_music + "\n",
-                "Visual Performance: " + $vp + "\n",
-                "General Effect - Visual: " + $ge_visual + "\n",
-                "Costume: " + $costume + "\n",
-                "Total Points: " + $total);
-              alert(rowArray.join(""));
+               breakdown = ('<h3>' + $band + " " + $year + '</h3>' +
+                            '<i>' + getOrdinal($prize) + ' Prize' + '</i><br><br>' +
+                            '<b>Music Playing:</b> ' + $mp + '<br>' +
+                            '<b>General Effect Music:</b> ' + $ge_music + '<br>' +
+                            '<b>Visual Performance:</b> ' + $vp + '<br>' +
+                            '<b>General Effect - Visual:</b> ' + $ge_visual + '<br>' +
+                            '<b>Costume:</b> ' + $costume + '<br><br>' +
+                            '<b>Total Points:</b> ' + $total + '<br>')
+                swal({title: 'Point Breakdown', html: breakdown})
             } else if (playing_exists){
               rowArray.push("Music Playing: " + $mp + "\n",
                 "General Effect Music: " + $ge_music + "\n",
