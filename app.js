@@ -205,7 +205,7 @@ setTimeout(function() {
                 '<i>' + getOrdinal($prize) + ' Prize' + '</i><br>' +
                 '<b>Music:</b> ' + $ge_music + '<br>' +
     '<b>Presentation:</b> ' + $ge_visual + '<br>' +
-    '<b>Costume:</b> ' + $costume + '<br>' +
+    '<b>Costume:</b> ' + $costume + '<br><br>' +
     '<b>Total Points:</b> ' + $total + '<br>')
               swal({title: 'Point Breakdown', html: breakdown})
             } else if (costume_exists) {
