@@ -203,7 +203,7 @@ setTimeout(function() {
     '<b>Presentation:</b> ' + $ge_visual + '<br>' +
     '<b>Costume:</b> ' + $costume + '<br>' +
     '<b>Total Points:</b> ' + $total + '<br>')
-              swal(title: 'Point Breakdown', html: breakdown)
+              swal({title: 'Point Breakdown', html: breakdown})
             } else if (costume_exists) {
               rowArray.push("Music Playing: " + $mp + "\n",
                 "General Effect Music: " + $ge_music + "\n",
