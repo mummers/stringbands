@@ -202,7 +202,7 @@ setTimeout(function() {
                 "Presentation: " + $ge_visual + "\n",
                 "Costume: " + $costume + "\n",
                 "Total Points: " + $total);
-              alert(rowArray.join(""));
+              swal('Point Breakdown', rowArray.join(""))
             } else if (costume_exists) {
               rowArray.push("Music Playing: " + $mp + "\n",
                 "General Effect Music: " + $ge_music + "\n",
