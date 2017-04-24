@@ -11,6 +11,12 @@ q.replace(/[?&]([^=]+)[=]([^&#]+)/g, function(match, key, value){
   return '';
 });
 
+function getOrdinal(n) {
+    var s=["th","st","nd","rd"],
+    v=n%100;
+    return n+(s[(v-20)%10]||s[v]||s[0]);
+ }
+
 function titleCase(str) {
   return str.toLowerCase().replace(/\b(\w)/g, s => s.toUpperCase());
 }
