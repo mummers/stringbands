@@ -170,6 +170,14 @@ $( window ).load(function() {
 
 setTimeout(function() {
   var table = document.getElementById("bands");
+  var thead = table.getElementsByTagName("thead")[0];
+  thead.onclick = function (e) {
+   e = e || window.event;
+   var th = e.target || e.srcElement;
+   console.log(th.innerHTML);
+  }
+  
+  
   if (table != null) {
     for (var i = 0; i < table.rows.length; i++) {
       for (var j = 0; j < table.rows[i].cells.length; j++)
