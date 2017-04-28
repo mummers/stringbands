@@ -170,7 +170,6 @@ $( window ).load(function() {
 
 setTimeout(function() {
   var table = document.getElementById("bands");
-  var thead = table.getElementsByTagName("thead")[0];
   var icon = "</i>";
   if (table != null) {
     for (var i = 0; i < table.rows.length; i++) {
