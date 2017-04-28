@@ -177,7 +177,7 @@ setTimeout(function() {
       for (var j = 0; j < table.rows[i].cells.length; j++)
         table.rows[i].cells[j].onclick = function() {
           if (this.cellIndex == 7) {
-            if (this.innerHTML.includes(icon)) {
+            if (!this.innerHTML.includes(icon)) {
                 var $row = $(this).closest("tr");
                 var $year = $row.find(".year").text();
                 var $prize = $row.find(".prize").text();
