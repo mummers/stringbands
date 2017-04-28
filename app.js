@@ -246,6 +246,5 @@ setTimeout(function() {
           }
         }
     };
-  }
 }, 700);
 
