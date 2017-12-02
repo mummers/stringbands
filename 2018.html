@@ -90,7 +90,9 @@
               <tr>
                 <th class="col-xs-1">Marching<br>Order <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
                 <th class="col-xs-4">Band <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th class="col-xs-7">Theme Concept <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+                <th>Theme Title <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+                <th>Captain <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+                <th>Concept <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
               </tr>
             </thead>
             <script id="bands-template" type="text/x-handlebars-template">
@@ -98,7 +100,9 @@
                 <tr>
                   <td>{{cellsArray.[0]}}</td>
                   <td><a href="index.html?q={{normalize cellsArray.[1]}}">{{cellsArray.[1]}}</a></td>
-                  <td><a href="index.html?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
+                  <td>{{cellsArray.[2]}}</td>
+                  <td><a href="index.html?q={{normalize cellsArray.[3]}}">{{cellsArray.[3]}}</a></td>
+                  <td><a href="index.html?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a></td>
                 </tr>
               {{/if}}
             </script>
