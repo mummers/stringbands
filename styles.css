@@ -84,3 +84,6 @@ td.np:after {
 td.sp:after {
   content: "SP";
 }
+td.total a {
+  cursor: pointer;
+}
