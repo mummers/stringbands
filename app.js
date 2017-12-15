@@ -65,11 +65,11 @@ if(isEmpty(params)) {
     loadResults(createSQL(searchTerm), mySpreadsheet);
 } else if (params['p'] == 'lastStand') { // Custard's Last Stand Winners
     $('#searchTerm').append("<h2>Custard's Last Stand Winners</h2><h5>The punniest theme title given by Jake Hart.</h5>");
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X order by A desc";
+    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K order by A desc";
     loadResults(sqlString, lastStandWinners);
 } else if (params['p'] == 'viewers') { // Viewer's Choice Award Winners
     $('#searchTerm').append("<h2>Viewer's Choice Award Winners</h2><h5>With the introduction of the Viewer's Choice Awards, String Band fans are now able to vote online for their favorite performance. Following is a listing of the top String Bands since the awards' inception in 2006.</h5>");
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X order by A desc";
+    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K order by A desc";
     loadResults(sqlString, viewersChoice);
 } else if (params['p']){ // Search via button
     searchTerm = params['p'];

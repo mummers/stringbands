@@ -138,50 +138,52 @@
   <table id="bands" class="table tablesorter">
     <thead>
       <tr>
-        <th>Year <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-        <th>Band
-          <br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-        <th>Band <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-        <th>Theme Title <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-        <th>Captain <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-        <th>Captain
-          <br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-        <th>Marching
-          <br>Order <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-        <th>Band
-          <br>Score <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th title="Sort results by year">Year <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th title="Sort results by band prize">Band<br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th title="Sort results by band name">Band <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th title="Sort results by theme title">Theme Title <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th title="Sort results by captain first name">Captain <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th title="Sort results by captain prize">Captain<br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th title="Sort results by marching order">Marching<br>Order <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th title="Sort results by band score">Band<br>Score <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
         <th class="note">Note</th>
         <th class="note">Music Playing</th>
         <th class="note">General Effect - Music</th>
         <th class="note">Visual Performance</th>
         <th class="note">General Effect - Visual</th>
         <th class="note">Costume</th>
+        <th></th>
       </tr>
     </thead>
     <script id="bands-template" type="text/x-handlebars-template">
       {{#if num}}
-      <tr>
-        <td class="year"><a href="index.html?q={{cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
-        <td class="prize"><span>{{cellsArray.[1]}}</span></td>
-        <td class="band"><a href="index.html?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
-        <td>
-          {{#if cellsArray.[8]}}
-            <a href="video.html?q={{cellsArray.[8]}}&year={{cellsArray.[0]}}&band={{normalize cellsArray.[2]}}">{{cellsArray.[3]}} <i class="fa fa-youtube-play"></i></a>
-          {{else}}
-            {{cellsArray.[3]}}
-          {{/if}}
-        </td>
-        <td><a href="index.html?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a></td>
-        <td><span>{{cellsArray.[5]}}</span></td>
-        <td>{{cellsArray.[6]}}</td>
-        <td class="total">{{cellsArray.[7]}}</td>
-        <td class="note">{{cellsArray.[9]}}</td>
-        <td class="note mp">{{cellsArray.[10]}}</td>
-        <td class="note ge_music">{{cellsArray.[11]}}</td>
-        <td class="note vp">{{cellsArray.[12]}}</td>
-        <td class="note ge_visual">{{cellsArray.[13]}}</td>
-        <td class="note costume">{{cellsArray.[14]}}</td>
-      </tr>
+        <tr>
+          <td class="year"><a href="index.html?q={{cellsArray.[0]}}" title="Display all {{cellsArray.[0]}} results">{{cellsArray.[0]}}</a></td>
+          <td class="prize"><span>{{cellsArray.[1]}}</span></td>
+          <td class="band"><a href="index.html?q={{normalize cellsArray.[2]}}" title="Display all {{cellsArray.[2]}} results">{{cellsArray.[2]}}</a></td>
+          <td>
+            {{#if cellsArray.[8]}}
+              <a href="video.html?q={{cellsArray.[8]}}&year={{cellsArray.[0]}}&band={{normalize cellsArray.[2]}}" title="Watch {{cellsArray.[2]}}'s {{cellsArray.[0]}} video"><i class="fa fa-youtube-play"></i> {{cellsArray.[3]}}</a>
+            {{else}}
+              {{cellsArray.[3]}}
+            {{/if}}
+          </td>
+          <td><a href="index.html?q={{normalize cellsArray.[4]}}" title="Display all {{cellsArray.[4]}} results">{{cellsArray.[4]}}</a></td>
+          <td><span>{{cellsArray.[5]}}</span></td>
+          <td>{{cellsArray.[6]}}</td>
+          <td class="total"><a title="Display {{cellsArray.[2]}}'s {{cellsArray.[0]}} scoring breakdown">{{cellsArray.[7]}}</a></td>
+          <td class="sheet">
+            {{#if cellsArray.[15]}}
+              <a href="{{cellsArray.[15]}}" title="Download {{cellsArray.[0]}} scoring breakdown PDF" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+            {{/if}}
+          </td>
+          <td class="note">{{cellsArray.[9]}}</td>
+          <td class="note mp">{{cellsArray.[10]}}</td>
+          <td class="note ge_music">{{cellsArray.[11]}}</td>
+          <td class="note vp">{{cellsArray.[12]}}</td>
+          <td class="note ge_visual">{{cellsArray.[13]}}</td>
+          <td class="note costume">{{cellsArray.[14]}}</td>
+        </tr>
       {{/if}}
     </script>
   </table>
