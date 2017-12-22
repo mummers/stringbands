@@ -30,7 +30,7 @@ function getOrdinal(n) {
  }
 
 // Start with this year if no params
-var searchTerm = 2017;
+var searchTerm = 2018;
 
 // Logic for countdown
 var today = new Date();
