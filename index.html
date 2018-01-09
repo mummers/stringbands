@@ -137,10 +137,10 @@
                   <td class="note vp">{{cellsArray.[12]}}</td>
                   <td class="note ge_visual">{{cellsArray.[13]}}</td>
                   <td class="note costume">{{cellsArray.[14]}}</td>
-                  <td class="note costumer">{{cellsArray.[16]}}</td>
-                  <td class="note designer">{{cellsArray.[17]}}</td>
-                  <td class="note arranger">{{cellsArray.[18]}}</td>
-                  <td class="note choreographer">{{cellsArray.[19]}}</td>
+                  <td class="note costumer">{{#if cellsArray.[16]}}{{cellsArray.[16]}}{{else}}Unknown{{/if}}</td>
+                  <td class="note designer">{{#if cellsArray.[17]}}{{cellsArray.[17]}}{{else}}Unknown{{/if}}</td>
+                  <td class="note arranger">{{#if cellsArray.[18]}}{{cellsArray.[18]}}{{else}}Unknown{{/if}}</td>
+                  <td class="note choreographer">{{#if cellsArray.[19]}}{{cellsArray.[19]}}{{else}}Unknown{{/if}}</td>
                 </tr>
               {{/if}}
             </script>
