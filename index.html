@@ -96,13 +96,17 @@
                 <th title="Sort results by captain prize">Captain<br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
                 <th title="Sort results by marching order">Marching<br>Order <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
                 <th title="Sort results by band score">Band<br>Score <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+                <th></th>
                 <th class="note">Note</th>
                 <th class="note">Music Playing</th>
                 <th class="note">General Effect - Music</th>
                 <th class="note">Visual Performance</th>
                 <th class="note">General Effect - Visual</th>
                 <th class="note">Costume</th>
-                <th></th>
+                <th class="note">Costumer</th>
+                <th class="note">Costume/Set Designer</th>
+                <th class="note">Music Arranger</th>
+                <th class="note">Choreographer</th>
               </tr>
             </thead>
             <script id="bands-template" type="text/x-handlebars-template">
@@ -133,6 +137,10 @@
                   <td class="note vp">{{cellsArray.[12]}}</td>
                   <td class="note ge_visual">{{cellsArray.[13]}}</td>
                   <td class="note costume">{{cellsArray.[14]}}</td>
+                  <td class="note costumer">{{cellsArray.[16]}}</td>
+                  <td class="note designer">{{cellsArray.[17]}}</td>
+                  <td class="note arranger">{{cellsArray.[18]}}</td>
+                  <td class="note choreographer">{{cellsArray.[19]}}</td>
                 </tr>
               {{/if}}
             </script>
