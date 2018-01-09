@@ -230,7 +230,7 @@ setTimeout(function() {
                     '<b>Costume:</b> ' + $costume + '<br><br>' +
                     '<b>Total Points:</b> ' + $total + '<br><br>' +
                     '<b>Costumer:</b> ' + $costumer + '<br>' +
-                    '<b>Costume Designer:</b> ' + $designer + '<br>' +
+                    '<b>Costume/Set Designer:</b> ' + $designer + '<br>' +
                     '<b>Music Arranger:</b> ' + $arranger + '<br>' +
                     '<b>Choreographer:</b> ' + $choreographer + '<br>')
                   swal({
