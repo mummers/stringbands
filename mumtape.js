@@ -147,7 +147,7 @@ setTimeout(function() {
   if($(".gp").length != 0) {
     $(".gpNote").show();
   }
-  $("td.note:contains('no')").siblings(".prize").addClass("no");
+  $("td.note:contains('no-j')").siblings(".prize").addClass("no");
   if($(".no").length != 0) {
     $(".noNote").show();
   }

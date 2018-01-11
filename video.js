@@ -54,7 +54,7 @@ function loadResults(sql, table) {
         if ($(".gp").length != 0) {
           $(".gpNote").show();
         }
-        $("td.note:contains('no')").siblings(".prize").addClass("no");
+        $("td.note:contains('no-j')").siblings(".prize").addClass("no");
         if ($(".no").length != 0) {
           $(".noNote").show();
         }
@@ -117,6 +117,10 @@ setTimeout(function() {
                 var $ge_visual = $row.find(".ge_visual").text();
                 var $costume = $row.find(".costume").text();
                 var $total = $row.find(".total").text();
+                var $costumer = $row.find(".costumer").text();
+                var $designer = $row.find(".designer").text();
+                var $arranger = $row.find(".arranger").text();
+                var $choreographer = $row.find(".choreographer").text();
 
                 if ($costume.length > 1) {
                   costume_exists = true;
@@ -137,7 +141,11 @@ setTimeout(function() {
                     '<b>Music:</b> ' + $ge_music + '<br>' +
                     '<b>Presentation:</b> ' + $ge_visual + '<br>' +
                     '<b>Costume:</b> ' + $costume + '<br><br>' +
-                    '<b>Total Points:</b> ' + $total + '<br>')
+                    '<b>Total Points:</b> ' + $total + '<br><br>' +
+                    '<b>Costumer:</b> ' + $costumer + '<br>' +
+                    '<b>Costume/Set Designer:</b> ' + $designer + '<br>' +
+                    '<b>Music Arranger:</b> ' + $arranger + '<br>' +
+                    '<b>Choreographer:</b> ' + $choreographer + '<br>')
                   swal({
                     title: 'Point Breakdown',
                     html: breakdown
@@ -150,7 +158,11 @@ setTimeout(function() {
                     '<b>Visual Performance:</b> ' + $vp + '<br>' +
                     '<b>General Effect - Visual:</b> ' + $ge_visual + '<br>' +
                     '<b>Costume:</b> ' + $costume + '<br><br>' +
-                    '<b>Total Points:</b> ' + $total + '<br>')
+                    '<b>Total Points:</b> ' + $total + '<br><br>' +
+                    '<b>Costumer:</b> ' + $costumer + '<br>' +
+                    '<b>Costume/Set Designer:</b> ' + $designer + '<br>' +
+                    '<b>Music Arranger:</b> ' + $arranger + '<br>' +
+                    '<b>Choreographer:</b> ' + $choreographer + '<br>')
                   swal({
                     title: 'Point Breakdown',
                     html: breakdown
@@ -162,7 +174,11 @@ setTimeout(function() {
                     '<b>General Effect Music:</b> ' + $ge_music + '<br>' +
                     '<b>Visual Performance:</b> ' + $vp + '<br>' +
                     '<b>General Effect - Visual:</b> ' + $ge_visual + '<br><br>' +
-                    '<b>Total Points:</b> ' + $total + '<br>')
+                    '<b>Total Points:</b> ' + $total + '<br><br>' +
+                    '<b>Costumer:</b> ' + $costumer + '<br>' +
+                    '<b>Costume/Set Designer:</b> ' + $designer + '<br>' +
+                    '<b>Music Arranger:</b> ' + $arranger + '<br>' +
+                    '<b>Choreographer:</b> ' + $choreographer + '<br>')
                   swal({
                     title: 'Point Breakdown',
                     html: breakdown

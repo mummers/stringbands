@@ -107,6 +107,10 @@
         <th class="note">Visual Performance</th>
         <th class="note">General Effect - Visual</th>
         <th class="note">Costume</th>
+        <th class="note">Costumer</th>
+        <th class="note">Costume/Set Designer</th>
+        <th class="note">Music Arranger</th>
+        <th class="note">Choreographer</th>
         <th></th>
       </tr>
     </thead>
@@ -138,6 +142,10 @@
           <td class="note vp">{{cellsArray.[12]}}</td>
           <td class="note ge_visual">{{cellsArray.[13]}}</td>
           <td class="note costume">{{cellsArray.[14]}}</td>
+          <td class="note costumer">{{#if cellsArray.[16]}}{{cellsArray.[16]}}{{else}}Unknown{{/if}}</td>
+          <td class="note designer">{{#if cellsArray.[17]}}{{cellsArray.[17]}}{{else}}Unknown{{/if}}</td>
+          <td class="note arranger">{{#if cellsArray.[18]}}{{cellsArray.[18]}}{{else}}Unknown{{/if}}</td>
+          <td class="note choreographer">{{#if cellsArray.[19]}}{{cellsArray.[19]}}{{else}}Unknown{{/if}}</td>
         </tr>
       {{/if}}
     </script>
