@@ -77,7 +77,7 @@ function myCallback(error, options, response) {
 
 
 var delay = 700;
-setTimeout(function() {	
+setTimeout(function() {
 	var myTableArray = [];
 	$("table#themes tr").each(function() {
 		var arrayOfThisRow = [];
@@ -98,7 +98,7 @@ setTimeout(function() {
 		document.getElementById('themes').innerHTML = message;
 		document.getElementById("themes").style.visibility = "visible";
 		document.getElementById('searchTerm').innerHTML = "<h2>Random Mum Tape: " + year + " " + band + " String Band</h2>";
-		sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K where A = " + year + " order by A desc";
+		sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
 		document.getElementById('results-tag').innerHTML = year + " Results";
 		sheetrock.defaults.rowTemplate = bandsTemplate;
 		sheetrock.defaults.callback = myCallback;
@@ -128,9 +128,9 @@ setTimeout(function() {
       links[i].className = "info";
     }
   }
-  
+
   $("#bands").tablesorter();
-  
+
   $("td.note:contains('bd')").siblings(".prize").addClass("bd");
   if($(".bd").length != 0) {
     $(".bdNote").show();
@@ -185,6 +185,10 @@ setTimeout(function() {
                 var $ge_visual = $row.find(".ge_visual").text();
                 var $costume = $row.find(".costume").text();
                 var $total = $row.find(".total").text();
+                var $costumer = $row.find(".costumer").text();
+                var $designer = $row.find(".designer").text();
+                var $arranger = $row.find(".arranger").text();
+                var $choreographer = $row.find(".choreographer").text();
 
                 if ($costume.length > 1) {
                   costume_exists = true;
@@ -205,7 +209,11 @@ setTimeout(function() {
                     '<b>Music:</b> ' + $ge_music + '<br>' +
                     '<b>Presentation:</b> ' + $ge_visual + '<br>' +
                     '<b>Costume:</b> ' + $costume + '<br><br>' +
-                    '<b>Total Points:</b> ' + $total + '<br>')
+                    '<b>Total Points:</b> ' + $total + '<br><br>' +
+                    '<b>Costumer:</b> ' + $costumer + '<br>' +
+                    '<b>Costume/Set Designer:</b> ' + $designer + '<br>' +
+                    '<b>Music Arranger:</b> ' + $arranger + '<br>' +
+                    '<b>Choreographer:</b> ' + $choreographer + '<br>')
                   swal({
                     title: 'Point Breakdown',
                     html: breakdown
@@ -218,7 +226,11 @@ setTimeout(function() {
                     '<b>Visual Performance:</b> ' + $vp + '<br>' +
                     '<b>General Effect - Visual:</b> ' + $ge_visual + '<br>' +
                     '<b>Costume:</b> ' + $costume + '<br><br>' +
-                    '<b>Total Points:</b> ' + $total + '<br>')
+                    '<b>Total Points:</b> ' + $total + '<br><br>' +
+                    '<b>Costumer:</b> ' + $costumer + '<br>' +
+                    '<b>Costume/Set Designer:</b> ' + $designer + '<br>' +
+                    '<b>Music Arranger:</b> ' + $arranger + '<br>' +
+                    '<b>Choreographer:</b> ' + $choreographer + '<br>')
                   swal({
                     title: 'Point Breakdown',
                     html: breakdown
@@ -230,7 +242,11 @@ setTimeout(function() {
                     '<b>General Effect Music:</b> ' + $ge_music + '<br>' +
                     '<b>Visual Performance:</b> ' + $vp + '<br>' +
                     '<b>General Effect - Visual:</b> ' + $ge_visual + '<br><br>' +
-                    '<b>Total Points:</b> ' + $total + '<br>')
+                    '<b>Total Points:</b> ' + $total + '<br><br>' +
+                    '<b>Costumer:</b> ' + $costumer + '<br>' +
+                    '<b>Costume/Set Designer:</b> ' + $designer + '<br>' +
+                    '<b>Music Arranger:</b> ' + $arranger + '<br>' +
+                    '<b>Choreographer:</b> ' + $choreographer + '<br>')
                   swal({
                     title: 'Point Breakdown',
                     html: breakdown
