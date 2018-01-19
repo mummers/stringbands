@@ -135,7 +135,7 @@ setTimeout(function() {
   if($(".bd").length != 0) {
     $(".bdNote").show();
   }
-  $("td.note:contains('bs')").siblings(".prize").addClass("bs");
+  $("td.note:contains('bs-j')").siblings(".prize").addClass("bs");
   if($(".bs").length != 0) {
     $(".bsNote").show();
   }
