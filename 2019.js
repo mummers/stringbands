@@ -4,7 +4,7 @@ var bandsTemplate = Handlebars.compile($('#bands-template').html());
 function loadResults() {
   $('#bands').sheetrock({
     url: mySpreadsheet,
-    query: "select A,B,C,D,E order by A asc",
+    query: "select B,C,D,E,F order by B asc",
     rowTemplate: bandsTemplate,
     callback: function(error, options, response) {
       if (!error) {
