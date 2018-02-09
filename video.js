@@ -62,7 +62,7 @@ function loadResults(sql, table) {
         if ($(".np").length != 0) {
           $(".npNote").show();
         }
-        $("td.note:contains('sp')").siblings(".prize").addClass("sp");
+        $("td.note:contains('sp-j')").siblings(".prize").addClass("sp");
         if ($(".sp").length != 0) {
           $(".spNote").show();
         }
