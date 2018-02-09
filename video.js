@@ -38,7 +38,7 @@ function loadResults(sql, table) {
 
         $('#bands').tablesorter();
 
-        $("td.note:contains('bd')").siblings(".prize").addClass("bd");
+        $("td.note:contains('bd-j')").siblings(".prize").addClass("bd");
         if ($(".bd").length != 0) {
           $(".bdNote").show();
         }
@@ -58,7 +58,7 @@ function loadResults(sql, table) {
         if ($(".no").length != 0) {
           $(".noNote").show();
         }
-        $("td.note:contains('np')").siblings(".prize").addClass("np");
+        $("td.note:contains('np-j')").siblings(".prize").addClass("np");
         if ($(".np").length != 0) {
           $(".npNote").show();
         }
