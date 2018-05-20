@@ -103,15 +103,16 @@ setTimeout(function() {
 		sheetrock.defaults.rowTemplate = bandsTemplate;
 		sheetrock.defaults.callback = myCallback;
 		loadResults(sqlString, '#bands');
-	} else {
-		document.getElementById('searchTerm').innerHTML = "<h2>Whoops! Looks like there was an error. Try again.</h2>";
+	}
+	else {
 		document.getElementById("themes").style.visibility = "visible";
-		if (year >= 2017){
+		if (year >= 2018){
 			year = parseInt(year) + 1
-			document.getElementById('themes').innerHTML = "<h2>" + year +  " didn't happen yet!</h2>";
+			document.getElementById('searchTerm').innerHTML = "<h2>Whoops! " + year +  " didn't happen yet! Try a different year.</h2>";
 		}
 		else {
-			document.getElementById('themes').innerHTML = "<img src='Mummy Turtle.gif' class='img-responsive turtle'>";
+			document.getElementById('searchTerm').innerHTML = "<h2>Whoops! Looks like there was an error. Trying again.</h2>";
+			document.getElementById('themes').innerHTML = "<meta http-equiv='refresh' content='2' />";
 		}
 	}
 }, delay);
