@@ -106,7 +106,7 @@ setTimeout(function() {
 	}
 	else {
 		document.getElementById("themes").style.visibility = "visible";
-		if (year >= 2018){
+		if (year >= 2019){
 			year = parseInt(year) + 1
 			document.getElementById('searchTerm').innerHTML = "<h2>Whoops! " + year +  " didn't happen yet! Try a different year.</h2>";
 		}
@@ -122,14 +122,6 @@ Handlebars.registerHelper("normalize", function(input) {
 });
 
 setTimeout(function() {
-  var links = document.getElementsByTagName("tr");
-
-  for (var i = 0; i < links.length; i++) {
-    if (links[i].innerHTML.includes(band)) {
-      links[i].className = "info";
-    }
-  }
-
   $("#bands").tablesorter();
 
   $("td.note:contains('bd-j')").siblings(".prize").addClass("bd");
@@ -168,6 +160,14 @@ setTimeout(function() {
 
 
 setTimeout(function() {
+	var links = document.getElementsByTagName("tr");
+
+	for (var i = 0; i < links.length; i++) {
+		if (links[i].innerHTML.includes(band)) {
+			links[i].className = "info";
+		}
+	}
+
   var table = document.getElementById("bands");
   var icon = "</i>";
   if (table != null) {
@@ -260,4 +260,4 @@ setTimeout(function() {
           }
         }
     };
-}, 1200);
+}, 2200);
