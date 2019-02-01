@@ -92,6 +92,7 @@
                 <th>Number<br>Of Wins <i class="fa fa-sort" aria-hidden="true"></i></th>
                 <th>Most<br>Recent Win <i class="fa fa-sort" aria-hidden="true"></i></th>
                 <th>Years<br>Since <i class="fa fa-sort" aria-hidden="true"></i></th>
+                <th>Sweeps <i class="fa fa-sort" aria-hidden="true"></i></th>
               </tr>
             </thead>
             <script id="hof-template" type="text/x-handlebars-template">
@@ -101,6 +102,7 @@
                   <td><a href="index.html?q={{normalize cellsArray.[0]}}&prize=1">{{cellsArray.[1]}}</a></td>
                   <td><a href="index.html?q={{cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
                   <td>{{cellsArray.[3]}}</td>
+                  <td>{{cellsArray.[4]}}</td>
                   </tr>
                 {{/if}}
             </script>
