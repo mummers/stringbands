@@ -53,18 +53,18 @@ if(isEmpty(params)) {
     }
     $('#searchTerm').append(countdownMessage);
     loadResults(createSQL(searchTerm), mySpreadsheet);
-} else if (params['q'] && params['prize'] && params['captainPrize']) { // Search user input with prize and captains prize attached
-    searchTerm = params['q'].split('+').join([separator = ' ']).trim();
+} else if (params['band'] && params['prize'] && params['captainPrize']) { // Search band with prize and captains prize attached
+    band = params['band'].split('+').join([separator = ' ']).trim();
     prize = params['prize'].split('+').join([separator = ' ']).trim();
     captainPrize = params['captainPrize'].split('+').join([separator = ' ']).trim();
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and F = " + captainPrize + " and (lower(C) like lower('%" + searchTerm + "%'))) order by A desc";
-    $('#searchTerm').append("<h2>Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(prize) + " prize band, " + getOrdinal(captainPrize) + " prize captain </h2>");
+    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and F = " + captainPrize + " and (lower(C) like lower('%" + band + "%'))) order by A desc";
+    $('#searchTerm').append("<h2>Search results for &ldquo;" + band + "&rdquo; and " + getOrdinal(prize) + " prize band, " + getOrdinal(captainPrize) + " prize captain </h2>");
     loadResults(sqlString, mySpreadsheet);
-} else if (params['q'] && params['prize']) { // Search user input with prize attached
-    searchTerm = params['q'].split('+').join([separator = ' ']).trim();
+} else if (params['band'] && params['prize']) { // Search band with prize attached
+    band = params['band'].split('+').join([separator = ' ']).trim();
     prize = params['prize'].split('+').join([separator = ' ']).trim();
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and (lower(C) like lower('%" + searchTerm + "%'))) order by A desc";
-    $('#searchTerm').append("<h2>Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(prize) + " prize </h2>");
+    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and (lower(C) like lower('%" + band + "%'))) order by A desc";
+    $('#searchTerm').append("<h2>Search results for &ldquo;" + band + "&rdquo; and " + getOrdinal(prize) + " prize </h2>");
     loadResults(sqlString, mySpreadsheet);
 } else if (params['q']) { // Search user input
     searchTerm = params['q'].split('+').join([separator = ' ']).trim();
