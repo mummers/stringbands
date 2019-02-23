@@ -70,6 +70,12 @@ if(isEmpty(params)) {
     searchTerm = params['q'].split('+').join([separator = ' ']).trim();
     $('#searchTerm').append("<h2>Search results for &ldquo;" + searchTerm + "&rdquo;</h2>");
     loadResults(createSQL(searchTerm), mySpreadsheet);
+} else if (params['concept'] && params['prize']) { // Search concept and prize
+    concept = params['concept'].split('+').join([separator = ' ']).trim();
+    prize = params['prize'].split('+').join([separator = ' ']).trim();
+    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and (lower(O) like lower('%" + concept + "%'))) order by A desc";
+    $('#searchTerm').append("<h2>Search results for &ldquo;" + concept + "&rdquo; and " + getOrdinal(prize) + " prize </h2>");
+    loadResults(sqlString, mySpreadsheet);
 } else if (params['p'] == 'lastStand') { // Custard's Last Stand Winners
     $('#searchTerm').append("<h2>Custard's Last Stand Winners</h2><h5>The punniest theme title given by Jake Hart.</h5>");
     sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T order by A desc";
