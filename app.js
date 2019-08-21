@@ -181,7 +181,7 @@ $( window ).load(function() {
   }
 });
 
-setTimeout(function() {
+window.onload = function() {
   var table = document.getElementById("bands");
   var icon = "</i>";
   if (table != null) {
@@ -273,5 +273,5 @@ setTimeout(function() {
             }
           }
         }
-    };
-}, 700);
+    }
+};

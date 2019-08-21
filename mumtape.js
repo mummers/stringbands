@@ -75,9 +75,7 @@ function myCallback(error, options, response) {
 };
 
 
-
-var delay = 700;
-setTimeout(function() {
+window.onload = function() {
 	var myTableArray = [];
 	$("table#themes tr").each(function() {
 		var arrayOfThisRow = [];
@@ -115,7 +113,7 @@ setTimeout(function() {
 			document.getElementById('themes').innerHTML = "<meta http-equiv='refresh' content='2' />";
 		}
 	}
-}, delay);
+};
 
 Handlebars.registerHelper("normalize", function(input) {
   return input.toLowerCase().replace(/ +/g, "+").replace(/\\.+|,.+|'.+/g, "");
