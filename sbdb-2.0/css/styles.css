@@ -1,0 +1,114 @@
+/* general styles */
+body {
+	padding-top: 54px;
+	font-size: 14px;
+}
+a {
+	color: #337ab7;
+}
+.searchForm {
+	padding-top: 15px;
+}
+@media (min-width: 992px) {
+	body {
+		padding-top: 56px;
+	}
+}
+h1 a, h1 a:hover {
+	text-decoration: none;
+	color: #337ab7;
+}
+a:hover {
+	text-decoration: none;
+}
+.btn-group {
+	margin-bottom: 10px;
+}
+.header {
+	margin-top: -30px;
+	margin-bottom: -15px;
+}
+/* card styles */
+.card {
+	margin-bottom: 15px;
+}
+.card-header {
+	font-weight: bold;
+}
+.card-header i {
+	padding-top: 5px;
+}
+.card-body ul {
+	padding-left: 0;
+	list-style: none;
+}
+.helper-alert {
+	cursor: pointer;
+	color: #337ab7;
+}
+/* table styles */
+table, .table {
+	margin: 10px 0;
+}
+th {
+	cursor: pointer;
+	color: #337ab7;
+}
+.footnotes {
+	margin: 0 0 20px 10px;
+	font-style: italic;
+	color: #999;
+}
+.note {
+	display: none;
+}
+.year-col {
+	display: none;
+}
+.nbNote {
+	margin-bottom: 10px;
+}
+.total {
+	color: #337ab7;
+}
+td.bd span, td.bs span, td.dq span, td.gp span, td.no span, td.np span, td.sp span {
+	display: none;
+}
+td.bd:after {
+	content: "BD";
+}
+td.bs:after {
+	content: "BS";
+}
+td.dq:after {
+	content: "DQ";
+}
+td.gp:after {
+	content: "GP";
+}
+td.no:after {
+	content: "NO";
+}
+td.np:after {
+	content: "NP";
+}
+td.sp:after {
+	content: "SP";
+}
+td.total a {
+	cursor: pointer;
+}
+/* pages with videos on them */
+.main-table-video {
+	padding-top: 10px;
+}
+/* random mum tape */
+.video-filters {
+	display: none;
+}
+.themes {
+	visibility: hidden;
+}
+.reload-btn{
+	margin-right: 10px;
+}
