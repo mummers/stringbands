@@ -113,7 +113,7 @@ if (isEmpty(params)) {
 }
 // define search string function
 function createSQL(term) {
-	return "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (A like '%" + term + "%') or (B like '" + term + "') or (lower(C) like lower('%" + term + "%')) or (lower(D) like lower('%" + term + "%')) or (lower(E) like lower('%" + term + "%')) or (F like '%" + term + "%') or (lower(O) like lower('%" + term + "%')) order by A desc, B asc";
+	return "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (A like '%" + term + "%') or (B like '" + term + "') or (lower(C) like lower('%" + term + "%')) or (lower(D) like lower('%" + term + "%')) or (lower(E) like lower('%" + term + "%')) or (F like '%" + term + "%') or (lower(O) like lower('%" + term + "%')) or (lower(Q) like lower('%" + term + "%')) or (lower(R) like lower('%" + term + "%')) or (lower(S) like lower('%" + term + "%')) or (lower(T) like lower('%" + term + "%')) order by A desc, B asc";
 }
 // define function to load results
 function loadResults(sql, sheetURL) {
