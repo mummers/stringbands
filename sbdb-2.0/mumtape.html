@@ -248,10 +248,10 @@
               <ul id="band-info">
               <script id="band-info-template" type="text/x-handlebars-template">
                 {{#if num}}
-                <li><strong>Costumer:</strong> {{#if cellsArray.[16]}}{{cellsArray.[16]}}{{else}}Unknown{{/if}}</li>
-                <li><strong>Designer:</strong> {{#if cellsArray.[17]}}{{cellsArray.[17]}}{{else}}Unknown{{/if}}</li>
-                <li><strong>Music Arranger:</strong> {{#if cellsArray.[18]}}{{cellsArray.[18]}}{{else}}Unknown{{/if}}</li>
-                <li><strong>Choreographer:</strong> {{#if cellsArray.[19]}}{{cellsArray.[19]}}{{else}}Unknown{{/if}}</li>
+                <li><strong>Costumer:</strong> {{#if cellsArray.[16]}}<a href="index.html?q={{normalize cellsArray.[16]}}">{{cellsArray.[16]}}</a>{{else}}Unknown{{/if}}</li>
+                <li><strong>Designer:</strong> {{#if cellsArray.[17]}}<a href="index.html?q={{normalize cellsArray.[17]}}">{{cellsArray.[17]}}</a>{{else}}Unknown{{/if}}</li>
+                <li><strong>Music Arranger:</strong> {{#if cellsArray.[18]}}<a href="index.html?q={{normalize cellsArray.[18]}}">{{cellsArray.[18]}}</a>{{else}}Unknown{{/if}}</li>
+                <li><strong>Choreographer:</strong> {{#if cellsArray.[19]}}<a href="index.html?q={{normalize cellsArray.[19]}}">{{cellsArray.[19]}}</a>{{else}}Unknown{{/if}}</li>
                 {{/if}}
               </script></ul>
             </div>
