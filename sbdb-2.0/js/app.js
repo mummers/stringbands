@@ -322,6 +322,10 @@ window.onload = function() {
 	if (isNaN(searchTerm)) {
 		$(".year-col").show();
 	} else {
+		if (searchTerm < 1916) {
+			document.getElementsByClassName('sidebar')[0].style.display = 'none';
+			document.getElementById("main-table").className = "col-md-12";
+		}
 		if (searchTerm < 1956) {
 			document.getElementById("hof-card").style.display = "none";
 		}
