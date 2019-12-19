@@ -13,7 +13,7 @@ var viewersTemplate = Handlebars.compile($('#viewers-template').html());
 var custardsTemplate = Handlebars.compile($('#custards-template').html());
 var hofTemplate = Handlebars.compile($('#hof-template').html());
 var infoTemplate = Handlebars.compile($('#info-template').html());
-
+var bandInfoTemplate = Handlebars.compile($('#band-info-template').html());
 // Get query string parameters
 var q = document.URL;
 var params = {};
@@ -113,6 +113,19 @@ function loadYearData(){
       }
     }
   });
+  // define function to load band info
+  $('#band-info').sheetrock({
+    url: mySpreadsheet,
+    query: "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " and (lower(C) like lower('%" + band + "%')) order by A desc",
+    rowTemplate: bandInfoTemplate,
+    callback: function(error, options, response) {
+      console.log(band);
+      if (error) {
+        console.log(error);
+        $('#band-info').append('<h3>Error.</h3>');
+      }
+    }
+  });
 }
 
 
@@ -163,6 +176,7 @@ setTimeout(function() {
   document.getElementById('searchTerm').innerHTML = "<h2>" + year + " " + band + " String Band</h2>";
   sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
   document.getElementById('results-tag').innerHTML = year + " Results";
+  document.getElementById('band-card-header').innerHTML = band + " " + year + " Info";
   loadResults(sqlString, '#bands');
   loadYearData()
   console.log("video load function ran")

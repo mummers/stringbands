@@ -11,6 +11,7 @@ var viewersTemplate = Handlebars.compile($('#viewers-template').html());
 var custardsTemplate = Handlebars.compile($('#custards-template').html());
 var hofTemplate = Handlebars.compile($('#hof-template').html());
 var infoTemplate = Handlebars.compile($('#info-template').html());
+var bandInfoTemplate = Handlebars.compile($('#band-info-template').html());
 
 var button = document.getElementById('btnSearch');
 var showBtn = document.getElementById('showFilters');
@@ -112,6 +113,7 @@ window.onload = function() {
 		document.getElementById('searchTerm').innerHTML = "Random Mum Tape: " + year + " " + band + " String Band";
 		sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
 		document.getElementById('results-tag').innerHTML = year + " Results";
+		document.getElementById('band-card-header').innerHTML = band + " " + year + " Info";
 		sheetrock.defaults.rowTemplate = bandsTemplate;
 		sheetrock.defaults.callback = myCallback;
 		loadResults(sqlString, '#bands');
@@ -193,6 +195,19 @@ function loadYearData(){
       if(error){
         console.log(error);
         $('#hof-Inductees').append('<h3>Error.</h3>');
+      }
+    }
+  });
+	// define function to load band info
+  $('#band-info').sheetrock({
+    url: mySpreadsheet,
+    query: "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " and (lower(C) like lower('%" + band + "%')) order by A desc",
+    rowTemplate: bandInfoTemplate,
+    callback: function(error, options, response) {
+      console.log(band);
+      if (error) {
+        console.log(error);
+        $('#band-info').append('<h3>Error.</h3>');
       }
     }
   });

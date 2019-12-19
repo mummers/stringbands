@@ -238,6 +238,23 @@
         </div>
 
         <div class="col-md-4 sidebar">
+          <h2 class="my-3">Band Info</h2>
+          <div class="card text-center">
+            <div id="band-card-header" class="card-header">
+              {Band} Info
+            </div>
+            <div class="card-body">
+              <ul id="band-info">
+              <script id="band-info-template" type="text/x-handlebars-template">
+                {{#if num}}
+                <li><strong>Costumer:</strong> {{#if cellsArray.[16]}}{{cellsArray.[16]}}{{else}}Unknown{{/if}}</li>
+                <li><strong>Designer:</strong> {{#if cellsArray.[17]}}{{cellsArray.[17]}}{{else}}Unknown{{/if}}</li>
+                <li><strong>Music Arranger:</strong> {{#if cellsArray.[18]}}{{cellsArray.[18]}}{{else}}Unknown{{/if}}</li>
+                <li><strong>Choreographer:</strong> {{#if cellsArray.[19]}}{{cellsArray.[19]}}{{else}}Unknown{{/if}}</li>
+                {{/if}}
+              </script></ul>
+            </div>
+          </div> <!-- band end -->
           <h2 class="my-3">Other Info</h2>
           <div class="card text-center">
             <div class="card-header">
