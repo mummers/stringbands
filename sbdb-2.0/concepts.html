@@ -67,6 +67,7 @@
                 <a class="dropdown-item" href="index.html?p=lastBands">Last Prize Bands</a>
                 <a class="dropdown-item" href="index.html?p=leadoffBands">Leadoff Bands</a>
                 <a class="dropdown-item" href="index.html?p=finaleBands">Finale Bands</a>
+                <a class="dropdown-item" href="captains.html">Captains Statistics</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="index.html?p=lastStand">Custard's Last Stand Winners</a>
                 <a class="dropdown-item" href="index.html?p=viewers">Viewer's Choice Award Winners</a>
@@ -122,12 +123,15 @@
                   <td><a href="index.html?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
                   <td><a href="index.html?q={{normalize cellsArray.[0]}}">{{cellsArray.[1]}}</a></td>
                   <td><a href="index.html?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
-                  <td><a href="index.html?concept={{normalize cellsArray.[0]}}&prize={{cellsArray.[3]}}">{{cellsArray.[3]}} {{#if cellsArray.[4]}}({{cellsArray.[4]}}){{/if}}</a></td>
+                  <td>{{#if cellsArray.[3]}}<a href="index.html?concept={{normalize cellsArray.[0]}}&prize={{cellsArray.[3]}}">{{cellsArray.[3]}} {{else}}BD{{/if}}{{#if cellsArray.[4]}}({{cellsArray.[4]}}){{/if}}</a></td>
                 </tr>
                               {{/if}}
                               {{/if}}
               </script>
             </table>
+            <div class="footnotes">
+              <div class="note bdNote">BD: Before the String Band Division was established.</div>
+            </div>
           </div>
         </div> <!-- /.main-table -->
       </div> <!-- /.row -->

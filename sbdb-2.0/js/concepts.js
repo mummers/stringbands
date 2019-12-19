@@ -25,3 +25,10 @@ function loadResults(sql){
 Handlebars.registerHelper("normalize", function(input) {
   return input.toLowerCase().replace(/ +/g, "+").replace(/\.+|,.+|'.+/g, "");
 });
+
+
+$(document).ready(function() {
+  if($(".band:contains('bd')")) {
+    $(".bdNote").show();
+  }
+});

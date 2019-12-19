@@ -60,6 +60,13 @@ if (isEmpty(params)) {
     sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and F = " + captainPrize + " and (lower(C) like lower('%" + searchTerm + "%'))) order by A desc";
     $('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(prize) + " prize band, " + getOrdinal(captainPrize) + " prize captain");
     loadResults(sqlString, mySpreadsheet);
+} else if (params['captain'] && params['captainPrize']) { // Search captain with captains prize attached
+		searchTerm = params['captain'].split('+').join([separator = ' ']).trim();
+		captainPrize = params['captainPrize'].split('+').join([separator = ' ']).trim();
+		sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (F = " + captainPrize + " and (lower(E) like lower('%" + searchTerm + "%'))) order by A desc";
+		$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(captainPrize) + " prize captain");
+		loadResults(sqlString, mySpreadsheet);
+		console.log(searchTerm);
 } else if (params['band'] && params['prize']) { // Search band with prize attached
     searchTerm = params['band'].split('+').join([separator = ' ']).trim();
     prize = params['prize'].split('+').join([separator = ' ']).trim();
