@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="A searchable database of Mummers String Band Themes.">
     <meta name="author" content="Brian Hamburg and TJ Ferry">
-    <title>String Band Database</title>
+    <title>String Band Database 2.0</title>
     <meta property="og:title" content="String Band Database" />
     <meta property="og:url" content="http://stringbanddatabase.com" />
     <meta property="og:type" content="website" />
@@ -27,172 +27,269 @@
     <meta name="twitter:description" content="A searchable database of Mummers String Band Themes. Search year, string band, theme...">
     <meta name="twitter:image" content="http://mummers.github.io/stringbands/FSB1920_meta.png">
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto|Noto+Serif' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.css">
-    <link href='styles-min.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.css">
 
-    <!--[if IE]>
-        <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  </head>
+  <body>
 
-</head>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./">String Band Database 2.0</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="leaderboard.html">First Prize Leaderboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="concepts.html">Theme Concepts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mumtape.html">Random Mum Tape</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Quick Lists
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="index.html?p=firstBands">First Prize Bands</a>
+                <a class="dropdown-item" href="index.html?p=firstCaptains">First Prize Captains</a>
+                <a class="dropdown-item" href="index.html?p=secondBands">Second Prize Bands</a>
+                <a class="dropdown-item" href="index.html?p=lastBands">Last Prize Bands</a>
+                <a class="dropdown-item" href="index.html?p=leadoffBands">Leadoff Bands</a>
+                <a class="dropdown-item" href="index.html?p=finaleBands">Finale Bands</a>
+                <a class="dropdown-item" href="captains.html">Captains Statistics</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="index.html?p=lastStand">Custard's Last Stand Winners</a>
+                <a class="dropdown-item" href="index.html?p=viewers">Viewer's Choice Award Winners</a>
+                <a class="dropdown-item" href="hof.html">Hall Of Fame Inductees</a>
+                <a class="dropdown-item" href="achievement-winners.html">Lifetime Achievement Award Winners</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-<body>
+    <!-- Page Content -->
     <div class="container">
-        <h1><a href="./"><small>The Philadelphia Mummers</small><br />String Band Database</a></h1>
-        <form id="searchForm" action="./" method="get">
+
+      <form class="searchForm" id="searchForm" action="./" method="get">
             <div class="form-group">
                 <div class="input-group">
-                  <input name="q" type="text" class="form-control input-lg" placeholder="Search year, string band, theme...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default btn-lg" type="submit"><i class="fa fa-search"></i></button>
-                  </span>
+                  <input name="q" type="text" class="form-control form-control-lg" placeholder="Search year, string band, theme, arranger, costumer, choreographer...">
+                  <div class="input-group-append">
+                    <button class="btn btn-secondary btn-lg" type="submit"><i class="fa fa-search"></i></button>
+                  </div>
                 </div>
             </div>
-            <div class="panel-group">
-              <div class="panel panel-primary">
-                <a data-toggle="collapse" href="#quick-lists" style="text-decoration: none; display: block;" class="panel-heading panel-title accordion-toggle collapsed">Quick Lists</a>
-                <div id="quick-lists" class="panel-collapse collapse">
-                  <ul class="list-group">
-                    <a class="list-group-item" href="leaderboard.html"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Bands Leaderboard</a>
-                    <a class="list-group-item" href="index.html?p=firstBands"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Bands</a>
-                    <a class="list-group-item" href="index.html?p=firstCaptains"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Captains</a>
-                    <a class="list-group-item" href="index.html?p=secondBands"><i class="fa fa-hand-peace-o fa-fw" aria-hidden="true"></i> Second Prize Bands</a>
-                    <a class="list-group-item" href="index.html?p=lastBands"><i class="fa fa-thumbs-o-down fa-fw" aria-hidden="true"></i> Last Prize Bands</a>
-                    <a class="list-group-item" href="index.html?p=leadoffBands"><i class="fa fa-flag fa-fw" aria-hidden="true"></i> Leadoff Bands</a>
-                    <a class="list-group-item" href="index.html?p=finaleBands"><i class="fa fa-flag-checkered fa-fw" aria-hidden="true"></i> Finale Bands</a>
-                    <a class="list-group-item" href="index.html?p=randomYear"><i class="fa fa-random fa-fw" aria-hidden="true"></i> Random Year</a>
-                    <a class="list-group-item" href="index.html?p=randomBand"><i class="fa fa-random fa-fw" aria-hidden="true"></i> Random Band</a>
-                    <a class="list-group-item" href="index.html?p=lastStand"><i class="fa fa-smile-o fa-fw" aria-hidden="true"></i> Custard's Last Stand Winners</a>
-                    <a class="list-group-item" href="index.html?p=viewers"><i class="fa fa-television fa-fw" aria-hidden="true"></i> Viewer's Choice Award Winners</a>
-                    <a class="list-group-item" href="hof.html"><i class="fa fa-star fa-fw" aria-hidden="true"></i> Hall of Fame Inductees</a>
-                    <a class="list-group-item" href="achievement-winners.html"><i class="fa fa-star fa-fw" aria-hidden="true"></i> Lifetime Achievement Award Winners</a>
-                    <a class="list-group-item" href="concepts.html"><i class="fa fa-lightbulb-o fa-fw" aria-hidden="true"></i> List Of Theme Concepts</a>
-                  </ul>
-                </div>
-              </div>
-            </div>
-        </form>
-        <p class="text-center">
-          <a class="btn btn-primary btn-lg hidden-xs" href="mumtape.html"><i class="fa fa-youtube-play fa-fw"></i> Random Mum Tape</a>
-          <a class="btn btn-primary btn-lg hidden-xs" href="2020.html"><i class="fa fa-flag fa-fw"></i> 2020 Line Of March And Concepts</a>
-  			</p>
-          <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="mumtape.html"><i class="fa fa-youtube-play fa-fw"></i> Random Mum Tape</a>
-          <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="2020.html"><i class="fa fa-flag fa-fw"></i> 2020 Line Of March And Concepts</a>
-        <div id="searchTerm"></div>
-        <div class="alert alert-info" role="alert">
-          We are currently working on a <strong>beta version</strong> of String Band Database 2.0. You can <strong><a href="https://mummers.github.io/stringbands/sbdb-2.0/index.html" class="alert-link">click here</a></strong> to try it out.
-        </div>
+      </form>
 
-        <div class="table-responsive">
-          <table id="bands" class="table tablesorter">
-            <thead>
-              <tr>
-                <th title="Sort results by year">Year <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th title="Sort results by band prize">Band<br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th title="Sort results by band name">Band <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th title="Sort results by theme title">Theme Title <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th title="Sort results by captain first name">Captain <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th title="Sort results by captain prize">Captain<br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th title="Sort results by marching order">Marching<br>Order <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th title="Sort results by band score">Band<br>Score <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th></th>
-                <th class="note">Note</th>
-                <th class="note">Music Playing</th>
-                <th class="note">General Effect - Music</th>
-                <th class="note">Visual Performance</th>
-                <th class="note">General Effect - Visual</th>
-                <th class="note">Costume</th>
-                <th class="note">Costumer</th>
-                <th class="note">Costume/Set Designer</th>
-                <th class="note">Music Arranger</th>
-                <th class="note">Choreographer</th>
-              </tr>
-            </thead>
-            <script id="bands-template" type="text/x-handlebars-template">
-              {{#if num}}
-                <tr>
-                  <td class="year"><a href="index.html?q={{cellsArray.[0]}}" title="Display all {{cellsArray.[0]}} results">{{cellsArray.[0]}}</a></td>
-                  <td class="prize"><span>{{cellsArray.[1]}}</span></td>
-                  <td class="band"><a href="index.html?q={{normalize cellsArray.[2]}}" title="Display all {{cellsArray.[2]}} results">{{cellsArray.[2]}}</a></td>
-                  <td>
-                    {{#if cellsArray.[8]}}
-                      <a href="video.html?q={{cellsArray.[8]}}&year={{cellsArray.[0]}}&band={{normalize cellsArray.[2]}}" title="Watch {{cellsArray.[2]}}'s {{cellsArray.[0]}} video"><i class="fa fa-youtube-play"></i> {{cellsArray.[3]}}</a>
-                    {{else}}
-                      {{cellsArray.[3]}}
-                    {{/if}}
-                  </td>
-                  <td><a href="index.html?q={{normalize cellsArray.[4]}}" title="Display all {{cellsArray.[4]}} results">{{cellsArray.[4]}}</a></td>
-                  <td><span>{{cellsArray.[5]}}</span></td>
-                  <td>{{cellsArray.[6]}}</td>
-                  <td class="total"><a title="Display {{cellsArray.[2]}}'s {{cellsArray.[0]}} scoring breakdown">{{cellsArray.[7]}}</a></td>
-                  <td class="sheet">
-                    {{#if cellsArray.[15]}}
-                      <a href="{{cellsArray.[15]}}" title="Download {{cellsArray.[0]}} scoring breakdown PDF" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
-                    {{/if}}
-                  </td>
-                  <td class="note">{{cellsArray.[9]}}</td>
-                  <td class="note mp">{{cellsArray.[10]}}</td>
-                  <td class="note ge_music">{{cellsArray.[11]}}</td>
-                  <td class="note vp">{{cellsArray.[12]}}</td>
-                  <td class="note ge_visual">{{cellsArray.[13]}}</td>
-                  <td class="note costume">{{cellsArray.[14]}}</td>
-                  <td class="note costumer">{{#if cellsArray.[16]}}{{cellsArray.[16]}}{{else}}Unknown{{/if}}</td>
-                  <td class="note designer">{{#if cellsArray.[17]}}{{cellsArray.[17]}}{{else}}Unknown{{/if}}</td>
-                  <td class="note arranger">{{#if cellsArray.[18]}}{{cellsArray.[18]}}{{else}}Unknown{{/if}}</td>
-                  <td class="note choreographer">{{#if cellsArray.[19]}}{{cellsArray.[19]}}{{else}}Unknown{{/if}}</td>
-                </tr>
-              {{/if}}
-            </script>
-          </table>
-          <div class="footnotes">
-            <div class="note nbNote">* Not the band of more recent years with the same name.</div>
-            <div class="note bdNote">BD: Before the String Band Division was established.</div>
-            <div class="note bsNote">BS: Participated in the non-official Broad Street parade. No official judging.</div>
-            <div class="note dqNote">DQ: Disqualified.</div>
-            <div class="note gpNote">GP: Greater Philadelphia area bands. Judged separately.</div>
-            <div class="note noNote">NO: No official judging. No prizes awarded to any band.</div>
-            <div class="note npNote">NP: Failed to place. No prize awarded.</div>
-            <div class="note spNote">SP: Failed to place. Awarded "Special Mention" by the city.</div>
+      <div class="row">
+        <div class="col-md-6 header">
+          <h2 class="my-4" id="searchTerm"></h2>
+        </div>
+        <div class="col-md-6">
+          <div class="alert alert-primary" role="alert">
+            You are currently using the <strong>beta version</strong> of String Band Database 2.0. You can <strong><a href="https://mummers.github.io/stringbands/sbdb-1.0/index.html" class="alert-link">click here</a></strong> to return to the old version at any time.
           </div>
         </div>
-        <p>A <a href="http://brian.hamburg">Brian Hamburg</a> and <a href="https://tjferry.com/">TJ Ferry</a> collaboration with much assistance from the following:</p>
-        <ul>
-            <li>Brian Maher, <a href="http://www.stringbandrecord.com/">The Philadelphia Mummers' String Band Record</a></li>
-            <li>John Gilbert</li>
-            <li>Joe "Bagel" Strine</li>
-            <li>Russ Coleman</li>
-            <li>Joe Fink, <a href="http://lvmummer.mysite.com/">History of the String Bands</a></li>
-        </ul>
-        <p>Please also visit these other fine purveyors of mummery:</p>
-        <ul>
-            <li><a href="http://pmsba.org">Philadelphia Mummers String Band Association</a></li>
-            <li><a href="http://fancybrigade.com">Philadelphia Mummers Fancy Brigade Association</a></li>
-            <li><a href="http://phillymummers.com">PhillyMummers.com</a></li>
-            <li><a href="http://www.mrmummer.com">Mr. Mummer</a></li>
-            <li><a href="http://mixlr.com/mum-radio/">Mum Radio</a></li>
-        </ul>
+      </div>
+
+      <div class="row">
+
+        <div id="main-table" class="col-md-8">
+          <div class="table-responsive">
+    <table id="bands" class="table tablesorter">
+      <thead>
+        <tr>
+          <th title="Sort results by year" class="year year-col">Year <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+          <th title="Sort results by band prize">Band<br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+          <th title="Sort results by band name">Band <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+          <th title="Sort results by theme title">Theme Title <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+          <th title="Sort results by captain first name">Captain <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+          <th title="Sort results by captain prize">Captain<br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+          <th title="Sort results by marching order">Marching<br>Order <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+          <th title="Sort results by band score">Band<br>Score <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+          <th></th>
+          <th class="note">Note</th>
+          <th class="note">Music Playing</th>
+          <th class="note">General Effect - Music</th>
+          <th class="note">Visual Performance</th>
+          <th class="note">General Effect - Visual</th>
+          <th class="note">Costume</th>
+          <th class="note">Costumer</th>
+          <th class="note">Costume/Set Designer</th>
+          <th class="note">Music Arranger</th>
+          <th class="note">Choreographer</th>
+        </tr>
+      </thead>
+      <script id="bands-template" type="text/x-handlebars-template">
+        {{#if num}}
+          <tr>
+            <td class="year year-col"><a href="index.html?q={{cellsArray.[0]}}" title="Display all {{cellsArray.[0]}} results">{{cellsArray.[0]}}</a></td>
+            <td class="prize"><span>{{cellsArray.[1]}}</span></td>
+            <td class="band"><a href="index.html?q={{normalize cellsArray.[2]}}" title="Display all {{cellsArray.[2]}} results">{{cellsArray.[2]}}</a></td>
+            <td>
+              {{#if cellsArray.[8]}}
+                <a href="video.html?q={{cellsArray.[8]}}&year={{cellsArray.[0]}}&band={{normalize cellsArray.[2]}}" title="Watch {{cellsArray.[2]}}'s {{cellsArray.[0]}} video"><i class="fa fa-youtube-play"></i> {{cellsArray.[3]}}</a>
+              {{else}}
+                {{cellsArray.[3]}}
+              {{/if}}
+            </td>
+            <td><a href="index.html?q={{normalize cellsArray.[4]}}" title="Display all {{cellsArray.[4]}} results">{{cellsArray.[4]}}</a></td>
+            <td><span>{{cellsArray.[5]}}</span></td>
+            <td>{{cellsArray.[6]}}</td>
+            <td class="total"><a title="Display {{cellsArray.[2]}}'s {{cellsArray.[0]}} scoring breakdown">{{cellsArray.[7]}}</a></td>
+            <td class="sheet">
+              {{#if cellsArray.[15]}}
+                <a href="{{cellsArray.[15]}}" title="Download {{cellsArray.[0]}} scoring breakdown PDF" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+              {{/if}}
+            </td>
+            <td class="note">{{cellsArray.[9]}}</td>
+            <td class="note mp">{{cellsArray.[10]}}</td>
+            <td class="note ge_music">{{cellsArray.[11]}}</td>
+            <td class="note vp">{{cellsArray.[12]}}</td>
+            <td class="note ge_visual">{{cellsArray.[13]}}</td>
+            <td class="note costume">{{cellsArray.[14]}}</td>
+            <td class="note costumer">{{#if cellsArray.[16]}}{{cellsArray.[16]}}{{else}}Unknown{{/if}}</td>
+            <td class="note designer">{{#if cellsArray.[17]}}{{cellsArray.[17]}}{{else}}Unknown{{/if}}</td>
+            <td class="note arranger">{{#if cellsArray.[18]}}{{cellsArray.[18]}}{{else}}Unknown{{/if}}</td>
+            <td class="note choreographer">{{#if cellsArray.[19]}}{{cellsArray.[19]}}{{else}}Unknown{{/if}}</td>
+          </tr>
+        {{/if}}
+      </script>
+    </table>
+    <div class="footnotes">
+      <div class="note nbNote">* Not the band of more recent years with the same name.</div>
+      <div class="note bdNote">BD: Before the String Band Division was established.</div>
+      <div class="note bsNote">BS: Participated in the non-official Broad Street parade. No official judging.</div>
+      <div class="note dqNote">DQ: Disqualified.</div>
+      <div class="note gpNote">GP: Greater Philadelphia area bands. Judged separately.</div>
+      <div class="note noNote">NO: No official judging. No prizes awarded to any band.</div>
+      <div class="note npNote">NP: Failed to place. No prize awarded.</div>
+      <div class="note spNote">SP: Failed to place. Awarded "Special Mention" by the city.</div>
     </div>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/chance/1.0.4/chance.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.4/js/jquery.tablesorter.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
-    <script src="//cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.js"></script>
-    <script src="app.js"></script>
-    <!-- Google Analytics -->
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-41776841-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-</body>
+  </div>
+
+        </div>
+
+        <div class="col-md-4 sidebar">
+          <h2 class="my-3">Other Info</h2>
+          <div class="card text-center" id="parade-card">
+            <div class="card-header">
+              Parade Date
+            </div>
+            <div class="card-body">
+              <ul id="parade-info">
+              <script id="info-template" type="text/x-handlebars-template">
+                {{#if num}}
+                <li>{{cellsArray.[1]}}</li>
+                <li><i>{{cellsArray.[2]}}</i></li>
+                {{/if}}
+              </script></ul>
+            </div>
+          </div> <!-- date end -->
+          <div class="card text-center" id="custards-card">
+            <div class="card-header">
+              Custard's Last Stand Winner <a onclick="custardsAlert()" title="What's this?"><i class="fa fa-question-circle helper-alert fa-lg pull-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="card-body">
+              <ul id="custards">
+              <script id="custards-template" type="text/x-handlebars-template">
+                {{#if num}}
+                <li>
+                {{#if cellsArray.[8]}}
+                  <a href="video.html?q={{cellsArray.[8]}}&year={{cellsArray.[0]}}&band={{normalize cellsArray.[2]}}" title="Watch {{cellsArray.[2]}}'s {{cellsArray.[0]}} video"><i class="fa fa-youtube-play"></i> {{cellsArray.[2]}} - {{cellsArray.[3]}}</a>
+                {{else}}
+                  {{cellsArray.[2]}} - {{cellsArray.[3]}}
+                {{/if}}
+                </li>
+                {{/if}}
+              </script></ul>
+            </div>
+          </div> <!-- custard's end -->
+          <div class="card text-center" id="lifetime-card">
+            <div class="card-header">
+              Lifetime Achievement Award Winner <a onclick="lifetimeAlert()" title="What's this?"><i class="fa fa-question-circle helper-alert fa-lg pull-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="card-body">
+              <ul id="lifetime">
+              <script id="life-template" type="text/x-handlebars-template">
+                {{#if num}}
+                <li>{{cellsArray.[1]}}</li>
+                {{/if}}
+              </script></ul>
+            </div>
+          </div> <!-- lifetime end -->
+          <div class="card text-center" id="viewers-card">
+            <div class="card-header">
+              Viewer's Choice Award Winner <a onclick="viewersAlert()" title="What's this?"><i class="fa fa-question-circle helper-alert fa-lg pull-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="card-body">
+              <ul id="viewers">
+              <script id="viewers-template" type="text/x-handlebars-template">
+                {{#if num}}
+                <li>
+                {{#if cellsArray.[8]}}
+                  <a href="video.html?q={{cellsArray.[8]}}&year={{cellsArray.[0]}}&band={{normalize cellsArray.[2]}}" title="Watch {{cellsArray.[2]}}'s {{cellsArray.[0]}} video"><i class="fa fa-youtube-play"></i> {{cellsArray.[2]}} - {{cellsArray.[3]}}</a>
+                {{else}}
+                  {{cellsArray.[2]}} - {{cellsArray.[3]}}
+                {{/if}}
+                </li>
+                {{/if}}
+              </script></ul>
+            </div>
+          </div> <!-- viewer's end -->
+          <div class="card text-center" id="hof-card">
+            <div class="card-header">
+              Hall Of Fame Inductees
+            </div>
+            <div class="card-body">
+              <ul id="hof-Inductees">
+              <script id="hof-template" type="text/x-handlebars-template">
+                {{#if num}}
+                <strong>Hall Of Fame Inductee(s)</strong>
+                <li>{{#if cellsArray.[1]}}{{cellsArray.[1]}}{{else}}No inductees this year.{{/if}}</li><br>
+                <strong>Old Timers Hall Of Fame Inductee(s)</strong>
+                <li>{{#if cellsArray.[2]}}{{cellsArray.[2]}}{{else}}No inductees this year.{{/if}}</li>
+                {{/if}}
+              </script></ul>
+            </div>
+          </div> <!-- hof end -->
+        </div> <!-- /.sidebar -->
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">A <a href="https://bhamburg.com">Brian Hamburg</a> and <a href="https://tjferry.com/">TJ Ferry</a> collaboration. A special thanks to the following:</p>
+        <p class="m-0 text-center text-white">Brian Maher, John Gilbert, Joe "Bagel" Strine, Russ Coleman and Joe Fink.</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.4/chance.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.4/js/jquery.tablesorter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.js"></script>
+
+    <script src="js/app.js"></script>
+
+  </body>
+
 </html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A searchable database of Mummers String Band Themes.">
+    <meta name="author" content="Brian Hamburg and TJ Ferry">
+    <title>String Band Database</title>
+    <meta property="og:title" content="String Band Database" />
+    <meta property="og:url" content="http://stringbanddatabase.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A searchable database of Mummers String Band Themes. Search year, string band, theme..." />
+    <meta property="og:image" content="http://mummers.github.io/stringbands/FSB1920_meta.png" />
+    <meta property="og:image:width" content="2770" />
+    <meta property="og:image:height" content="1000" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="favicons/manifest.json">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#337ab7">
+    <meta name="msapplication-config" content="favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mummerburger">
+    <meta name="twitter:title" content="String Band Database">
+    <meta name="twitter:description" content="A searchable database of Mummers String Band Themes. Search year, string band, theme...">
+    <meta name="twitter:image" content="http://mummers.github.io/stringbands/FSB1920_meta.png">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto|Noto+Serif' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='styles-min.css' rel='stylesheet' type='text/css'>
+
+    <!--[if IE]>
+        <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div class="container">
+        <h1><a href="./"><small>The Philadelphia Mummers</small><br />String Band Database</a></h1>
+        <form id="searchForm" action="./" method="get">
+            <div class="form-group">
+                <div class="input-group">
+                  <input name="q" type="text" class="form-control input-lg" placeholder="Search year, string band, theme...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default btn-lg" type="submit"><i class="fa fa-search"></i></button>
+                  </span>
+                </div>
+            </div>
+            <div class="panel-group">
+              <div class="panel panel-primary">
+                <a data-toggle="collapse" href="#quick-lists" style="text-decoration: none; display: block;" class="panel-heading panel-title accordion-toggle collapsed">Quick Lists</a>
+                <div id="quick-lists" class="panel-collapse collapse">
+                  <ul class="list-group">
+                    <a class="list-group-item" href="leaderboard.html"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Bands Leaderboard</a>
+                    <a class="list-group-item" href="index.html?p=firstBands"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Bands</a>
+                    <a class="list-group-item" href="index.html?p=firstCaptains"><i class="fa fa-trophy fa-fw" aria-hidden="true"></i> First Prize Captains</a>
+                    <a class="list-group-item" href="index.html?p=secondBands"><i class="fa fa-hand-peace-o fa-fw" aria-hidden="true"></i> Second Prize Bands</a>
+                    <a class="list-group-item" href="index.html?p=lastBands"><i class="fa fa-thumbs-o-down fa-fw" aria-hidden="true"></i> Last Prize Bands</a>
+                    <a class="list-group-item" href="index.html?p=leadoffBands"><i class="fa fa-flag fa-fw" aria-hidden="true"></i> Leadoff Bands</a>
+                    <a class="list-group-item" href="index.html?p=finaleBands"><i class="fa fa-flag-checkered fa-fw" aria-hidden="true"></i> Finale Bands</a>
+                    <a class="list-group-item" href="index.html?p=randomYear"><i class="fa fa-random fa-fw" aria-hidden="true"></i> Random Year</a>
+                    <a class="list-group-item" href="index.html?p=randomBand"><i class="fa fa-random fa-fw" aria-hidden="true"></i> Random Band</a>
+                    <a class="list-group-item" href="index.html?p=lastStand"><i class="fa fa-smile-o fa-fw" aria-hidden="true"></i> Custard's Last Stand Winners</a>
+                    <a class="list-group-item" href="index.html?p=viewers"><i class="fa fa-television fa-fw" aria-hidden="true"></i> Viewer's Choice Award Winners</a>
+                    <a class="list-group-item" href="hof.html"><i class="fa fa-star fa-fw" aria-hidden="true"></i> Hall of Fame Inductees</a>
+                    <a class="list-group-item" href="achievement-winners.html"><i class="fa fa-star fa-fw" aria-hidden="true"></i> Lifetime Achievement Award Winners</a>
+                    <a class="list-group-item" href="concepts.html"><i class="fa fa-lightbulb-o fa-fw" aria-hidden="true"></i> List Of Theme Concepts</a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </form>
+        <p class="text-center">
+          <a class="btn btn-primary btn-lg hidden-xs" href="mumtape.html"><i class="fa fa-youtube-play fa-fw"></i> Random Mum Tape</a>
+          <a class="btn btn-primary btn-lg hidden-xs" href="https://mummers.github.io/stringbands/"><i class="fa fa-arrow-right fa-fw"></i> Switch to Database 2.0</a>
+  			</p>
+          <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="mumtape.html"><i class="fa fa-youtube-play fa-fw"></i> Random Mum Tape</a>
+          <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="https://mummers.github.io/stringbands/"><i class="fa fa-arrow-right fa-fw"></i> Switch to Database 2.0</a>
+        <div id="searchTerm"><h2>List Of Theme Concepts</h2></div>
+        <div class="table-responsive">
+          <table id="bands" class="table tablesorter">
+            <thead>
+              <tr>
+                <th>Concept <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+                <th>Times<br>Done <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+                <th>Last<br>Done <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+                <th>Highest<br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+              </tr>
+            </thead>
+            <script id="bands-template" type="text/x-handlebars-template">
+                          {{#if num}}
+                          {{#if cellsArray.[0]}}
+                <tr>
+                  <td><a href="index.html?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
+                  <td><a href="index.html?q={{normalize cellsArray.[0]}}">{{cellsArray.[1]}}</a></td>
+                  <td><a href="index.html?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
+                  <td><a href="index.html?concept={{normalize cellsArray.[0]}}&prize={{cellsArray.[3]}}">{{cellsArray.[3]}}</a></td>
+                </tr>
+                              {{/if}}
+                              {{/if}}
+            </script>
+          </table>
+        </div>
+        <p>A <a href="http://brian.hamburg">Brian Hamburg</a> and <a href="https://tjferry.com/">TJ Ferry</a> collaboration with much assistance from the following:</p>
+        <ul>
+            <li>Brian Maher, <a href="http://www.stringbandrecord.com/">The Philadelphia Mummers' String Band Record</a></li>
+            <li>John Gilbert</li>
+            <li>Joe "Bagel" Strine</li>
+            <li>Russ Coleman</li>
+            <li>Joe Fink, <a href="http://lvmummer.mysite.com/">History of the String Bands</a></li>
+        </ul>
+        <p>Please also visit these other fine purveyors of mummery:</p>
+        <ul>
+            <li><a href="http://pmsba.org">Philadelphia Mummers String Band Association</a></li>
+            <li><a href="http://fancybrigade.com">Philadelphia Mummers Fancy Brigade Association</a></li>
+            <li><a href="http://phillymummers.com">PhillyMummers.com</a></li>
+            <li><a href="http://www.mrmummer.com">Mr. Mummer</a></li>
+            <li><a href="http://mixlr.com/mum-radio/">Mum Radio</a></li>
+        </ul>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/chance/1.0.4/chance.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.4/js/jquery.tablesorter.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+    <script src="concepts.js"></script>
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-41776841-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
