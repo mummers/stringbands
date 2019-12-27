@@ -204,7 +204,6 @@ function loadYearData(){
     query: "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " and (lower(C) like lower('%" + band + "%')) order by A desc",
     rowTemplate: bandInfoTemplate,
     callback: function(error, options, response) {
-      console.log(band);
       if (error) {
         console.log(error);
         $('#band-info').append('<h3>Error.</h3>');
@@ -252,6 +251,7 @@ $(document).ready(function() {
 });
 
 setTimeout(function() {
+	$('#bands').tablesorter();
 	const table = document.getElementById("bands");
 	const icon = "</i>";
 	if (table != null) {
