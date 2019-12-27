@@ -16,7 +16,7 @@ function loadResults(sql){
           $('#bands').append("<h3>No results.</h3>")
         }
       } else {
-        $('#bands').append('<h3>Error.</h3>');
+        $('#bands').append('<h3 class="error">Error.</h3>');
       }
     }
   });

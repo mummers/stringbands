@@ -16,7 +16,7 @@ function loadResults(sql, sheetURL){
           $('#winners').append("<h3>No results.</h3>")
         }
       } else {
-        $('#winners').append('<h3>Error.</h3>');
+        $('#winners').append('<h3 class="error">Error.</h3>');
       }
     }
   });

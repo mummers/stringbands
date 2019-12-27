@@ -35,7 +35,7 @@ function loadResults(sql, sheetURL){
           $('#hof').append("<h3>No results.</h3>")
         }
       } else {
-        $('#hof').append('<h3>Error.</h3>');
+        $('#hof').append('<h3 class="error">Error.</h3>');
       }
     }
   });

@@ -109,6 +109,10 @@ td.total a {
 .themes {
 	visibility: hidden;
 }
-.reload-btn{
+.reload-btn {
 	margin-right: 10px;
+}
+.error {
+	padding-top: 10px;
+	color: #ff0000;
 }

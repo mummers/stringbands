@@ -137,7 +137,7 @@ function loadResults(sql, sheetURL) {
 					document.getElementsByClassName('sidebar')[0].style.display = 'none';
 				}
 			} else {
-				$('#bands').append('<h3>Error.</h3>');
+				$('#bands').append('<h3 class="error">Error.</h3>');
 			}
 		}
 	});
@@ -170,7 +170,7 @@ function loadYearData() {
 		callback: function(error, options, response) {
 			if (error) {
 				console.log(error);
-				$('#lifetime').append('<h3>Error.</h3>');
+				$('#lifetime').append('<h3 class="error">Error.</h3>');
 			}
 		}
 	});
@@ -182,7 +182,7 @@ function loadYearData() {
 		callback: function(error, options, response) {
 			if (error) {
 				console.log(error);
-				$('#viewers').append('<h3>Error.</h3>');
+				$('#viewers').append('<h3 class="error">Error.</h3>');
 			}
 		}
 	});
@@ -194,7 +194,7 @@ function loadYearData() {
 		callback: function(error, options, response) {
 			if (error) {
 				console.log(error);
-				$('#custards').append('<h3>Error.</h3>');
+				$('#custards').append('<h3 class="error">Error.</h3>');
 			}
 		}
 	});
@@ -206,7 +206,7 @@ function loadYearData() {
 		callback: function(error, options, response) {
 			if (error) {
 				console.log(error);
-				$('#hof-Inductees').append('<h3>Error.</h3>');
+				$('#hof-Inductees').append('<h3 class="error">Error.</h3>');
 			}
 		}
 	});
