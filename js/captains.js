@@ -23,7 +23,7 @@ function loadResults(sql){
 }
 
 Handlebars.registerHelper("normalize", function(input) {
-  return input.toLowerCase().replace(/ +/g, "+").replace(/\.+|,.+|'.+/g, "");
+  return input.toLowerCase().replace(/ +/g, "+").replace(/,.+|'.+/g, "");
 });
 
 Handlebars.registerHelper('iff', function(a, operator, b, opts) {
