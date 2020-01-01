@@ -39,7 +39,7 @@ var one_day=1000*60*60*24;
 var countdownMessage = "";
 if (today.getMonth() == 0 && today.getDate() == 1)
 {
-  countdownMessage = "<h4>Happy New Year! " + today.getFullYear() + "Results will be posted after 8 PM EST.</h4>";
+  countdownMessage = "<h4>Happy New Year! " + today.getFullYear() + " Results will be posted after 8 PM EST.</h4>";
 } else {
   countdownMessage = "<h4>Only " + Math.ceil((nyd.getTime() - today.getTime()) / one_day) + " days left until New Year's Day!</h4>";
 }
