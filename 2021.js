@@ -23,22 +23,22 @@ Handlebars.registerHelper("normalize", function(input) {
 
 function fakeThemes(){
   var playerList = [
-{name: "band1", highScore: 1, ability: 8},
-{name: "band2", highScore: 1, ability: 7},
-{name: "band3", highScore: 1, ability: 6},
-{name: "band4", highScore: 1, ability: 5},
-{name: "band5", highScore: 1, ability: 4},
-{name: "band6", highScore: 1, ability: 3},
-{name: "band7", highScore: 1, ability: 2},
-{name: "band8", highScore: 1, ability: 1},
-{name: "band9", highScore: 1, ability: 1},
-{name: "band10", highScore: 1, ability: 1},
-{name: "band11", highScore: 1, ability: 1},
-{name: "band12", highScore: 1, ability: 1},
-{name: "band13", highScore: 1, ability: 1},
-{name: "band14", highScore: 1, ability: 1},
-{name: "band15", highScore: 1, ability: 1},
-{name: "band16", highScore: 1, ability: 1},
+{name: "band1"},
+{name: "band2"},
+{name: "band3"},
+{name: "band4"},
+{name: "band5"},
+{name: "band6"},
+{name: "band7"},
+{name: "band8"},
+{name: "band9"},
+{name: "band10"},
+{name: "band11"},
+{name: "band12"},
+{name: "band13"},
+{name: "band14"},
+{name: "band15"},
+{name: "band16"},
 
 ];
 
@@ -47,9 +47,6 @@ function fakeThemes(){
       randomtheme = chance.pickone(themeList);
             var player = document.getElementById("band" + (i + 1));
             var playerscore = document.getElementById('band' + (i + 1) + "score")
-
-            //add players score to the table//
-
             playerscore.innerText = randomtheme;
 
     }
