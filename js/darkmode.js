@@ -9,15 +9,15 @@ else {
 function applyDarkMode(){
 	color = document.body.style.backgroundColor;
 	color = color.replace(/[^\d,]/g, '').split(',');
-	if (color == "255,255,255"){
-		console.log("coming from light");
-		setDark();
-		sessionStorage.setItem("darkMode", "dark");
-	}
-	else{
+	if (color == "0,0,0"){
 		console.log("coming from dark");
 		setLight();
 		sessionStorage.setItem("darkMode", "light");
+	}
+	else{
+		console.log("coming from light");
+		setDark();
+		sessionStorage.setItem("darkMode", "dark");
 	}
 }
 
