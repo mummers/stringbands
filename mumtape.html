@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.css">
 
   </head>
-  <body>
+  <body style="background-color: #ffffff;">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -99,7 +99,8 @@
         </div>
         <div class="col-md-4">
           <button id="showFilters" type="button" class="btn pull-right btn-dark">Show Filters</button>
-          <a href="mumtape.html" role="button" class="btn btn-dark pull-right reload-btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+          <a href="mumtape.html" role="button" class="btn btn-dark pull-right reload-btn" title="Random Mum Tape"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+          <button id="darkMode" type="button" onclick="applyDarkMode()" class="btn pull-right mr-2 btn-dark" title="Dark Mode"><i class="fa fa-moon-o" aria-hidden="true"></i></button>
         </div>
       </div>
 
@@ -240,7 +241,7 @@
 
         <div class="col-md-4 sidebar">
           <h2 class="my-3">Band Info</h2>
-          <div class="card text-center">
+          <div class="card text-center" id="band-info-card">
             <div id="band-card-header" class="card-header">
               {Band} Info
             </div>
@@ -361,7 +362,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
     <script src="https://cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.js"></script>
-
+    <script src="js/darkmode.js"></script>
     <script src="js/mumtape.js"></script>
 
   </body>

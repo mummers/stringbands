@@ -22,6 +22,13 @@ showBtn.onclick = function() {
 							 })
 };
 
+if (sessionStorage.getItem("darkMode") == "dark"){
+	setDark();
+}
+else {
+	setLight();
+}
+
 function getOrdinal(n) {
     var s=["th","st","nd","rd"],
     v=n%100;
@@ -88,7 +95,6 @@ function myCallback(error, options, response) {
     $('#bands').append('<h3>' + error + '</h3>');
   }
 };
-
 
 window.onload = function() {
 	var myTableArray = [];
