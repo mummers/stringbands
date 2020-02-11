@@ -22,13 +22,6 @@ showBtn.onclick = function() {
 							 })
 };
 
-if (sessionStorage.getItem("darkMode") == "dark"){
-	setDark();
-}
-else {
-	setLight();
-}
-
 function getOrdinal(n) {
     var s=["th","st","nd","rd"],
     v=n%100;

@@ -1,4 +1,10 @@
 var darkBtn = document.getElementById('darkMode');
+if (sessionStorage.getItem("darkMode") == "dark"){
+	setDark();
+}
+else {
+	setLight();
+}
 
 function applyDarkMode(){
 	color = document.body.style.backgroundColor;
