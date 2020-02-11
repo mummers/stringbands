@@ -178,12 +178,12 @@ setTimeout(function() {
   document.getElementById('results-tag').innerHTML = year + " Results";
   document.getElementById('band-card-header').innerHTML = band + " " + year + " Info";
   loadResults(sqlString, '#bands');
-  loadYearData()
-  console.log("video load function ran")
+  loadYearData();
+  console.log("video load function ran");
 }, 100);
 
 
-setTimeout(function() {
+$(window).load(function () {
 	const table = document.getElementById("bands");
 	const icon = "</i>";
 	if (table != null) {
@@ -268,7 +268,7 @@ setTimeout(function() {
       links[i].className = "table-info";
     }
   }
-}, 700);
+});
 
 function custardsAlert(){
   alert("The punniest theme title given by Jake Hart.")
