@@ -104,7 +104,7 @@ window.onload = function() {
 	if (myTableArray.length > 0) {
 		randomVid = chance.pickone(myTableArray);
 		ID = randomVid[3];
-		message = '<iframe class="embed-responsive-item" src="' + ID + '"></iframe>';
+		message = '<iframe class="embed-responsive-item" src="' + ID + ' allowfullscreen"></iframe>';
 		year = randomVid[0];
 		band = randomVid[2];
 		document.getElementById('themes').innerHTML = message;
