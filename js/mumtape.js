@@ -29,11 +29,11 @@ function getOrdinal(n) {
  }
 
 button.onclick = function() {
-	var year = document.getElementById('yearText').value;
+	var yearTag = document.getElementById('yearText').value;
 	var bandFilter = document.getElementById('bandsFilter').value;
 
 	function saveItems() {
-		sessionStorage.setItem("yearTag", year);
+		sessionStorage.setItem("yearTag", yearTag);
 		sessionStorage.setItem("bandTag", bandFilter);
 	}
 	if (year == "") {
@@ -60,13 +60,13 @@ if (sessionStorage.getItem("bandTag")) {
 	bandFilter = sessionStorage.getItem("bandTag");
 }
 
-year = sessionStorage.getItem("yearTag");
+yearTag = sessionStorage.getItem("yearTag");
 
 if (typeof bandFilter==="undefined"){
-    sqlString = "select A,B,C,V where V contains 'https' and A >" + year + "order by A desc";
+    sqlString = "select A,B,C,V where V contains 'https' and A >" + yearTag + "order by A desc";
 }
 else{
-    sqlString = "select A,B,C,V where V contains 'https' and A >" + year + "and (lower(C) like lower('%" + bandFilter + "%')) order by A desc";
+    sqlString = "select A,B,C,V where V contains 'https' and A >" + yearTag + "and (lower(C) like lower('%" + bandFilter + "%')) order by A desc";
 }
 loadRandomVideo(sqlString, '#themes');
 
@@ -87,35 +87,34 @@ function loadRandomVideo(sql){
         year = randomVid.cellsArray[0];
         band = randomVid.cellsArray[2];
   		  videoID = randomVid.cellsArray[3];
-    		message = '<iframe class="embed-responsive-item" src="' + videoID + '" allowfullscreen></iframe>';
-    		document.getElementById("themes").innerHTML = message;
-    		document.getElementById("themes").style.visibility = "visible";
-    		document.getElementById("searchTerm").innerHTML = "Random Mum Tape: " + year + " " + band + " String Band";
-    		sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
-    		document.getElementById("results-tag").innerHTML = year + " Results";
-    		document.getElementById("band-card-header").innerHTML = band + " " + year + " Info";
-    		sheetrock.defaults.rowTemplate = bandsTemplate;
-    		sheetrock.defaults.callback = myCallback;
-    		loadResults(sqlString, '#bands');
-    		loadYearData();
+				if (yearTag >= 2020){
+					year = parseInt(yearTag) + 1;
+					document.getElementById('searchTerm').innerHTML = "<h2>Whoops! " + year +  " didn't happen yet! Try a different year.</h2>";
+					document.getElementsByClassName('sidebar')[0].style.display = 'none';
+					document.getElementById("themes").style.display = 'none';
+					document.getElementById("bands").style.display = 'none';
+					document.getElementsByClassName('embed-responsive')[0].style.display = 'none';
+					$("#video-filters").toggle();
+				}
+				else{
+					message = '<iframe class="embed-responsive-item" src="' + videoID + '" allowfullscreen></iframe>';
+					document.getElementById("themes").innerHTML = message;
+					document.getElementById("themes").style.visibility = "visible";
+					document.getElementById("searchTerm").innerHTML = "Random Mum Tape: " + year + " " + band + " String Band";
+					sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
+					document.getElementById("results-tag").innerHTML = year + " Results";
+					document.getElementById("band-card-header").innerHTML = band + " " + year + " Info";
+					sheetrock.defaults.rowTemplate = bandsTemplate;
+					sheetrock.defaults.callback = myCallback;
+					loadResults(sqlString, '#bands');
+					loadYearData();
+				}
 		  }
       if (error){
-        alert(error);
         document.getElementById("themes").style.visibility = "visible";
-        if (year >= 2019){
-          year = parseInt(year) + 1
-          document.getElementById('searchTerm').innerHTML = "<h2>Whoops! " + year +  " didn't happen yet! Try a different year.</h2>";
-          document.getElementsByClassName('sidebar')[0].style.display = 'none';
-          document.getElementById("themes").style.display = 'none';
-          document.getElementById("bands").style.display = 'none';
-          document.getElementsByClassName('embed-responsive')[0].style.display = 'none';
-          $("#video-filters").toggle();
-        }
-        else {
-          document.getElementById('searchTerm').innerHTML = "<h2>Whoops! Looks like there was an error. Trying again.</h2>";
-          document.getElementById('themes').innerHTML = "<meta http-equiv='refresh' content='2' />";
-          document.getElementById("bands").style.display = 'none';
-        }
+        document.getElementById('searchTerm').innerHTML = "<h2>Whoops! Looks like there was an error. Trying again.</h2>";
+        document.getElementById('themes').innerHTML = "<meta http-equiv='refresh' content='2' />";
+        document.getElementById("bands").style.display = 'none';
       }
 		}
   });
