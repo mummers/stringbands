@@ -82,11 +82,7 @@ function loadRandomVideo(sql){
     url: mySpreadsheet,
     query: sql,
     callback: function(error, options, response) {
-			if (!error) {
-        randomVid = chance.pickone(response.rows);
-        year = randomVid.cellsArray[0];
-        band = randomVid.cellsArray[2];
-  		  videoID = randomVid.cellsArray[3];
+			if (!error){
 				if (yearTag >= 2020){
 					year = parseInt(yearTag) + 1;
 					document.getElementById('searchTerm').innerHTML = "<h2>Whoops! " + year +  " didn't happen yet! Try a different year.</h2>";
@@ -97,6 +93,10 @@ function loadRandomVideo(sql){
 					$("#video-filters").toggle();
 				}
 				else{
+					randomVid = chance.pickone(response.rows);
+					year = randomVid.cellsArray[0];
+					band = randomVid.cellsArray[2];
+					videoID = randomVid.cellsArray[3];
 					message = '<iframe class="embed-responsive-item" src="' + videoID + '" allowfullscreen></iframe>';
 					document.getElementById("themes").innerHTML = message;
 					document.getElementById("themes").style.visibility = "visible";
