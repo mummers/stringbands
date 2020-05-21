@@ -68,12 +68,56 @@ if (typeof bandFilter==="undefined"){
 else{
     sqlString = "select A,B,C,V where V contains 'https' and A >" + year + "and (lower(C) like lower('%" + bandFilter + "%')) order by A desc";
 }
-loadResults(sqlString, '#themes');
+loadRandomVideo(sqlString, '#themes');
 
 function loadResults(sql, table) {
   $(table).sheetrock({
     url: mySpreadsheet,
     query: sql
+  });
+}
+
+function loadRandomVideo(sql){
+  $('#themes').sheetrock({
+    url: mySpreadsheet,
+    query: sql,
+    callback: function(error, options, response) {
+			if (!error) {
+        randomVid = chance.pickone(response.rows);
+        year = randomVid.cellsArray[0];
+        band = randomVid.cellsArray[2];
+  		  videoID = randomVid.cellsArray[3];
+    		message = '<iframe class="embed-responsive-item" src="' + videoID + '" allowfullscreen></iframe>';
+    		document.getElementById("themes").innerHTML = message;
+    		document.getElementById("themes").style.visibility = "visible";
+    		document.getElementById("searchTerm").innerHTML = "Random Mum Tape: " + year + " " + band + " String Band";
+    		sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
+    		document.getElementById("results-tag").innerHTML = year + " Results";
+    		document.getElementById("band-card-header").innerHTML = band + " " + year + " Info";
+    		sheetrock.defaults.rowTemplate = bandsTemplate;
+    		sheetrock.defaults.callback = myCallback;
+    		loadResults(sqlString, '#bands');
+    		loadYearData();
+		  }
+      if (error){
+        alert(error);
+        document.getElementById("themes").style.visibility = "visible";
+        if (year >= 2019){
+          year = parseInt(year) + 1
+          document.getElementById('searchTerm').innerHTML = "<h2>Whoops! " + year +  " didn't happen yet! Try a different year.</h2>";
+          document.getElementsByClassName('sidebar')[0].style.display = 'none';
+          document.getElementById("themes").style.display = 'none';
+          document.getElementById("bands").style.display = 'none';
+          document.getElementsByClassName('embed-responsive')[0].style.display = 'none';
+          $("#video-filters").toggle();
+        }
+        else {
+          document.getElementById('searchTerm').innerHTML = "<h2>Whoops! Looks like there was an error. Trying again.</h2>";
+          document.getElementById('themes').innerHTML = "<meta http-equiv='refresh' content='2' />";
+          document.getElementById("bands").style.display = 'none';
+        }
+      }
+		}
   });
 }
 
@@ -89,53 +133,6 @@ function myCallback(error, options, response) {
   }
 };
 
-window.onload = function() {
-	var myTableArray = [];
-	$("table#themes tr").each(function() {
-		var arrayOfThisRow = [];
-		var tableData = $(this).find('td');
-		if (tableData.length > 0) {
-			tableData.each(function() {
-				arrayOfThisRow.push($(this).text());
-			});
-			myTableArray.push(arrayOfThisRow);
-		}
-	});
-	if (myTableArray.length > 0) {
-		randomVid = chance.pickone(myTableArray);
-		ID = randomVid[3];
-		message = '<iframe class="embed-responsive-item" src="' + ID + '" allowfullscreen></iframe>';
-		year = randomVid[0];
-		band = randomVid[2];
-		document.getElementById('themes').innerHTML = message;
-		document.getElementById("themes").style.visibility = "visible";
-		document.getElementById('searchTerm').innerHTML = "Random Mum Tape: " + year + " " + band + " String Band";
-		sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
-		document.getElementById('results-tag').innerHTML = year + " Results";
-		document.getElementById('band-card-header').innerHTML = band + " " + year + " Info";
-		sheetrock.defaults.rowTemplate = bandsTemplate;
-		sheetrock.defaults.callback = myCallback;
-		loadResults(sqlString, '#bands');
-		loadYearData()
-	}
-	else {
-		document.getElementById("themes").style.visibility = "visible";
-		if (year >= 2019){
-			year = parseInt(year) + 1
-			document.getElementById('searchTerm').innerHTML = "<h2>Whoops! " + year +  " didn't happen yet! Try a different year.</h2>";
-			document.getElementsByClassName('sidebar')[0].style.display = 'none';
-			document.getElementById("themes").style.display = 'none';
-			document.getElementById("bands").style.display = 'none';
-			document.getElementsByClassName('embed-responsive')[0].style.display = 'none';
-			$("#video-filters").toggle();
-		}
-		else {
-			document.getElementById('searchTerm').innerHTML = "<h2>Whoops! Looks like there was an error. Trying again.</h2>";
-			document.getElementById('themes').innerHTML = "<meta http-equiv='refresh' content='2' />";
-			document.getElementById("bands").style.display = 'none';
-		}
-	}
-};
 
 function loadYearData(){
   // define function to load lifetime achievement winner
