@@ -171,7 +171,7 @@ setTimeout(function() {
   video = params['q'].split('+').join([separator = ' ']).trim();
   year = params['year'].split('+').join([separator = ' ']).trim();
   band = titleCase(params['band'].split('+').join([separator = ' ']).trim());
-  message = '<iframe class="embed-responsive-item" src="' + video + '"></iframe>';
+  message = '<iframe class="embed-responsive-item" src="' + video + '" allowfullscreen></iframe>';
   document.getElementById('video').innerHTML = message;
   document.getElementById('searchTerm').innerHTML = "<h2>" + year + " " + band + " String Band</h2>";
   sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
