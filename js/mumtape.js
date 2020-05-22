@@ -36,7 +36,7 @@ button.onclick = function() {
 		sessionStorage.setItem("yearTag", yearTag);
 		sessionStorage.setItem("bandTag", bandFilter);
 	}
-	if (year == "") {
+	if (yearTag == "") {
 		sessionStorage.clear();
 		sqlString = "select A,B,C,V where V contains 'https' and order by A desc";
 		saveItems();
