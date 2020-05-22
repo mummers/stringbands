@@ -47,7 +47,7 @@ button.onclick = function() {
 		sqlString = "select A,B,C,V where V contains 'https' and A >" + year + "order by A desc";
 		saveItems();
 	}
-	loadResults(sqlString, '#themes');
+	loadRandomVideo(sqlString);
 }
 
 if (sessionStorage.getItem("yearTag")) {
@@ -68,7 +68,7 @@ if (typeof bandFilter==="undefined"){
 else{
     sqlString = "select A,B,C,V where V contains 'https' and A >" + yearTag + "and (lower(C) like lower('%" + bandFilter + "%')) order by A desc";
 }
-loadRandomVideo(sqlString, '#themes');
+loadRandomVideo(sqlString);
 
 function loadResults(sql, table) {
   $(table).sheetrock({
