@@ -95,6 +95,9 @@ td.np:after {
 td.sp:after {
 	content: "SP";
 }
+td.COVID:after {
+	content: "COVID";
+}
 td.total a {
 	cursor: pointer;
 }

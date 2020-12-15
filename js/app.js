@@ -253,8 +253,8 @@ function loadNotes(){
 	if ($(".sp").length != 0) {
 		$(".spNote").show();
 	}
-	$("td.note:contains('no-covid')").siblings(".prize").addClass("no");
-	if ($(".no").length != 0) {
+	$("td.note:contains('no-covid')").siblings(".prize").addClass("COVID");
+	if ($(".COVID").length != 0) {
 		$(".covidNote").show();
 	}
 	if ($(".band:contains('*')").length != 0) {
