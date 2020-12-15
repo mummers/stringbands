@@ -1,6 +1,7 @@
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=882897653';
 var bandsTemplate = Handlebars.compile($('#bands-template').html());
-
+var today = new Date();
+var upcomingYear = today.getFullYear() + 1;
 function loadResults() {
   $('#bands').sheetrock({
     url: mySpreadsheet,
@@ -9,6 +10,7 @@ function loadResults() {
     callback: function(error, options, response) {
       if (!error) {
         $('#bands').tablesorter();
+        document.getElementById('searchTerm').innerHTML = "<h2>" + upcomingYear + " Line Of March And Theme Concepts</h2>";
       }
     }
   });

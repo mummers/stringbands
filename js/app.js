@@ -133,7 +133,7 @@ function loadResults(sql, sheetURL) {
 				$('#bands').tablesorter();
 				loadNotes();
 				if ($('#bands tr').length == 1) {
-					$('#bands').append("<h3>No results.</h3>")
+					$('#bands').append('<h3 class="empty">No results.</h3>')
 					document.getElementsByClassName('sidebar')[0].style.display = 'none';
 				}
 			} else {
@@ -141,12 +141,19 @@ function loadResults(sql, sheetURL) {
 			}
 		}
 	});
-	if (isNaN(searchTerm)) {
+	if (searchTerm == '2021'){
+		alert("No parade in 2021 due to COVID-19.");
 		document.getElementsByClassName('sidebar')[0].style.display = 'none';
 		document.getElementById("main-table").className = "col-md-12";
-	} else {
-		loadYearData();
-		document.getElementById("main-table").className = "col-md-8";
+	}
+	else {
+		if (isNaN(searchTerm)) {
+			document.getElementsByClassName('sidebar')[0].style.display = 'none';
+			document.getElementById("main-table").className = "col-md-12";
+		} else {
+			loadYearData();
+			document.getElementById("main-table").className = "col-md-8";
+		}
 	}
 }
 
@@ -245,6 +252,10 @@ function loadNotes(){
 	$("td.note:contains('sp-j')").siblings(".prize").addClass("sp");
 	if ($(".sp").length != 0) {
 		$(".spNote").show();
+	}
+	$("td.note:contains('no-covid')").siblings(".prize").addClass("no");
+	if ($(".no").length != 0) {
+		$(".covidNote").show();
 	}
 	if ($(".band:contains('*')").length != 0) {
 		$(".nbNote").show();
