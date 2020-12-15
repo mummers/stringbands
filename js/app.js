@@ -142,7 +142,6 @@ function loadResults(sql, sheetURL) {
 		}
 	});
 	if (searchTerm == '2021'){
-		alert("No parade in 2021 due to COVID-19.");
 		document.getElementsByClassName('sidebar')[0].style.display = 'none';
 		document.getElementById("main-table").className = "col-md-12";
 	}
