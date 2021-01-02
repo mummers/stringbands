@@ -29,7 +29,7 @@ function isEmpty(obj) {
 
 function getOrdinal(n) {
 	var s = ["th", "st", "nd", "rd"],
-		v = n % 100;
+	v = n % 100;
 	return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 // Start with this year if no params
@@ -54,47 +54,49 @@ if (isEmpty(params)) {
 	$('#searchTerm').append(countdownMessage);
 	loadResults(createSQL(searchTerm), mySpreadsheet);
 } else if (params['band'] && params['prize'] && params['captainPrize']) { // Search band with prize and captains prize attached
-    searchTerm = params['band'].split('+').join([separator = ' ']).trim();
-    prize = params['prize'].split('+').join([separator = ' ']).trim();
-    captainPrize = params['captainPrize'].split('+').join([separator = ' ']).trim();
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and F = " + captainPrize + " and (lower(C) like lower('%" + searchTerm + "%'))) order by A desc";
-    $('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(prize) + " prize band, " + getOrdinal(captainPrize) + " prize captain");
-    loadResults(sqlString, mySpreadsheet);
+	searchTerm = params['band'].split('+').join([separator = ' ']).trim();
+	prize = params['prize'].split('+').join([separator = ' ']).trim();
+	captainPrize = params['captainPrize'].split('+').join([separator = ' ']).trim();
+	sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and F = " + captainPrize + " and (lower(C) like lower('%" + searchTerm + "%'))) order by A desc";
+	$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(prize) + " prize band, " + getOrdinal(captainPrize) + " prize captain");
+	loadResults(sqlString, mySpreadsheet);
 } else if (params['captain'] && params['captainPrize']) { // Search captain with captains prize attached
-		searchTerm = params['captain'].split('+').join([separator = ' ']).trim();
-		captainPrize = params['captainPrize'].split('+').join([separator = ' ']).trim();
-		sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (F = " + captainPrize + " and (lower(E) like lower('%" + searchTerm + "%'))) order by A desc";
-		$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(captainPrize) + " prize captain");
-		loadResults(sqlString, mySpreadsheet);
-		console.log(searchTerm);
+	searchTerm = params['captain'].split('+').join([separator = ' ']).trim();
+	captainPrize = params['captainPrize'].split('+').join([separator = ' ']).trim();
+	sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (F = " + captainPrize + " and (lower(E) like lower('%" + searchTerm + "%'))) order by A desc";
+	$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(captainPrize) + " prize captain");
+	loadResults(sqlString, mySpreadsheet);
+	console.log(searchTerm);
 } else if (params['band'] && params['prize']) { // Search band with prize attached
-    searchTerm = params['band'].split('+').join([separator = ' ']).trim();
-    prize = params['prize'].split('+').join([separator = ' ']).trim();
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and (lower(C) like lower('%" + searchTerm + "%'))) order by A desc";
-    $('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(prize) + " prize");
-    loadResults(sqlString, mySpreadsheet);
+	searchTerm = params['band'].split('+').join([separator = ' ']).trim();
+	prize = params['prize'].split('+').join([separator = ' ']).trim();
+	sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and (lower(C) like lower('%" + searchTerm + "%'))) order by A desc";
+	$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(prize) + " prize");
+	loadResults(sqlString, mySpreadsheet);
 } else if (params['q']) { // Search user input
 	searchTerm = params['q'].split('+').join([separator = ' ']).trim();
 	$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo;");
 	loadResults(createSQL(searchTerm), mySpreadsheet);
 } else if (params['concept'] && params['prize']) { // Search concept and prize
-    concept = params['concept'].split('+').join([separator = ' ']).trim();
-    prize = params['prize'].split('+').join([separator = ' ']).trim();
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and (lower(O) like lower('%" + concept + "%'))) order by A desc";
-    $('#searchTerm').append("Search results for &ldquo;" + concept + "&rdquo; and " + getOrdinal(prize) + " prize");
-    loadResults(sqlString, mySpreadsheet);
+	concept = params['concept'].split('+').join([separator = ' ']).trim();
+	prize = params['prize'].split('+').join([separator = ' ']).trim();
+	sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and (lower(O) like lower('%" + concept + "%'))) order by A desc";
+	$('#searchTerm').append("Search results for &ldquo;" + concept + "&rdquo; and " + getOrdinal(prize) + " prize");
+	loadResults(sqlString, mySpreadsheet);
 } else if (params['p'] == 'lastStand') { // Custard's Last Stand Winners
-    $('#searchTerm').append("Custard's Last Stand Winners<br><h5>The punniest theme title given by Jake Hart.</h5>");
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T order by A desc";
-		document.getElementsByClassName('sidebar')[0].style.display = 'none';
-    loadResults(sqlString, lastStandWinners);
-		document.getElementById("main-table").className = "col-md-12";
+	searchTerm = "Custards";
+	$('#searchTerm').append("Custard's Last Stand Winners<br><h5>The punniest theme title given by Jake Hart.</h5>");
+	sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T order by A desc";
+	document.getElementsByClassName('sidebar')[0].style.display = 'none';
+	loadResults(sqlString, lastStandWinners);
+	document.getElementById("main-table").className = "col-md-12";
 } else if (params['p'] == 'viewers') { // Viewer's Choice Award Winners
-    $('#searchTerm').append("Viewer's Choice Award Winners<br><h5>With the introduction of the Viewer's Choice Awards, String Band fans are now able to vote online for their favorite performance. Following is a listing of the top String Bands since the awards' inception in 2006.</h5>");
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T order by A desc";
-		document.getElementsByClassName('sidebar')[0].style.display = 'none';
-    loadResults(sqlString, viewersChoice);
-		document.getElementById("main-table").className = "col-md-12";
+	searchTerm = "Viewers";
+	$('#searchTerm').append("Viewer's Choice Award Winners<br><h5>With the introduction of the Viewer's Choice Awards, String Band fans are now able to vote online for their favorite performance. Following is a listing of the top String Bands since the awards' inception in 2006.</h5>");
+	sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T order by A desc";
+	document.getElementsByClassName('sidebar')[0].style.display = 'none';
+	loadResults(sqlString, viewersChoice);
+	document.getElementById("main-table").className = "col-md-12";
 } else if (params['p']) { // Search via button
 	searchTerm = params['p'];
 	if (params['p'] == 'firstBands') { // First Prize Bands
@@ -300,27 +302,27 @@ window.onload = function() {
 						costume = `<b>Costume:</b> ${$costume}<br>`
 					} else if (playing_exists && !costume_exists) { // 2014-present day
 						music = `<b>Music Playing:</b> ${$mp} <br>
-                     <b>General Effect Music:</b> ${$ge_music} <br>`
+						<b>General Effect Music:</b> ${$ge_music} <br>`
 						presentation = `<b>Visual Performance:</b> ${$vp}<br>
-                       <b>General Effect - Visual:</b> ${$ge_visual}<br><br>`
+						<b>General Effect - Visual:</b> ${$ge_visual}<br><br>`
 						costume = ''
 					} else if (visual_exists) { // 1991-2013
 						music = `<b>Music Playing:</b> ${$mp} <br>
-                     <b>General Effect Music:</b> ${$ge_music} <br>`
+						<b>General Effect Music:</b> ${$ge_music} <br>`
 						presentation = `<b>Visual Performance:</b> ${$vp}<br>
-                       <b>General Effect - Visual:</b> ${$ge_visual}<br>`
+						<b>General Effect - Visual:</b> ${$ge_visual}<br>`
 						costume = `<b>Costume:</b> ${$costume}<br><br>`
 					}
 					breakdown = `<h3>${$band} ${$year}</h3>
-              <i>${getOrdinal($prize)} Prize</i><br><br>
-              ${music}
-              ${presentation}
-              ${costume}
-              <strong>Total Points:</strong> ${$total}<br><br>
-              <strong>Costumer:</strong> ${$costumer}<br>
-              <strong>Costume/Set Designer:</strong> ${$designer}<br>
-              <strong>Music Arranger:</strong> ${$arranger}<br>
-              <strong>Choreographer:</strong> ${$choreographer}<br>`
+					<i>${getOrdinal($prize)} Prize</i><br><br>
+					${music}
+					${presentation}
+					${costume}
+					<strong>Total Points:</strong> ${$total}<br><br>
+					<strong>Costumer:</strong> ${$costumer}<br>
+					<strong>Costume/Set Designer:</strong> ${$designer}<br>
+					<strong>Music Arranger:</strong> ${$arranger}<br>
+					<strong>Choreographer:</strong> ${$choreographer}<br>`
 					swal({
 						title: 'Point Breakdown',
 						html: breakdown
