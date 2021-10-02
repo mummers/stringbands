@@ -134,7 +134,7 @@ function myCallback(error, options, response) {
 
 
 function loadYearData(){
-  // define function to load lifetime achievement winner
+	// define function to load parade information
   $('#parade-info').sheetrock({
     url: infoSheet,
     query: "select A,B,I where A = " + year + "order by A desc",
@@ -146,6 +146,7 @@ function loadYearData(){
       }
     }
   });
+	// define function to load lifetime achievement winner
   $('#lifetime').sheetrock({
     url: achievementawards,
     query: "select A,B where A = " + year + "order by A desc",
@@ -275,7 +276,10 @@ setTimeout(function() {
 					var playing_exists = $mp.length > 0;
 					var breakdown = "breakdown"
 					if (!costume_exists && !playing_exists) {
-						alert(`No point breakdowns for ${$band} in ${$year} are available.`);
+						swal({
+							title: 'No Breakdown Available.',
+							html: `No point breakdowns for ${$band} in ${$year} are available.`
+						})
 						return;
 					}
 					if ($year < 1991 && costume_exists) { // before 1990
@@ -334,13 +338,22 @@ setTimeout(function() {
 }, 2200);
 
 function custardsAlert() {
-	alert("The punniest theme title given by Jake Hart.")
+	swal({
+		title: 'What is the Custard\'s Last Stand Award?',
+		html: "The punniest theme title given by Jake Hart."
+	})
 }
 
 function lifetimeAlert() {
-	alert("Each year the String Band Association presents a lifetime achievement award to a string band member for his or her individual accomplishments for the String Band Association going above and beyond to improve the quality of the Parade and promote the spirit of mummery.");
+	swal({
+		title: 'What is the Lifetime Achievement Award?',
+		html: "Each year the String Band Association presents a lifetime achievement award to a string band member for his or her individual accomplishments for the String Band Association going above and beyond to improve the quality of the Parade and promote the spirit of mummery."
+	})
 }
 
 function viewersAlert() {
-	alert("With the introduction of the Viewer's Choice Awards, String Band fans are now able to vote online for their favorite performance.")
+	swal({
+		title: 'What is the Viewer\'s Choice Award?',
+		html: "With the introduction of the Viewer's Choice Awards, String Band fans are now able to vote online for their favorite performance."
+	})
 }

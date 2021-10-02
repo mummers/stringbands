@@ -66,7 +66,6 @@ if (isEmpty(params)) {
 	sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (F = " + captainPrize + " and (lower(E) like lower('%" + searchTerm + "%'))) order by A desc";
 	$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(captainPrize) + " prize captain");
 	loadResults(sqlString, mySpreadsheet);
-	console.log(searchTerm);
 } else if (params['band'] && params['prize']) { // Search band with prize attached
 	searchTerm = params['band'].split('+').join([separator = ' ']).trim();
 	prize = params['prize'].split('+').join([separator = ' ']).trim();
@@ -78,11 +77,13 @@ if (isEmpty(params)) {
 	$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo;");
 	loadResults(createSQL(searchTerm), mySpreadsheet);
 } else if (params['concept'] && params['prize']) { // Search concept and prize
+	searchTerm = "Concept and Prize";
 	concept = params['concept'].split('+').join([separator = ' ']).trim();
 	prize = params['prize'].split('+').join([separator = ' ']).trim();
 	sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and (lower(O) like lower('%" + concept + "%'))) order by A desc";
 	$('#searchTerm').append("Search results for &ldquo;" + concept + "&rdquo; and " + getOrdinal(prize) + " prize");
 	loadResults(sqlString, mySpreadsheet);
+	document.getElementById("main-table").className = "col-md-12";
 } else if (params['p'] == 'lastStand') { // Custard's Last Stand Winners
 	searchTerm = "Custards";
 	$('#searchTerm').append("Custard's Last Stand Winners<br><h5>The punniest theme title given by Jake Hart.</h5>");
@@ -159,7 +160,7 @@ function loadResults(sql, sheetURL) {
 }
 
 function loadYearData() {
-	// define function to load lifetime achievement winner
+	// define function to load parade information
 	$('#parade-info').sheetrock({
 		url: infoSheet,
 		query: "select A,B,I where A = " + searchTerm + "order by A desc",
@@ -171,6 +172,7 @@ function loadYearData() {
 			}
 		}
 	});
+	// define function to load lifetime achievement winner
 	$('#lifetime').sheetrock({
 		url: achievementawards,
 		query: "select A,B where A = " + searchTerm + "order by A desc",
@@ -293,7 +295,10 @@ window.onload = function() {
 					var playing_exists = $mp.length > 0;
 					var breakdown = "breakdown"
 					if (!costume_exists && !playing_exists) {
-						alert(`No point breakdowns for ${$band} in ${$year} are available.`);
+						swal({
+							title: 'No Breakdown Available.',
+							html: `No point breakdowns for ${$band} in ${$year} are available.`
+						})
 						return;
 					}
 					if ($year < 1991 && costume_exists) { // before 1990
@@ -353,13 +358,22 @@ window.onload = function() {
 };
 
 function custardsAlert() {
-	alert("The punniest theme title given by Jake Hart.")
+	swal({
+		title: 'What is the Custard\'s Last Stand Award?',
+		html: "The punniest theme title given by Jake Hart."
+	})
 }
 
 function lifetimeAlert() {
-	alert("Each year the String Band Association presents a lifetime achievement award to a string band member for his or her individual accomplishments for the String Band Association going above and beyond to improve the quality of the Parade and promote the spirit of mummery.");
+	swal({
+		title: 'What is the Lifetime Achievement Award?',
+		html: "Each year the String Band Association presents a lifetime achievement award to a string band member for his or her individual accomplishments for the String Band Association going above and beyond to improve the quality of the Parade and promote the spirit of mummery."
+	})
 }
 
 function viewersAlert() {
-	alert("With the introduction of the Viewer's Choice Awards, String Band fans are now able to vote online for their favorite performance.")
+	swal({
+		title: 'What is the Viewer\'s Choice Award?',
+		html: "With the introduction of the Viewer's Choice Awards, String Band fans are now able to vote online for their favorite performance."
+	})
 }

@@ -1,5 +1,9 @@
 # Changelog
 
+10/2/2021
+- Fix for sidebar showing when searching theme concept with highest prize attached.
+- Switch all alert instances to SweetAlert instances.
+
 10/1/2021
 - Create Changelog.
 - Add .gitignore file.
@@ -147,7 +151,7 @@
 - Add extra information (point breakdown, theme info) to "video.html" and random mum tape pages.
 
 1/9/2018
-- Add extra information (point breakdown, theme info) to "app.js"
+- Add extra information (point breakdown, theme info) to "app.js".
 
 1/8/2018
 - Add minified CSS file.
@@ -217,3 +221,110 @@
 
 1/2/2017
 - Change parade live stream link to parade photo gallery link.
+
+12/30/2016
+- Add year results table under video on random mum tape page.
+
+12/29/2016
+- Update meta tags.
+
+12/27/2016
+- Open results in new tab from random mum tape page.
+
+12/26/2016
+- Improvements to random mum tape functionality.
+
+12/23/2016
+- Switch from "Balthazar" to "Noto Serif" font.
+
+12/22/2016
+- Add random mum tape page/feature.
+
+12/21/2016
+- Add "getOrdinal" function for displaying prize results in "searchTerm".
+
+12/20/2016
+- Add multiple queries to search function.
+
+12/19/2016
+- Clean up function to pull query string parameters.
+
+12/14/2016
+- Grammar fix.
+
+12/9/2016
+- Move styles to "styles.css" file (rather than inline).
+- Tweaks to First Prize Leaderboard page.
+
+12/8/2016
+- Add First Prize Leaderboard page.
+
+12/7/2016
+- Grammar fix.
+
+12/5/2016
+- Add asterisk for different bands with the same name.
+
+12/2/2016
+- Add logic for footnotes for different types of non-prizes.
+- Add new favicons.
+- General clean up.
+
+12/1/2016
+- Added last prize, finale, and second prize quick lists.
+
+11/29/2016
+- General clean up.
+
+11/28/2016
+- General clean up.
+
+11/25/2016
+- Change default "searchTerm" to 2017.
+- Add countdown to NYD.
+
+11/17/2016
+- Update to Bootstrap 3.3.7.
+- Update to Font Awesome 4.7.0.
+
+11/5/2016
+- Update Joe Fink's website link.
+
+8/14/2016
+- Clean up Hall of Fame Inductees page functionality.
+
+8/10/2016
+- Add list of Hall of Fame Inductees.
+
+7/23/2016
+- Add Android touch icons.
+
+6/30/2016
+- Update Meta information.
+- Update to Bootstrap 3.3.6.
+
+6/29/2016
+- Clean up Custard's Last Stand Winners list functionality.
+
+6/28/2016
+- Add list of Custard's Last Stand Winners.
+
+6/18/2016 (Merged PR on 6/23/2016)
+- Update Meta information.
+
+6/15/2016 (Merged PR on 6/23/2016)
+- Update Meta information.
+
+6/12/2016 (Merged PR on 6/23/2016)
+- Add quick list of leadoff bands.
+- Update Font Awesome to 4.6.3.
+
+6/8/2016 (Merged PR on 6/9/2016)
+- Add random year and random band quick lists/search terms.
+- Style tweaks.
+
+1/6/2016
+- Fix apostrophes in captains' names.
+- Add handlebars template for youtube.
+- Normalize search input from links.
+- Update callback function for new version of Sheetrock.
