@@ -1,5 +1,8 @@
 # Changelog
 
+12/2/2021
+- Move scripts and most styles into vendor folders for better reliability
+
 10/2/2021
 - Fix for sidebar showing when searching theme concept with highest prize attached.
 - Switch all alert instances to SweetAlert instances.
