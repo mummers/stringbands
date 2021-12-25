@@ -1,7 +1,16 @@
 # Changelog
 
+12/25/2021
+- Change default "searchTerm" to 2022.
+- Switch upcoming.js to use upcoming year spreadsheet tab.
+- Rename "2022.html" to "2023.html".
+
+12/17/2021
+- Remove "2.0" wording from all pages.
+
 12/2/2021
-- Move scripts and most styles into vendor folders for better reliability
+- Move scripts and most styles into vendor folders for better reliability.
+- Renamed COVID abbreviation to avoid confusion with No Prize abbreviation.
 
 10/2/2021
 - Fix for sidebar showing when searching theme concept with highest prize attached.
