@@ -50,8 +50,8 @@
             <li class="nav-item">
               <a class="nav-link" href="leaderboard.html">First Prize Leaderboard</a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Theme Concepts</a>
+            <li class="nav-item">
+              <a class="nav-link" href="concepts.html">Theme Concepts</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="mumtape.html">Random Mum Tape</a>
@@ -68,7 +68,7 @@
                 <a class="dropdown-item" href="index.html?p=leadoffBands">Leadoff Bands</a>
                 <a class="dropdown-item" href="index.html?p=finaleBands">Finale Bands</a>
                 <a class="dropdown-item" href="captains.html">Captains Statistics</a>
-                <a class="dropdown-item" href="postponed.html">Postponed Parades</a>
+                <a class="dropdown-item" href="#">Postponed Parades</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="index.html?p=lastStand">Custard's Last Stand Winners</a>
                 <a class="dropdown-item" href="index.html?p=viewers">Viewer's Choice Award Winners</a>
@@ -96,7 +96,7 @@
 
       <div class="row">
         <div class="col-md-6 header">
-          <h2 class="my-4" id="searchTerm">List Of Theme Concepts</h2>
+          <h2 class="my-4" id="searchTerm">Postponed Parades</h2>
         </div>
       </div>
 
@@ -106,10 +106,9 @@
           <table id="bands" class="table tablesorter">
             <thead>
               <tr>
-                <th>Concept <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th>Times<br>Done <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th>Last<br>Done <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-                <th>Highest<br>Prize <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+                <th>Year <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+                <th>Parade<br>Date <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+                <th>Parade/Weather<br>Comments <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
               </tr>
             </thead>
             <script id="bands-template" type="text/x-handlebars-template">
@@ -117,17 +116,13 @@
                           {{#if cellsArray.[0]}}
                 <tr>
                   <td><a href="index.html?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
-                  <td><a href="index.html?q={{normalize cellsArray.[0]}}">{{cellsArray.[1]}}</a></td>
-                  <td><a href="index.html?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a></td>
-                  <td>{{#if cellsArray.[3]}}<a href="index.html?concept={{normalize cellsArray.[0]}}&prize={{cellsArray.[3]}}">{{cellsArray.[3]}} {{else}}BD {{/if}}{{#if cellsArray.[4]}}({{cellsArray.[4]}}){{/if}}</a></td>
+                  <td>{{cellsArray.[1]}}</td>
+                  <td>{{cellsArray.[2]}}</td>
                 </tr>
                               {{/if}}
                               {{/if}}
               </script>
             </table>
-            <div class="footnotes">
-              <div class="note bdNote">BD: Before the String Band Division was established.</div>
-            </div>
           </div>
         </div> <!-- /.main-table -->
       </div> <!-- /.row -->
@@ -146,12 +141,10 @@
 
     <script src="js/vendor/jquery-3.5.1.slim.min.js"></script>
     <script src="js/vendor/bootstrap.bundle.min.js"></script>
-    <script src="js/vendor/chance.min.js"></script>
     <script src="js/vendor/jquery.tablesorter.min.js"></script>
     <script src="js/vendor/handlebars.min.js"></script>
     <script src="js/vendor/sheetrock.min.js"></script>
-    <script src="js/vendor/sweetalert2.min.js"></script>
-    <script src="js/concepts.js"></script>
+    <script src="js/postponed.js"></script>
 
   </body>
 
