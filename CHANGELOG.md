@@ -1,7 +1,8 @@
 # Changelog
 
 12/27/2021
-- Update TJ's link to Unparalleled Developers site.
+- Update TJ's link to Unparalleled Developers' site.
+- Update Brian's link on SBDB 1.0 pages.
 
 12/25/2021
 - Change default "searchTerm" to 2022.
