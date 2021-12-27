@@ -1,5 +1,8 @@
 # Changelog
 
+12/27/2021
+- Update TJ's link to Unparalleled Developers site.
+
 12/25/2021
 - Change default "searchTerm" to 2022.
 - Switch upcoming.js to use upcoming year spreadsheet tab.
