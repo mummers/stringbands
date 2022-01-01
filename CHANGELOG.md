@@ -1,5 +1,8 @@
 # Changelog
 
+12/31/2021
+- Update NYD Countdown message to prepare for 2022's postponed parade.
+
 12/27/2021
 - Update TJ's link to Unparalleled Developers' site.
 - Update Brian's link on SBDB 1.0 pages.

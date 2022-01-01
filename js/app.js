@@ -41,7 +41,7 @@ var one_day = 1000 * 60 * 60 * 24;
 var countdownMessage = "";
 if (today.getMonth() == 0 && today.getDate() == 1) {
 	if (searchTerm == "2022") {
-		countdownMessage = "<h4>Happy New Year! Due to weather, the " + today.getFullYear() + " parade has been postponed to January 2nd. Results will be posted after 8 PM EST on parade day.</h4><h4><a href=\"http://phl17.com/live/\">Watch the parade live here.</a></h4>";
+		countdownMessage = "<h4>Happy New Year! Due to weather, the " + today.getFullYear() + " parade has been postponed. Results will be posted after 8 PM EST on parade day.</h4><h4><a href=\"http://phl17.com/live/\">Watch the parade live here.</a></h4>";
 	}
 	else {
 		countdownMessage = "<h4>Happy New Year! " + today.getFullYear() + " Results will be posted after 8 PM EST.</h4><h4><a href=\"http://phl17.com/live/\">Watch the parade live here.</a></h4>";
