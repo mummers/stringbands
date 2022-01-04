@@ -1,5 +1,9 @@
 # Changelog
 
+1/3/2022
+- Comment out postponed countdownMessage.
+- Hide Custard's Last Stand card after 2020. (Award no longer given out)
+
 12/31/2021
 - Update NYD Countdown message to prepare for 2022's postponed parade.
 
