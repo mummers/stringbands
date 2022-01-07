@@ -1,5 +1,9 @@
 # Changelog
 
+1/6/2022
+- Hide Custard's Last Stand card after 2020 on video pages. (Forgot to add in previous commit)
+- Bump random mum tape filter to 2022.
+
 1/3/2022
 - Comment out postponed countdownMessage.
 - Hide Custard's Last Stand card after 2020. (Award no longer given out)

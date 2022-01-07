@@ -265,6 +265,9 @@ setTimeout(function() {
       document.getElementById("custards-card").style.display = "none";
       document.getElementById("lifetime-card").style.display = "none";
     }
+    if (searchTerm > 2020) {
+			document.getElementById("custards-card").style.display = "none";
+		}
   }
   var links = document.getElementsByTagName("tr");
   for (var i = 0; i < links.length; i++) {
