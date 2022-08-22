@@ -1,5 +1,8 @@
 # Changelog
 
+8/22/2022
+- Add margin to top of filters card on random mum tape page.
+
 1/6/2022
 - Hide Custard's Last Stand card after 2020 on video pages. (Forgot to add in previous commit)
 - Bump random mum tape filter to 2022.
