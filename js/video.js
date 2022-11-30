@@ -267,6 +267,7 @@ setTimeout(function() {
     }
     if (year > 2020) {
 			document.getElementById("custards-card").style.display = "none";
+      document.getElementById("viewers-card").style.display = "none";
 		}
   }
   var links = document.getElementsByTagName("tr");

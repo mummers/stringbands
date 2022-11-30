@@ -356,6 +356,7 @@ window.onload = function() {
 		}
 		if (searchTerm > 2020) {
 			document.getElementById("custards-card").style.display = "none";
+			document.getElementById("viewers-card").style.display = "none";
 		}
 		$(".year-col").hide();
 	}
