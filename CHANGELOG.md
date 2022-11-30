@@ -2,6 +2,7 @@
 
 11/30/2022
 - Hide Viewer's Choice card after 2020. (Award no longer given out)
+- Clean up meta tags.
 
 8/22/2022
 - Add margin to top of filters card on random mum tape page.
