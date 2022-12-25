@@ -1,5 +1,9 @@
 # Changelog
 
+12/25/2022
+- Change default "searchTerm" to 2023.
+- Remove public facing links/references to upcoming parade (since we no longer publicize early anyway)
+
 11/30/2022
 - Hide Viewer's Choice card after 2020. (Award no longer given out)
 - Clean up meta tags.
