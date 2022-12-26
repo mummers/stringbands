@@ -1,5 +1,8 @@
 # Changelog
 
+12/26/2022
+- Fix issue where random mum tape would grab header row from sheet.
+
 12/25/2022
 - Change default "searchTerm" to 2023.
 - Remove public facing links/references to upcoming parade (since we no longer publicize early anyway)

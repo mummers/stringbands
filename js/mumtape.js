@@ -93,7 +93,7 @@ function loadRandomVideo(sql){
 					$("#video-filters").toggle();
 				}
 				else{
-					randomVid = chance.pickone(response.rows);
+					randomVid = chance.pickone(response.rows.slice(1));
 					year = randomVid.cellsArray[0];
 					band = randomVid.cellsArray[2];
 					videoID = randomVid.cellsArray[3];
