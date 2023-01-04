@@ -83,7 +83,7 @@ function loadRandomVideo(sql){
     query: sql,
     callback: function(error, options, response) {
 			if (!error){
-				if (yearTag >= 2022){
+				if (yearTag >= 2023){
 					year = parseInt(yearTag) + 1;
 					document.getElementById('searchTerm').innerHTML = "<h2>Whoops! " + year +  " didn't happen yet! Try a different year.</h2>";
 					document.getElementsByClassName('sidebar')[0].style.display = 'none';
