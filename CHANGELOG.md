@@ -1,5 +1,8 @@
 # Changelog
 
+1/12/2023
+- Load parade weather conditions and media coverage under parade date.
+
 1/3/2023
 - Bump random mum tape filter to 2023.
 

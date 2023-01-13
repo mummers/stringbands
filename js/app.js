@@ -164,7 +164,7 @@ function loadYearData() {
 	// define function to load parade information
 	$('#parade-info').sheetrock({
 		url: infoSheet,
-		query: "select A,C,D where A = " + searchTerm + "order by A desc",
+		query: "select A,C,D,I,J where A = " + searchTerm + "order by A desc",
 		rowTemplate: infoTemplate,
 		callback: function(error, options, response) {
 			if (error) {

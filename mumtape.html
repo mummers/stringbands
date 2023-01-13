@@ -261,14 +261,23 @@
           <h2 class="my-3">Other Info</h2>
           <div class="card text-center" id="parade-card">
             <div class="card-header">
-              Parade Date
+              Parade Information
             </div>
             <div class="card-body">
               <ul id="parade-info">
               <script id="info-template" type="text/x-handlebars-template">
                 {{#if num}}
+                <strong>Parade Date</strong>
                 <li>{{cellsArray.[1]}}</li>
-                <li><i>{{cellsArray.[2]}}</i></li>
+                <li><i>{{cellsArray.[2]}}</i></li><br>
+                {{#if cellsArray.[3]}}
+                <strong>Weather Conditions</strong>
+                <li>{{cellsArray.[3]}}</li><br>
+                {{/if}}
+                {{#if cellsArray.[4]}}
+                <strong>Media Coverage</strong>
+                <li>{{cellsArray.[4]}}</li>
+                {{/if}}
                 {{/if}}
               </script></ul>
             </div>
