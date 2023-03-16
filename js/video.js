@@ -42,6 +42,7 @@ function loadResults(sql, table) {
     callback: function(error, options, response) {
       if (!error) {
         $("#bands").tablesorter();
+        loadNotes();
         if ($('#bands tr').length == 1) {
           $('#bands').append("<h3>No results.</h3>")
           document.getElementsByClassName('sidebar')[0].style.display = 'none';
@@ -134,39 +135,28 @@ Handlebars.registerHelper("normalize", function(input) {
   return input.toLowerCase().replace(/ +/g, "+").replace(/\\.+|,.+|'.+/g, "");
 });
 
-$(document).ready(function() {
-  $("td.note:contains('bd-j')").siblings(".prize").addClass("bd");
-  if($(".bd").length != 0) {
-    $(".bdNote").show();
-  }
-  $("td.note:contains('bs-j')").siblings(".prize").addClass("bs");
-  if($(".bs").length != 0) {
-    $(".bsNote").show();
-  }
-  $("td.note:contains('dq')").siblings(".prize").addClass("dq");
-  if($(".dq").length != 0) {
-    $(".dqNote").show();
-  }
-  $("td.note:contains('gp')").siblings(".prize").addClass("gp");
-  if($(".gp").length != 0) {
-    $(".gpNote").show();
-  }
-  $("td.note:contains('no-j')").siblings(".prize").addClass("no");
-  if($(".no").length != 0) {
-    $(".noNote").show();
-  }
-  $("td.note:contains('np-j')").siblings(".prize").addClass("np");
-  if($(".np").length != 0) {
-    $(".npNote").show();
-  }
-  $("td.note:contains('sp-j')").siblings(".prize").addClass("sp");
-  if($(".sp").length != 0) {
-    $(".spNote").show();
-  }
-  if($(".band:contains('*')").length != 0) {
-    $(".nbNote").show();
-  }
-});
+function loadNotes() {
+	const notes = [
+	  { class: 'bd', note: 'bd-j', noteClass: 'bdNote' },
+	  { class: 'bs', note: 'bs-j', noteClass: 'bsNote' },
+	  { class: 'dq', note: 'dq', noteClass: 'dqNote' },
+	  { class: 'gp', note: 'gp', noteClass: 'gpNote' },
+	  { class: 'no', note: 'no-j', noteClass: 'noNote' },
+	  { class: 'np', note: 'np-j', noteClass: 'npNote' },
+	  { class: 'sp', note: 'sp-j', noteClass: 'spNote' }
+	];
+  
+	notes.forEach(({ class: noteClass, note, noteClass: showClass }) => {
+	  $(`td.note:contains('${note}')`).siblings('.prize').addClass(noteClass);
+	  if ($(`.${noteClass}`).length) {
+		$(`.${showClass}`).show();
+	  }
+	});
+  
+	if ($('.band:contains("*")').length) {
+	  $('.nbNote').show();
+	}
+}
 
 setTimeout(function() {
   video = params['q'].split('+').join([separator = ' ']).trim();
@@ -180,7 +170,6 @@ setTimeout(function() {
   document.getElementById('band-card-header').innerHTML = band + " " + year + " Info";
   loadResults(sqlString, '#bands');
   loadYearData()
-  console.log("video load function ran")
 }, 100);
 
 

@@ -2,6 +2,7 @@
 
 3/16/2023
 - Small code cleanup to 'app.js' file.
+- Fix notes not showing up on video page (disqualified, etc...)
 
 1/12/2023
 - Load parade weather conditions and media coverage under parade date.
