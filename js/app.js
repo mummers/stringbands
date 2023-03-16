@@ -294,10 +294,9 @@ window.onload = function() {
 					var costume_exists = $costume.length > 0;
 					var visual_exists = $vp.length > 0;
 					var playing_exists = $mp.length > 0;
-					var breakdown = "breakdown"
 					if (!costume_exists && !playing_exists) {
 						swal({
-							title: 'No Breakdown Available.',
+							title: "No Breakdown Available.",
 							html: `No point breakdowns for ${$band} in ${$year} are available.`
 						})
 						return;
@@ -311,7 +310,7 @@ window.onload = function() {
 						<b>General Effect Music:</b> ${$ge_music} <br>`
 						presentation = `<b>Visual Performance:</b> ${$vp}<br>
 						<b>General Effect - Visual:</b> ${$ge_visual}<br><br>`
-						costume = ''
+						costume = ""
 					} else if (visual_exists) { // 1991-2013
 						music = `<b>Music Playing:</b> ${$mp} <br>
 						<b>General Effect Music:</b> ${$ge_music} <br>`
@@ -319,7 +318,7 @@ window.onload = function() {
 						<b>General Effect - Visual:</b> ${$ge_visual}<br>`
 						costume = `<b>Costume:</b> ${$costume}<br><br>`
 					}
-					breakdown = `<h3>${$band} ${$year}</h3>
+					var breakdown = `<h3>${$band} ${$year}</h3>
 					<i>${getOrdinal($prize)} Prize</i><br><br>
 					${music}
 					${presentation}
@@ -330,7 +329,7 @@ window.onload = function() {
 					<strong>Music Arranger:</strong> ${$arranger}<br>
 					<strong>Choreographer:</strong> ${$choreographer}<br>`
 					swal({
-						title: 'Point Breakdown',
+						title: "Point Breakdown",
 						html: breakdown
 					})
 				}
@@ -341,7 +340,7 @@ window.onload = function() {
 		$(".year-col").show();
 	} else {
 		if (searchTerm < 1916) {
-			document.getElementsByClassName('sidebar')[0].style.display = 'none';
+			document.getElementsByClassName("sidebar")[0].style.display = "none";
 			document.getElementById("main-table").className = "col-md-12";
 		}
 		if (searchTerm < 1956) {
@@ -364,21 +363,21 @@ window.onload = function() {
 
 function custardsAlert() {
 	swal({
-		title: 'What is the Custard\'s Last Stand Award?',
+		title: "What is the Custard\'s Last Stand Award?",
 		html: "The punniest theme title given by Jake Hart."
 	})
 }
 
 function lifetimeAlert() {
 	swal({
-		title: 'What is the Lifetime Achievement Award?',
+		title: "What is the Lifetime Achievement Award?",
 		html: "Each year the String Band Association presents a lifetime achievement award to a string band member for his or her individual accomplishments for the String Band Association going above and beyond to improve the quality of the Parade and promote the spirit of mummery."
 	})
 }
 
 function viewersAlert() {
 	swal({
-		title: 'What is the Viewer\'s Choice Award?',
+		title: "What is the Viewer\'s Choice Award?",
 		html: "With the introduction of the Viewer's Choice Awards, String Band fans are now able to vote online for their favorite performance."
 	})
 }
