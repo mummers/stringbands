@@ -1,5 +1,8 @@
 # Changelog
 
+3/16/2023
+- Small code cleanup to 'app.js' file.
+
 1/12/2023
 - Load parade weather conditions and media coverage under parade date.
 
