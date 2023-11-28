@@ -1,5 +1,8 @@
 # Changelog
 
+11/28/2023
+- Remove links to V1 of Database and add message that V1 is no longer maintained.
+
 3/16/2023
 - Small code cleanup to 'app.js' file.
 - Fix notes not showing up on video page (disqualified, etc...)
