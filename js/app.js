@@ -15,9 +15,10 @@ var infoTemplate = Handlebars.compile($('#info-template').html());
 // Get query string parameters
 var q = document.URL;
 var params = {};
-q.replace(/[?&]([^=]+)[=]([^&#]+)/g, function(match, key, value) {
-	params[key] = value;
-	return '';
+q.replace(/[?&]([^=]+)=([^&#]+)/g, function(match, key, value) {
+    // Use decodeURIComponent to decode the query parameters
+    params[key] = decodeURIComponent(value);
+    return '';
 });
 
 function isEmpty(obj) {
@@ -224,7 +225,8 @@ function loadYearData() {
 }
 
 Handlebars.registerHelper("normalize", function(input) {
-	return input.toLowerCase().replace(/ +/g, "+").replace(/\\.+|,.+|'.+/g, "");
+    // Convert to lowercase and encode URI components
+    return encodeURIComponent(input.toLowerCase());
 });
 
 
