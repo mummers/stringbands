@@ -1,7 +1,7 @@
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=1867154294';
 var bandsTemplate = Handlebars.compile($('#bands-template').html());
 
-sqlQuery = "select A,B,I where I contains 'Postponed' order by A desc";
+sqlQuery = "select A,C,D where D contains 'Postponed' order by A desc";
 
 loadResults(sqlQuery);
 function loadResults(sql){

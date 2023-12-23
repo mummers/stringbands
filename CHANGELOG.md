@@ -2,6 +2,7 @@
 
 12/23/2023
 - Revert to old way of handling names with Apostrophes.
+- Fix postponed parades quick list.
 
 12/22/2023
 - Use decodeURIComponent to decode search paramaters back to original form, fixing search queries for double quotes.
