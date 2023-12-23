@@ -75,8 +75,8 @@ if (isEmpty(params)) {
 	$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(prize) + " prize");
 	loadResults(sqlQuery, mySpreadsheet);
 } else if (params['q']) { // Search user input
-    searchTerm = params['q'].split('+').join([separator = ' ']).trim();
-		$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo;");
+	searchTerm = params['q'].split('+').join([separator = ' ']).trim();
+	$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo;");
 	loadResults(createSQL(searchTerm), mySpreadsheet);
 } else if (params['concept'] && params['prize']) { // Search concept and prize
 	searchTerm = "Concept and Prize";
@@ -229,7 +229,6 @@ Handlebars.registerHelper("normalize", function(input) {
     // Convert to lower case and replace spaces with '+'
     return input.toLowerCase().replace(/ +/g, "+");
 });
-
 
 function loadNotes() {
 	const notes = [
