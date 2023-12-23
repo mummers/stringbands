@@ -144,7 +144,7 @@ function loadResults(sql, sheetURL) {
 				}
 			} else {
 				$('#bands').append('<h3 class="error">Error.</h3>');
-							}
+			}
 		}
 	});
 	if (searchTerm == '2021'){
