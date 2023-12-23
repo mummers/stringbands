@@ -22,16 +22,16 @@ button.onclick = function() {
 	}
 	if (year == "") {
 		sessionStorage.clear();
-		sqlString = "select A,B,C,V where V contains 'https' and order by A desc";
+		sqlQuery = "select A,B,C,V where V contains 'https' and order by A desc";
 		saveItems();
 	} else if (bandFilter != "") {
-		sqlString = "select A,B,C,V where V contains 'https' and A >" + year + "and (lower(C) like lower('%" + bandFilter + "%')) order by A desc";
+		sqlQuery = "select A,B,C,V where V contains 'https' and A >" + year + "and (lower(C) like lower('%" + bandFilter + "%')) order by A desc";
 		saveItems();
 	} else {
-		sqlString = "select A,B,C,V where V contains 'https' and A >" + year + "order by A desc";
+		sqlQuery = "select A,B,C,V where V contains 'https' and A >" + year + "order by A desc";
 		saveItems();
 	}
-	loadResults(sqlString, '#themes');
+	loadResults(sqlQuery, '#themes');
 }
 
 if (sessionStorage.getItem("yearTag")) {
@@ -47,12 +47,12 @@ if (sessionStorage.getItem("bandTag")) {
 year = sessionStorage.getItem("yearTag");
 
 if (typeof bandFilter==="undefined"){
-    sqlString = "select A,B,C,V where V contains 'https' and A >" + year + "order by A desc";
+    sqlQuery = "select A,B,C,V where V contains 'https' and A >" + year + "order by A desc";
 }
 else{
-    sqlString = "select A,B,C,V where V contains 'https' and A >" + year + "and (lower(C) like lower('%" + bandFilter + "%')) order by A desc";
+    sqlQuery = "select A,B,C,V where V contains 'https' and A >" + year + "and (lower(C) like lower('%" + bandFilter + "%')) order by A desc";
 }
-loadResults(sqlString, '#themes');
+loadResults(sqlQuery, '#themes');
 
 var bandsTemplate = Handlebars.compile($('#bands-template').html());
 
@@ -96,11 +96,11 @@ window.onload = function() {
 		document.getElementById('themes').innerHTML = message;
 		document.getElementById("themes").style.visibility = "visible";
 		document.getElementById('searchTerm').innerHTML = "<h2>Random Mum Tape: " + year + " " + band + " String Band</h2>";
-		sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
+		sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
 		document.getElementById('results-tag').innerHTML = year + " Results";
 		sheetrock.defaults.rowTemplate = bandsTemplate;
 		sheetrock.defaults.callback = myCallback;
-		loadResults(sqlString, '#bands');
+		loadResults(sqlQuery, '#bands');
 	}
 	else {
 		document.getElementById("themes").style.visibility = "visible";

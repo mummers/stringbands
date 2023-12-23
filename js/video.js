@@ -165,10 +165,10 @@ setTimeout(function() {
   message = '<iframe class="embed-responsive-item" src="' + video + '" allowfullscreen></iframe>';
   document.getElementById('video').innerHTML = message;
   document.getElementById('searchTerm').innerHTML = "<h2>" + year + " " + band + " String Band</h2>";
-  sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
+  sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
   document.getElementById('results-tag').innerHTML = year + " Results";
   document.getElementById('band-card-header').innerHTML = band + " " + year + " Info";
-  loadResults(sqlString, '#bands');
+  loadResults(sqlQuery, '#bands');
   loadYearData()
 }, 100);
 

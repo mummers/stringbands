@@ -19,8 +19,8 @@ if(q != undefined){
 // Check for parameters
 if (params == 0) {
     $('#searchTerm').append("<h2>Hall of Fame Inductees</h2>");
-    sqlString = "select A,B,C order by A desc";
-    loadResults(sqlString, mySpreadsheet);
+    sqlQuery = "select A,B,C order by A desc";
+    loadResults(sqlQuery, mySpreadsheet);
 }
 
 // define function to load results

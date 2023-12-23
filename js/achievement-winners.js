@@ -1,8 +1,8 @@
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=1517009682';
 var bandsTemplate = Handlebars.compile($('#winners-template').html());
 
-sqlString = "select A,B order by A desc";
-loadResults(sqlString, mySpreadsheet);
+sqlQuery = "select A,B order by A desc";
+loadResults(sqlQuery, mySpreadsheet);
 
 function loadResults(sql, sheetURL){
   $('#winners').sheetrock({

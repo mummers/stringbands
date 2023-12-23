@@ -57,15 +57,15 @@ if(isEmpty(params)) {
     band = params['band'].split('+').join([separator = ' ']).trim();
     prize = params['prize'].split('+').join([separator = ' ']).trim();
     captainPrize = params['captainPrize'].split('+').join([separator = ' ']).trim();
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and F = " + captainPrize + " and (lower(C) like lower('%" + band + "%'))) order by A desc";
+    sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and F = " + captainPrize + " and (lower(C) like lower('%" + band + "%'))) order by A desc";
     $('#searchTerm').append("<h2>Search results for &ldquo;" + band + "&rdquo; and " + getOrdinal(prize) + " prize band, " + getOrdinal(captainPrize) + " prize captain </h2>");
-    loadResults(sqlString, mySpreadsheet);
+    loadResults(sqlQuery, mySpreadsheet);
 } else if (params['band'] && params['prize']) { // Search band with prize attached
     band = params['band'].split('+').join([separator = ' ']).trim();
     prize = params['prize'].split('+').join([separator = ' ']).trim();
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and (lower(C) like lower('%" + band + "%'))) order by A desc";
+    sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and (lower(C) like lower('%" + band + "%'))) order by A desc";
     $('#searchTerm').append("<h2>Search results for &ldquo;" + band + "&rdquo; and " + getOrdinal(prize) + " prize </h2>");
-    loadResults(sqlString, mySpreadsheet);
+    loadResults(sqlQuery, mySpreadsheet);
 } else if (params['q']) { // Search user input
     searchTerm = params['q'].split('+').join([separator = ' ']).trim();
     $('#searchTerm').append("<h2>Search results for &ldquo;" + searchTerm + "&rdquo;</h2>");
@@ -73,47 +73,47 @@ if(isEmpty(params)) {
 } else if (params['concept'] && params['prize']) { // Search concept and prize
     concept = params['concept'].split('+').join([separator = ' ']).trim();
     prize = params['prize'].split('+').join([separator = ' ']).trim();
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and (lower(O) like lower('%" + concept + "%'))) order by A desc";
+    sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (B = " + prize + " and (lower(O) like lower('%" + concept + "%'))) order by A desc";
     $('#searchTerm').append("<h2>Search results for &ldquo;" + concept + "&rdquo; and " + getOrdinal(prize) + " prize </h2>");
-    loadResults(sqlString, mySpreadsheet);
+    loadResults(sqlQuery, mySpreadsheet);
 } else if (params['p'] == 'lastStand') { // Custard's Last Stand Winners
     $('#searchTerm').append("<h2>Custard's Last Stand Winners</h2><h5>The punniest theme title given by Jake Hart.</h5>");
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T order by A desc";
-    loadResults(sqlString, lastStandWinners);
+    sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T order by A desc";
+    loadResults(sqlQuery, lastStandWinners);
 } else if (params['p'] == 'viewers') { // Viewer's Choice Award Winners
     $('#searchTerm').append("<h2>Viewer's Choice Award Winners</h2><h5>With the introduction of the Viewer's Choice Awards, String Band fans are now able to vote online for their favorite performance. Following is a listing of the top String Bands since the awards' inception in 2006.</h5>");
-    sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T order by A desc";
-    loadResults(sqlString, viewersChoice);
+    sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T order by A desc";
+    loadResults(sqlQuery, viewersChoice);
 } else if (params['p']){ // Search via button
     searchTerm = params['p'];
     if (params['p'] == 'firstBands') { // First Prize Bands
         $('#searchTerm').append("<h2>First Prize Bands</h2>");
-        sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where B = 1 order by A desc";
+        sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where B = 1 order by A desc";
     } else if (params['p'] == 'firstCaptains') { // First Prize Captains
         $('#searchTerm').append("<h2>First Prize Captains</h2>");
-        sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where F = 1 order by A desc";
+        sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where F = 1 order by A desc";
     } else if (params['p'] == 'secondBands') { // Second Prize Bands
         $('#searchTerm').append("<h2>Second Prize Bands</h2>");
-        sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where B = 2 order by A desc";
+        sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where B = 2 order by A desc";
     } else if (params['p'] == 'lastBands') { // Last Prize Bands
         $('#searchTerm').append("<h2>Last Prize, No Prize, and Disqualified Bands</h2>");
-        sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where B = N order by A desc";
+        sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where B = N order by A desc";
     } else if (params['p'] == 'randomYear') { // Random Year
         var year = chance.year({ min: 1902, max: today.getFullYear() });
         $('#searchTerm').append("<h2>Search results for &ldquo;" + year + "&rdquo;</h2>");
-        sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
+        sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where A = " + year + " order by A desc";
     } else if (params['p'] == 'randomBand') { // Random Band
         var band = chance.pickset(['Avalon', 'Aqua', 'Broomall', 'Burke', 'Duffy', 'Durning', 'Ferko', 'Fralinger', 'Greater Bucks', 'Greater Kensington', 'Greater Overbrook', 'Harrowgate', 'Hegeman', 'Irish American', 'Italian American', 'Pennsport', 'Polish American', 'Quaker City', 'South Philadelphia', 'Trilby', 'Two Street', 'Ukrainian American', 'Uptown', 'Woodland']);
         $('#searchTerm').append("<h2>Search results for &ldquo;" + band + "&rdquo;</h2>");
-        sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (lower(C) like lower('%" + band + "%')) order by A desc";
+        sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (lower(C) like lower('%" + band + "%')) order by A desc";
     } else if (params['p'] == 'leadoffBands') { // Leadoff Bands
         $('#searchTerm').append("<h2>Leadoff Bands</h2>");
-        sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where M = 1 order by A desc";
+        sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where M = 1 order by A desc";
     } else if (params['p'] == 'finaleBands') { // Finale Bands
         $('#searchTerm').append("<h2>Finale Bands</h2>");
-        sqlString = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where M = N order by A desc";
+        sqlQuery = "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where M = N order by A desc";
     }
-  loadResults(sqlString, mySpreadsheet);
+  loadResults(sqlQuery, mySpreadsheet);
 }
 
 // define search string function
