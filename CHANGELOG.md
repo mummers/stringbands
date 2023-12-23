@@ -1,5 +1,8 @@
 # Changelog
 
+12/22/2023
+- Use decodeURIComponent to decode search paramaters back to original form, fixing search queries for double quotes.
+
 11/28/2023
 - Remove links to V1 of Database and add message that V1 is no longer maintained.
 
