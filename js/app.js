@@ -15,9 +15,14 @@ var infoTemplate = Handlebars.compile($('#info-template').html());
 // Get query string parameters
 var q = document.URL;
 var params = {};
-q.replace(/[?&]([^=]+)=([^&#]+)/g, function(match, key, value) {
-    // Decode URI components, including apostrophes
-    params[key] = decodeURIComponent(value).replace(/\+/g, ' ');
+q.replace(/[?&]([^=]+)=([^&]*)/g, function(match, key, value) {
+    // Decode URI components, then truncate at the first apostrophe
+    var decodedValue = decodeURIComponent(value).replace(/\+/g, ' ');
+    var apostropheIndex = decodedValue.indexOf("'");
+    if (apostropheIndex !== -1) {
+        decodedValue = decodedValue.substring(0, apostropheIndex);
+    }
+    params[key] = decodedValue;
     return '';
 });
 
@@ -75,7 +80,7 @@ if (isEmpty(params)) {
 	$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo; and " + getOrdinal(prize) + " prize");
 	loadResults(sqlQuery, mySpreadsheet);
 } else if (params['q']) { // Search user input
-	searchTerm = params['q'].split('+').join([separator = ' ']).trim();
+	searchTerm = params['q'].split('+').join(' ').trim();
 	$('#searchTerm').append("Search results for &ldquo;" + searchTerm + "&rdquo;");
 	loadResults(createSQL(searchTerm), mySpreadsheet);
 } else if (params['concept'] && params['prize']) { // Search concept and prize
@@ -128,6 +133,7 @@ if (isEmpty(params)) {
 function createSQL(term) {
 	return "select A,B,C,D,E,F,M,L,V,W,G,H,I,J,K,X,Q,R,S,T where (A like '%" + term + "%') or (B like '" + term + "') or (lower(C) like lower('%" + term + "%')) or (lower(D) like lower('%" + term + "%')) or (lower(E) like lower('%" + term + "%')) or (F like '%" + term + "%') or (lower(O) like lower('%" + term + "%')) or (lower(Q) like lower('%" + term + "%')) or (lower(R) like lower('%" + term + "%')) or (lower(S) like lower('%" + term + "%')) or (lower(T) like lower('%" + term + "%')) order by A desc, B asc";
 }
+
 // define function to load results
 function loadResults(sql, sheetURL) {
 	$('#bands').sheetrock({
@@ -144,6 +150,7 @@ function loadResults(sql, sheetURL) {
 				}
 			} else {
 				$('#bands').append('<h3 class="error">Error.</h3>');
+				console.log(error);
 			}
 		}
 	});

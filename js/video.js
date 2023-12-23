@@ -17,9 +17,14 @@ var bandInfoTemplate = Handlebars.compile($('#band-info-template').html());
 // Get query string parameters
 var q = document.URL;
 var params = {};
-q.replace(/[?&]([^=]+)=([^&#]+)/g, function(match, key, value) {
-    // Use decodeURIComponent to decode the query parameters
-    params[key] = decodeURIComponent(value);
+q.replace(/[?&]([^=]+)=([^&]*)/g, function(match, key, value) {
+    // Decode URI components, then truncate at the first apostrophe
+    var decodedValue = decodeURIComponent(value).replace(/\+/g, ' ');
+    var apostropheIndex = decodedValue.indexOf("'");
+    if (apostropheIndex !== -1) {
+        decodedValue = decodedValue.substring(0, apostropheIndex);
+    }
+    params[key] = decodedValue;
     return '';
 });
 
