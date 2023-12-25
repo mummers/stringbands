@@ -1,5 +1,8 @@
 # Changelog
 
+12/25/2023
+- Change default "searchTerm" to 2024.
+
 12/23/2023
 - Revert to old way of handling names with Apostrophes.
 - Fix postponed parades quick list.
