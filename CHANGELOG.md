@@ -1,5 +1,8 @@
 # Changelog
 
+1/10/2024
+- Add ability to click on an error and see what the error message shows.
+
 1/4/2024
 - Bump random mum tape filter to 2024.
 

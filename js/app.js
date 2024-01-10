@@ -149,8 +149,9 @@ function loadResults(sql, sheetURL) {
 					document.getElementsByClassName('sidebar')[0].style.display = 'none';
 				}
 			} else {
-				$('#bands').append('<h3 class="error">Error.</h3>');
+                $('#bands').append('<h3 class="error"><a href="#" onclick="displayError(event, \'' + error + '\')">Error.</a></h3>');
 				console.log(error);
+				
 			}
 		}
 	});
@@ -167,6 +168,11 @@ function loadResults(sql, sheetURL) {
 			document.getElementById("main-table").className = "col-md-8";
 		}
 	}
+}
+
+function displayError(event, errorMsg) {
+    event.preventDefault(); // Prevent the default anchor action
+    alert('Error: ' + errorMsg); // Show the error message
 }
 
 function loadYearData() {
@@ -376,3 +382,5 @@ function viewersAlert() {
 		html: "With the introduction of the Viewer's Choice Awards, String Band fans are now able to vote online for their favorite performance."
 	})
 }
+
+
