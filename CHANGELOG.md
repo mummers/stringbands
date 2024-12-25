@@ -1,5 +1,8 @@
 # Changelog
 
+12/25/2024
+- Change default "searchTerm" to 2025.
+
 1/10/2024
 - Add ability to click on an error and see what the error message shows.
 
