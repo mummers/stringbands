@@ -1,5 +1,8 @@
 # Changelog
 
+1/6/2025
+- Bump random mum tape filter to 2025.
+
 12/25/2024
 - Change default "searchTerm" to 2025.
 
