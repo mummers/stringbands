@@ -1,5 +1,8 @@
 # Changelog
 
+4/17/2025 
+- Remove fbclid parameter from URL.
+
 1/6/2025
 - Bump random mum tape filter to 2025.
 
