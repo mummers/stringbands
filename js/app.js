@@ -1,3 +1,10 @@
+// Remove fbclid parameter from URL
+if (window.location.search.includes('fbclid')) {
+	const url = new URL(window.location);
+	url.searchParams.delete('fbclid');
+	window.history.replaceState({}, document.title, url);
+}  
+
 // Define Google spreadsheet URLs
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=1847002595';
 var lastStandWinners = 'https://docs.google.com/spreadsheets/d/1xqGTbkgosPqSRCkZ6xKj1c01sRRZkg0qeNeN2hrkFSI/pubhtml?gid=639470266';
