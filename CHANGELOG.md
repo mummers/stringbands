@@ -1,5 +1,8 @@
 # Changelog
 
+12/25/2025
+- Change default "searchTerm" to 2026.
+
 4/17/2025 
 - Remove fbclid parameter from URL.
 

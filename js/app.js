@@ -46,7 +46,7 @@ function getOrdinal(n) {
 	return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 // Start with this year if no params
-var searchTerm = 2025;
+var searchTerm = 2026;
 // Logic for countdown
 var today = new Date();
 var nyd = new Date(today.getFullYear() + 1, 0, 1);
