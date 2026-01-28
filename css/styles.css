@@ -71,8 +71,16 @@ th {
 .total {
 	color: #337ab7;
 }
-td.bd span, td.bs span, td.dq span, td.gp span, td.no span, td.np span, td.sp span {
-	display: none;
+td.bd span,
+td.bs span,
+td.dq span,
+td.gp span,
+td.no span,
+td.np span,
+td.sp span,
+td.wd span,
+td.COVID span {
+  display: none;
 }
 td.bd:after {
 	content: "BD";
@@ -91,6 +99,9 @@ td.no:after {
 }
 td.np:after {
 	content: "NP";
+}
+td.wd:after {
+	content: "WD";
 }
 td.sp:after {
 	content: "SP";

@@ -259,6 +259,7 @@ function loadNotes() {
 	  { class: 'no', note: 'no-j', noteClass: 'noNote' },
 	  { class: 'np', note: 'np-j', noteClass: 'npNote' },
 	  { class: 'sp', note: 'sp-j', noteClass: 'spNote' },
+	  { class: 'wd', note: 'wd', noteClass: 'wdNote' },
 	  { class: 'COVID', note: 'no-covid', noteClass: 'covidNote' }
 	];
   

@@ -1,5 +1,9 @@
 # Changelog
 
+1/28/2026
+- Add class/footnote for Withdrawing from competition. 
+- Open Brian and TJ links in new tab. 
+
 12/25/2025
 - Change default "searchTerm" to 2026.
 
