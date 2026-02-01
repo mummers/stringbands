@@ -1,5 +1,9 @@
 # Changelog
 
+2/1/2026
+- Add withdrawal footnote to video page.
+- Bump random mum tape filter to 2026.
+
 1/28/2026
 - Add class/footnote for Withdrawing from competition. 
 - Open Brian and TJ links in new tab. 
