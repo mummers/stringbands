@@ -261,35 +261,36 @@ setTimeout(function() {
 					var $costumer = $row.find(".costumer").text();
 					var $designer = $row.find(".designer").text();
 					var $arranger = $row.find(".arranger").text();
-					var $choreographer = $row.find(".choreographer").text();
-					var costume_exists = $costume.length > 0;
-					var visual_exists = $vp.length > 0;
-					var playing_exists = $mp.length > 0;
-					var yearNumber = parseInt($year, 10);
-					var music = '';
-					var presentation = '';
-					var costume = '';
-					if (!costume_exists && !playing_exists) {
-						swal({
-							title: 'No Breakdown Available.',
-							html: `No point breakdowns for ${$band} in ${$year} are available.`
-						})
-						return;
-					}
-					if (yearNumber < 1991 && costume_exists) { // before 1990
-						music = `<b>Music:</b> ${$ge_music}<br>`
-						presentation = `<strong>Presentation:</strong> ${$ge_visual}<br>`
-						costume = `<b>Costume:</b> ${$costume}<br>`
-					} else if (playing_exists && !costume_exists) { // 2014-present day
-						music = `<b>Music Playing:</b> ${$mp} <br>
-					<b>General Effect Music:</b> ${$ge_music} <br>`
-					presentation = `<b>Visual Performance:</b> ${$vp}<br>
-					<b>General Effect - Visual:</b> ${$ge_visual}<br><br>`
-					costume = ''
-					} else if (visual_exists) { // 1991-2013
-						music = `<b>Music Playing:</b> ${$mp} <br>
-						<b>General Effect Music:</b> ${$ge_music} <br>`
-						presentation = `<b>Visual Performance:</b> ${$vp}<br>
+						var $choreographer = $row.find(".choreographer").text();
+						var costume_exists = $costume.length > 0;
+						var visual_exists = $vp.length > 0;
+						var playing_exists = $mp.length > 0;
+						var ge_music_exists = $ge_music.length > 0;
+						var ge_visual_exists = $ge_visual.length > 0;
+						var hasBreakdownData = costume_exists || playing_exists || ge_music_exists || visual_exists || ge_visual_exists;
+						var yearNumber = parseInt($year, 10);
+						var music = '';
+						var presentation = '';
+						var costume = '';
+						if (!hasBreakdownData) {
+							swal({
+								title: 'No Breakdown Available.',
+								html: `No point breakdowns for ${$band} in ${$year} are available.`
+							})
+							return;
+						}
+						if (yearNumber < 1991 && costume_exists) { // before 1990
+							music = `<b>Music:</b> ${$ge_music}<br>`
+							presentation = `<strong>Presentation:</strong> ${$ge_visual}<br>`
+							costume = `<b>Costume:</b> ${$costume}<br>`
+						} else if (yearNumber >= 2014 && !costume_exists) { // 2014-present day
+							music = `${playing_exists ? `<b>Music Playing:</b> ${$mp} <br>` : ''}${ge_music_exists ? `<b>General Effect Music:</b> ${$ge_music} <br>` : ''}`
+							presentation = `${visual_exists ? `<b>Visual Performance:</b> ${$vp}<br>` : ''}${ge_visual_exists ? `<b>General Effect - Visual:</b> ${$ge_visual}<br><br>` : ''}`
+						costume = ''
+						} else if (yearNumber >= 1991 && yearNumber < 2014) { // 1991-2013
+							music = `<b>Music Playing:</b> ${$mp} <br>
+							<b>General Effect Music:</b> ${$ge_music} <br>`
+							presentation = `<b>Visual Performance:</b> ${$vp}<br>
 						<b>General Effect - Visual:</b> ${$ge_visual}<br>`
 						costume = `<b>Costume:</b> ${$costume}<br><br>`
 					} else {
