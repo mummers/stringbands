@@ -265,6 +265,10 @@ setTimeout(function() {
 					var costume_exists = $costume.length > 0;
 					var visual_exists = $vp.length > 0;
 					var playing_exists = $mp.length > 0;
+					var yearNumber = parseInt($year, 10);
+					var music = '';
+					var presentation = '';
+					var costume = '';
 					if (!costume_exists && !playing_exists) {
 						swal({
 							title: 'No Breakdown Available.',
@@ -272,33 +276,37 @@ setTimeout(function() {
 						})
 						return;
 					}
-					if ($year < 1991 && costume_exists) { // before 1990
+					if (yearNumber < 1991 && costume_exists) { // before 1990
 						music = `<b>Music:</b> ${$ge_music}<br>`
 						presentation = `<strong>Presentation:</strong> ${$ge_visual}<br>`
 						costume = `<b>Costume:</b> ${$costume}<br>`
 					} else if (playing_exists && !costume_exists) { // 2014-present day
 						music = `<b>Music Playing:</b> ${$mp} <br>
-                     <b>General Effect Music:</b> ${$ge_music} <br>`
-						presentation = `<b>Visual Performance:</b> ${$vp}<br>
-                       <b>General Effect - Visual:</b> ${$ge_visual}<br><br>`
-						costume = ''
+					<b>General Effect Music:</b> ${$ge_music} <br>`
+					presentation = `<b>Visual Performance:</b> ${$vp}<br>
+					<b>General Effect - Visual:</b> ${$ge_visual}<br><br>`
+					costume = ''
 					} else if (visual_exists) { // 1991-2013
 						music = `<b>Music Playing:</b> ${$mp} <br>
-                     <b>General Effect Music:</b> ${$ge_music} <br>`
+						<b>General Effect Music:</b> ${$ge_music} <br>`
 						presentation = `<b>Visual Performance:</b> ${$vp}<br>
-                       <b>General Effect - Visual:</b> ${$ge_visual}<br>`
+						<b>General Effect - Visual:</b> ${$ge_visual}<br>`
 						costume = `<b>Costume:</b> ${$costume}<br><br>`
+					} else {
+						music = $ge_music.length ? `<b>Music:</b> ${$ge_music}<br>` : ''
+						presentation = $ge_visual.length ? `<strong>Presentation:</strong> ${$ge_visual}<br>` : ''
+						costume = costume_exists ? `<b>Costume:</b> ${$costume}<br><br>` : ''
 					}
-					var breakdown = `<h3>${$band} ${$year}</h3>
-              <i>${getOrdinal($prize)} Prize</i><br><br>
-              ${music}
-              ${presentation}
-              ${costume}
-              <strong>Total Points:</strong> ${$total}<br><br>
-              <strong>Costumer:</strong> ${$costumer}<br>
-              <strong>Costume/Set Designer:</strong> ${$designer}<br>
-              <strong>Music Arranger:</strong> ${$arranger}<br>
-              <strong>Choreographer:</strong> ${$choreographer}<br>`
+				var breakdown = `<h3>${$band} ${$year}</h3>
+			<i>${getOrdinal($prize)} Prize</i><br><br>
+			${music}
+			${presentation}
+			${costume}
+			<strong>Total Points:</strong> ${$total}<br><br>
+			<strong>Costumer:</strong> ${$costumer}<br>
+			<strong>Costume/Set Designer:</strong> ${$designer}<br>
+			<strong>Music Arranger:</strong> ${$arranger}<br>
+			<strong>Choreographer:</strong> ${$choreographer}<br>`
 					swal({
 						title: 'Point Breakdown',
 						html: breakdown

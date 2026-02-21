@@ -1,5 +1,8 @@
 # Changelog
 
+2/21/2026
+- Fix issue where point breakdown would not display.
+
 2/1/2026
 - Add withdrawal footnote to video page.
 - Bump random mum tape filter to 2026.
