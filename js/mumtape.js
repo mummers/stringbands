@@ -256,8 +256,8 @@ setTimeout(function() {
 					var $ge_music = $row.find(".ge_music").text();
 					var $vp = $row.find(".vp").text();
 					var $ge_visual = $row.find(".ge_visual").text();
-					var $costume = $row.find(".costume").text();
-					var $total = $row.find(".total").text();
+						var $costume = $row.find(".costume").text();
+						var $total = $row.find(".total").text();
 					var $costumer = $row.find(".costumer").text();
 					var $designer = $row.find(".designer").text();
 					var $arranger = $row.find(".arranger").text();
@@ -267,12 +267,13 @@ setTimeout(function() {
 						var playing_exists = $mp.length > 0;
 						var ge_music_exists = $ge_music.length > 0;
 						var ge_visual_exists = $ge_visual.length > 0;
+						var total_exists = $total.length > 0;
 						var hasBreakdownData = costume_exists || playing_exists || ge_music_exists || visual_exists || ge_visual_exists;
 						var yearNumber = parseInt($year, 10);
 						var music = '';
 						var presentation = '';
 						var costume = '';
-						if (!hasBreakdownData) {
+						if (!hasBreakdownData && !total_exists) {
 							swal({
 								title: 'No Breakdown Available.',
 								html: `No point breakdowns for ${$band} in ${$year} are available.`
