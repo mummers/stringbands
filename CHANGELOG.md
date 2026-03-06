@@ -1,5 +1,8 @@
 # Changelog
 
+3/6/2026
+- Add relevant Page tite tags
+
 2/21/2026
 - Fix issue where point breakdown would not display.
 
